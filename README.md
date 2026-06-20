@@ -12,6 +12,14 @@ The framework is Markdown-first so the core instructions can remain reusable acr
 
 ## What this repository is
 
+## Codex compatibility
+
+The canonical Amalgamatic Orchestra skills remain metadata-rich. Codex may require simplified frontmatter.
+Use `adapters/codex/` for Codex-compatible export and installation.
+Repository-local `.agents/skills` installation is strongly recommended instead of modifying your global `.codex` directory.
+
+## Getting Started
+
 Amalgamatic Orchestra uses reusable Markdown instruction files to guide AI assistants through specialized project tasks while keeping responsibilities clear and separated.
 
 The goal is to make AI-assisted project work easier to route, review, and verify. Instead of relying on one broad prompt for every task, this framework coordinates focused specialists. For example, one specialist handles UI/UX review, another handles documentation, another handles database review, and another handles QA readiness.
