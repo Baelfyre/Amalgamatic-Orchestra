@@ -93,6 +93,9 @@ For tools that do not support local skill folders directly, use the Markdown fil
 
 See [INSTALLATION.md](INSTALLATION.md) and [adapters/](adapters/README.md) for more details.
 
+## Plugin readiness
+
+Amalgamatic Orchestra is Markdown-first. The metadata, routing map, and output format files are structured so future plugin loaders can support lazy loading. Plugin support is not required to use the framework, and the framework should not depend on any single runtime plugin system.
 ## Compatibility
 
 This repository is designed to be Markdown-first. That means the core instructions are plain Markdown files that can be adapted across different AI coding environments.

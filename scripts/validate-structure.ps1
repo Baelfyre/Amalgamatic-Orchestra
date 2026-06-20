@@ -6,6 +6,7 @@ $requiredRoot = @(
     'README.md','LICENSE','.gitignore','CONTRIBUTING.md','CHANGELOG.md',
     'SKILL_INDEX.md','FOUNDATION.md','INSTALLATION.md','LOCAL_ONLY_GUIDE.md',
     'COMPATIBILITY.md','VALIDATION.md','ROADMAP.md','ROUTING_MAP.md',
+    'PLUGIN_READINESS.md','MANIFEST_SCHEMA.md','examples/plugin-manifest.example.json',
     'assets/logo/orchestra-of-amalgamation.png'
 )
 $skills = @(

@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.0 - Phase 5: Plugin readiness and metadata discovery (2026-06-20)
+
+- Added `PLUGIN_READINESS.md` documenting how future LLM loaders can extract routing metadata and lazily load outputs while preserving the core Markdown-first architecture.
+- Added `MANIFEST_SCHEMA.md` to establish a clean YAML-to-JSON manifest structure.
+- Created an example plugin manifest (`examples/plugin-manifest.example.json`) demonstrating how the 8 skills map perfectly to standard plugin attributes.
+- Updated `README.md` to highlight the non-breaking plugin readiness.
+- Validated structure to enforce the permanent presence of these new metadata and example files.
+
 ## v0.5.0 - Phase 4: Live Behavior Testing (2026-06-20)
 
 - Created a dedicated manual behavior testing framework (`tests/behavior/`) to validate Progressive Disclosure rules in live LLM environments.
