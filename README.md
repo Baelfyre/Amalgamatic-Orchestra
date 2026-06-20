@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="assets/logo/orchestra-of-amalgamation.png" alt="Orchestra of Amalgamation" width="280" />
-  <h1>Orchestra of Amalgamation</h1>
-  <p>A portable Markdown-based skill system for guiding AI assistants through review, documentation, diagrams, database work, QA, security, and gated resilience testing.</p>
+  <img src="assets/logo/orchestra-of-amalgamation.png" alt="Amalgamatic Orchestra" width="280" />
+  <h1>Amalgamatic Orchestra</h1>
+  <p>A portable Markdown-based framework for coordinating specialized AI workflows across review, documentation, diagrams, database work, QA, security, and gated resilience testing.</p>
 </div>
 
 ## What this repository is
 
-Orchestra of Amalgamation is a collection of reusable AI instruction files. Each instruction folder defines a specific specialist role that can help an AI assistant handle a certain type of work more consistently.
+Amalgamatic Orchestra is a portable AI workflow framework. It uses reusable Markdown instruction files to guide AI assistants through specialized project tasks while keeping responsibilities clear and separated.
 
-The goal is to make AI-assisted project work easier to route, review, and verify. Instead of using one broad prompt for every task, this repository separates responsibilities into focused skills. For example, one skill handles UI/UX review, another handles documentation, another handles database review, and another handles QA readiness.
+The goal is to make AI-assisted project work easier to route, review, and verify. Instead of relying on one broad prompt for every task, this framework coordinates focused specialists. For example, one specialist handles UI/UX review, another handles documentation, another handles database review, and another handles QA readiness.
 
 The main coordinating skill is **Amalgam Conductor**. It helps decide which specialist skill should be used, when multiple skills are needed, and what order they should be used in.
 
