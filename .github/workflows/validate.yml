@@ -1,0 +1,26 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate repository structure
+        shell: pwsh
+        run: ./scripts/validate-structure.ps1
+
+      - name: Validate manifest consistency
+        shell: pwsh
+        run: ./scripts/validate-manifest.ps1
