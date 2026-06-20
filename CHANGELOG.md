@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.1 - Codex compatibility adapter (2026-06-21)
+
+- Added Codex-compatible skill export in `adapters/codex/`.
+- Simplified exported frontmatter to satisfy Codex requirements (`name` and `description` only).
+- Added support for repository-local `.agents/skills` installation.
+- Added adapter validation scripts.
+- Canonical v1.0.0 skill files remain perfectly untouched and metadata-rich.
+
 ## v0.8.0 - Phase 7: Final release hardening (2026-06-20)
 
 - Replaced all legacy references to "Orchestra of Amalgamation" with the correct "Amalgamatic Orchestra" title.

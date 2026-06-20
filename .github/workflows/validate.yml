@@ -25,3 +25,7 @@ jobs:
       - name: Validate manifest consistency
         shell: pwsh
         run: ./scripts/validate-manifest.ps1
+
+      - name: Validate Codex adapter export
+        shell: pwsh
+        run: ./adapters/codex/validate-codex-export.ps1
