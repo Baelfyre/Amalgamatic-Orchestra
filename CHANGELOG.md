@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.8.0 - Phase 7: Final release hardening (2026-06-20)
+
+- Replaced all legacy references to "Orchestra of Amalgamation" with the correct "Amalgamatic Orchestra" title.
+- Replaced the vague "high-signal" term with "relevant" in the Conductor skill.
+- Added `V1_READINESS_CHECKLIST.md` to formally verify all critical repository requirements before v1.0.0 tagging.
+- Hardened validation scripts and documentation to guarantee zero-drift and Markdown-first architecture.
+
 ## v0.7.0 - Phase 6: Manifest verification (2026-06-20)
 
 - Added a standalone manifest verification script (`scripts/validate-manifest.ps1`).
@@ -47,6 +54,6 @@
 ## v0.1.0 - Initial packaging (2026-06-20)
 
 - Created the clean repository package.
-- Added the eight-skill Orchestra of Amalgamation structure.
+- Added the eight-skill Amalgamatic Orchestra structure.
 - Added IDE adapter guides and templates.
 - Added validation and local-only guidance.

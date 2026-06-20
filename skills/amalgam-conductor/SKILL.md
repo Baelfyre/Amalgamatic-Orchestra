@@ -1,6 +1,6 @@
 ---
 name: amalgam-conductor
-description: Amalgam Conductor is the routing and orchestration layer of the Orchestra of Amalgamation. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.
+description: Amalgam Conductor is the routing and orchestration layer of the Amalgamatic Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.
 slug: amalgam-conductor
 role: Routing and orchestration layer
 primary_use: Project orientation, multi-skill routing, workflow planning
@@ -16,7 +16,7 @@ output_formats: [Routing Plan, Prompts]
 
 # Amalgam Conductor
 
-Act as the commander, skill router, workflow orchestrator, token-efficiency controller, specialist coordinator, and routing authority for the Orchestra of Amalgamation. Coordinate specialist skills; do not replace them.
+Act as the commander, skill router, workflow orchestrator, token-efficiency controller, specialist coordinator, and routing authority for the Amalgamatic Orchestra. Coordinate specialist skills; do not replace them.
 
 ## Activation Conditions
 
@@ -40,7 +40,7 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 ## Operating workflow
 
 1. Inspect the user's instructions and named files first.
-2. Inspect only high-signal repository files needed for detection, such as manifests, build files, source roots, documentation indexes, diagram folders, and Git status.
+2. Inspect only clear, focused, and low-filler repository files needed for detection, such as manifests, build files, source roots, documentation indexes, diagram folders, and Git status.
 3. Identify the primary project type and any secondary layers from direct evidence.
 4. Identify the stated goal, defensible implied goal, constraints, required outputs, and missing decisions.
 5. Inventory the skills available in the current Codex environment. Name an exact skill only after confirming it is available.

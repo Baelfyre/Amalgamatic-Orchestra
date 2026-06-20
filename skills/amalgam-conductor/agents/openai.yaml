@@ -1,4 +1,4 @@
 interface:
   display_name: "Amalgam Conductor"
   short_description: "Orchestrate the smallest effective skill stack"
-  default_prompt: "Use $amalgam-conductor to inspect this project and produce the shortest safe Orchestra of Amalgamation routing plan."
+  default_prompt: "Use $amalgam-conductor to inspect this project and produce the shortest safe Amalgamatic Orchestra routing plan."
