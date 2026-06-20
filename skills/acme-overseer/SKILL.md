@@ -1,6 +1,13 @@
 ---
 name: acme-overseer
 description: Review quality assurance, test strategy and plans, test cases, acceptance criteria, requirements testability, unit/integration/system/user-acceptance testing, smoke and regression planning, defect triage, verification and validation evidence, CI test workflows, quality gates, release readiness, and quality documentation. Use when project quality or readiness must be assessed from available evidence.
+slug: acme-overseer
+role: Quality assurance auditor and release gatekeeper
+primary_use: Test strategy, test cases, defect triage, regression, release readiness
+avoid_when: Destructive pressure testing is needed
+activation_level: Specialist
+depends_on: None
+output_formats: [Compact, Full]
 ---
 
 <div align="center">
@@ -22,6 +29,7 @@ Do not use it for destructive or pressure testing. Route destructive, negative, 
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Load [QUALITY_STANDARDS.md](QUALITY_STANDARDS.md) only for standards, principles, or formal review framing.
 - Load [TESTING_CHECKLIST.md](TESTING_CHECKLIST.md) only when auditing tests or quality evidence.
@@ -74,70 +82,9 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 10. Documentation completeness
 11. Maintainability of tests
 
-## Compact mode
+## Output formats
 
-```markdown
-# Acme Overseer Quick QA Review
-
-## Quality Objective
--
-
-## Evidence Reviewed
--
-
-## Confirmed Issues
-1.
-2.
-3.
-
-## Highest-Risk Gap
--
-
-## Recommended Next Action
--
-```
-
-## Full mode
-
-```markdown
-# Acme Overseer Quality Review
-
-## Scope Reviewed
-- Project:
-- Quality Objective:
-- Review Mode:
-- Evidence Reviewed:
-
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
-
-## Executive Summary
-
-## Confirmed Quality Strengths
-
-## Requirements Testability Issues
-
-## Test Coverage Issues
-
-## Test Case Quality Issues
-
-## Defect and Risk Issues
-
-## Regression Readiness
-
-## Verification and Validation Notes
-
-## Release Readiness
-
-## Missing Evidence
-
-## Priority Fixes
-
-## Recommended Test or QA Actions
-
-## Final Recommendation
-```
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Claims and approvals
 

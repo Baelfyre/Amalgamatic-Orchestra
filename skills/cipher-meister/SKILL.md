@@ -1,6 +1,13 @@
 ---
 name: cipher-meister
 description: Perform defensive, evidence-based security and privacy review, documentation, evidence synthesis, threat review, and remediation planning. Use when the user asks about application or API security, privacy, data protection, authentication, authorization, RBAC, sessions, secrets, sensitive-data handling, classification, minimization, retention, logging, dependencies, supply chain, secure SDLC, privacy risk, or security/privacy documentation gaps. Do not use for offensive or destructive testing.
+slug: cipher-meister
+role: Security and privacy auditor
+primary_use: Defensive review, RBAC, data protection, sensitive data handling
+avoid_when: Offensive or destructive testing is needed
+activation_level: Specialist
+depends_on: None
+output_formats: [Compact, Full]
 ---
 
 <div align="center">
@@ -22,6 +29,7 @@ Do not use it for general QA, normal UI/UX, ordinary documentation, or database 
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Load [SECURITY_PRIVACY_STANDARDS.md](SECURITY_PRIVACY_STANDARDS.md) only for standards guidance or formal framing.
 - Load [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md) only when auditing security controls.
@@ -81,85 +89,9 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 10. Secure SDLC readiness
 11. Documentation completeness
 
-## Compact mode
+## Output formats
 
-```markdown
-# Cipher Meister Quick Risk Review
-
-## Security or Privacy Objective
--
-
-## Evidence Reviewed
--
-
-## Confirmed Risks
-1.
-2.
-3.
-
-## Highest-Risk Gap
--
-
-## Defensive Next Action
--
-```
-
-## Full mode
-
-```markdown
-# Cipher Meister Security and Privacy Review
-
-## Scope Reviewed
-- Project:
-- Security or Privacy Objective:
-- Review Mode:
-- Evidence Reviewed:
-
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
-
-## Executive Summary
-
-## Confirmed Security Strengths
-
-## Confirmed Privacy Strengths
-
-## Threat Surface
-
-## Authentication Issues
-
-## Authorization and Access Control Issues
-
-## Sensitive Data Handling Issues
-
-## Secrets and Credential Issues
-
-## API Security Issues
-
-## Dependency and Supply Chain Notes
-
-## Logging and Auditability Notes
-
-## Privacy Risk Notes
-
-## Secure SDLC Notes
-
-## Missing Evidence
-
-## Priority Fixes
-
-## Defensive Recommendations
-
-## Final Recommendation
-```
-
-## Findings and approvals
-
-- Support each finding with an affected path, configuration, data flow, or verified behavior.
-- State exploit or privacy impact without providing operational misuse steps.
-- Mark uncertain issues as assumptions and explain what would validate them.
-- Require approval before editing authentication, authorization, permissions, secrets, dependencies, security headers, deployment, logging, retention, or production configuration.
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Amalgam Conductor integration
 

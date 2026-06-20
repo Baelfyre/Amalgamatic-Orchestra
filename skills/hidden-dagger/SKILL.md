@@ -1,6 +1,13 @@
 ---
 name: hidden-dagger
 description: Use only when the user explicitly requests controlled destructive testing, negative testing, fuzz testing, adversarial QA, boundary or failure-mode testing, guardrail or crash testing, invalid-input testing, database constraint stress testing, resilience testing, or pre-production pressure testing. Do not invoke automatically. Operate only on authorized, non-production systems with a completed safety gate and explicit approval for risky execution.
+slug: hidden-dagger
+role: Controlled resilience tester
+primary_use: Destructive, negative, fuzz, adversarial QA, failure-mode testing
+avoid_when: Operating in production, lacking explicit approval, or during early dev
+activation_level: Gated
+depends_on: amalgam-conductor
+output_formats: [Output]
 ---
 
 <div align="center">
@@ -73,6 +80,7 @@ Prioritize safety and authorization, production protection, critical workflows, 
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Always read [SAFETY_GATES.md](SAFETY_GATES.md) before recommending or executing destructive, negative, fuzz, failure-mode, guardrail, resilience, or pressure testing.
 - Read [DESTRUCTIVE_TESTING_GUIDE.md](DESTRUCTIVE_TESTING_GUIDE.md) only for controlled destructive or recovery tests.
@@ -84,27 +92,9 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 - Read [TEST_EXECUTION_PROTOCOL.md](TEST_EXECUTION_PROTOCOL.md) only when execution is being planned or reviewed.
 - Load `examples/` only when the user requests examples or ambiguity requires one.
 
-## Output
+## Output formats
 
-For planning, report safety status, target, highest-risk areas, proposed tests, approval required, and next action.
-
-For a full review, report:
-
-1. Safety gate and approved scope
-2. System purpose, critical workflows, evidence, and exclusions
-3. Confidence and reason
-4. Each test: target, condition, expected guardrail, actual result, severity, evidence, fix, and retest
-5. Resilience scorecard
-6. Confirmed failures, suspected weaknesses, assumptions, missing evidence, and untested areas
-7. Highest-risk findings, fix priority, retest plan, and final recommendation
-
-Use Critical, Major, Minor, or Cleanup severity. Never mark a test passed unless it ran and evidence is available.
-
-## Scoring
-
-Use 0 to 100: 90-100 strong with minor gaps; 75-89 generally strong with targeted fixes; 60-74 moderate with meaningful risk; 40-59 weak with major gaps; 0-39 high risk and failure-prone.
-
-Weight critical workflow impact, safety, data integrity, security and privacy, likelihood, severity, and recovery difficulty. Mark scores provisional when evidence is incomplete.
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Amalgam Conductor integration
 

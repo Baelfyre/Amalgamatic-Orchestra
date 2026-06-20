@@ -1,12 +1,12 @@
 # Skill Index
 
-| Skill name | Folder | Primary purpose | Use when | Do not use when | Typical output | Activation level |
-|---|---|---|---|---|---|---|
-| Amalgam Conductor | `skills/amalgam-conductor` | Route and sequence specialists | Ownership or workflow is unclear | One obvious specialist suffices | Routing plan and prompts | Commander |
-| Cloak Meister | `skills/cloak-meister` | Review user-facing software | UI, UX, accessibility, forms, dashboards | Database or system modeling | Severity-ranked UX review | Specialist |
-| Scribe Meister | `skills/scribe-meister` | Produce verified documentation | README, reports, audits, handoffs | Source evidence is unavailable and claims cannot be verified | Documentation audit or draft | Specialist |
-| Meister Weaver | `skills/meister-weaver` | Review and create visual models | UML, ERD visuals, architecture, workflows | Database semantics alone | Diagram review or source | Specialist |
-| Meister Chronicler | `skills/meister-chronicler` | Review database design and evidence | Schemas, SQL, constraints, migrations | UI review | Database findings and validation | Specialist |
-| Acme Overseer | `skills/acme-overseer` | Assess normal quality and readiness | Tests, defects, regression, release gates | Destructive pressure testing | QA review and readiness decision | Specialist |
-| Cipher Meister | `skills/cipher-meister` | Review security/privacy evidence | Auth, RBAC, secrets, data protection, dependencies | Offensive or destructive testing | Defensive risk review | Specialist |
-| Hidden Dagger | `skills/hidden-dagger` | Pressure-test resilience under approval | Explicit negative, fuzz, failure, or mature pre-production testing | Production, unauthorized, or normal QA | Safety gate, test plan, scorecard | Gated |
+| Name | Slug | Role | Primary Use | Avoid When | Activation | Depends On | Output Formats |
+|---|---|---|---|---|---|---|---|
+| Amalgam Conductor | `amalgam-conductor` | Routing and orchestration layer | Project orientation, multi-skill routing, workflow planning | A single obvious specialist suffices | Commander | None | Routing Plan, Prompts |
+| Cloak Meister | `cloak-meister` | UI/UX architect and frontend auditor | UI, UX, accessibility, frontend architecture, responsive layout | Database schema or system architecture diagraming is needed | Specialist | None | Output |
+| Scribe Meister | `scribe-meister` | Documentation compiler and auditor | READMEs, project reports, readiness summaries, handover docs | Source evidence is unavailable to verify claims | Specialist | None | Compact, Full |
+| Meister Weaver | `meister-weaver` | Visual modeling and diagram specialist | UML, ERD, architecture, workflow, data-flow diagrams | Resolving UI accessibility or evaluating functional code without diagrams | Specialist | None | Compact, Full |
+| Meister Chronicler | `meister-chronicler` | Database architect and schema auditor | Schemas, ERDs, constraints, migrations, SQL validation | Evaluating visible UI or system-level testing | Specialist | None | Compact, Full |
+| Acme Overseer | `acme-overseer` | Quality assurance auditor and release gatekeeper | Test strategy, test cases, defect triage, regression, release readiness | Destructive pressure testing is needed | Specialist | None | Compact, Full |
+| Cipher Meister | `cipher-meister` | Security and privacy auditor | Defensive review, RBAC, data protection, sensitive data handling | Offensive or destructive testing is needed | Specialist | None | Compact, Full |
+| Hidden Dagger | `hidden-dagger` | Controlled resilience tester | Destructive, negative, fuzz, adversarial QA, failure-mode testing | Operating in production, lacking explicit approval, or during early dev | Gated | `amalgam-conductor` | Output |

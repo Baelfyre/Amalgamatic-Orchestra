@@ -1,6 +1,13 @@
 ---
 name: cloak-meister
 description: Review and improve the visible and experiential layer of software systems, including UI, UX, accessibility, visual hierarchy, frontend architecture, dashboards, JavaFX screens, React/HTML/CSS components, design systems, responsive layouts, user flows, information architecture, interaction design, forms, component consistency, and frontend implementation guidance. Use for evidence-based interface audits and practical visible-layer improvements.
+slug: cloak-meister
+role: UI/UX architect and frontend auditor
+primary_use: UI, UX, accessibility, frontend architecture, responsive layout
+avoid_when: Database schema or system architecture diagraming is needed
+activation_level: Specialist
+depends_on: None
+output_formats: [Output]
 ---
 
 <div align="center">
@@ -22,12 +29,12 @@ Do not use it for database schemas, system architecture diagrams, security audit
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Load [CHECKLIST.md](CHECKLIST.md) for the selected review mode.
 - Load [ACCESSIBILITY_CHECKLIST.md](ACCESSIBILITY_CHECKLIST.md) only for accessibility reviews.
 - Load [FRONTEND_REVIEW_GUIDE.md](FRONTEND_REVIEW_GUIDE.md) only for frontend architecture reviews.
 - Load [UX_STANDARDS.md](UX_STANDARDS.md) only for UX or interaction design reviews.
-- Load [OUTPUT_TEMPLATES.md](OUTPUT_TEMPLATES.md) only when generating reusable output.
 - Load `examples/` only when the user requests examples or ambiguity requires one.
 
 ## Operating principles
@@ -122,75 +129,9 @@ Cloak Meister is not the primary specialist for UML class diagrams, use-case dia
 - Route mixed or unclear tasks through `amalgam-conductor`.
 - Use Cloak Meister on a technical diagram only for visual presentation, readability, or user-facing clarity, with the domain specialist retaining semantic ownership.
 
-## Output format
+## Output formats
 
-```markdown
-# Cloak Meister Review
-
-## Scope Reviewed
-- Artifact Type:
-- Primary User Goal:
-- Target User:
-- Review Mode:
-- Evidence Reviewed:
-
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
-
-## Scoring Matrix
-- Task Completion: __/100
-- Accessibility: __/100
-- Cognitive Load: __/100
-- Discoverability: __/100
-- Visual Hierarchy: __/100
-- Consistency: __/100
-- Responsiveness: __/100
-- Maintainability: __/100
-- Performance: __/100
-- Overall Score: __/100
-
-## Executive Summary
-
-## Confirmed Findings
-
-## Assumptions
-
-## Critical Issues
-### [Issue title]
-- Severity:
-- Principle Applied:
-- Finding:
-- Impact:
-- Recommendation:
-- Implementation Notes:
-
-## Major Issues
-
-## Minor Issues
-
-## Strengths
-
-## Quick Wins
-
-## Long-Term Improvements
-
-## Accessibility Notes
-
-## Information Architecture Notes
-
-## Design Debt
-
-## Frontend Implementation Notes
-
-## Performance Notes
-
-## Missing Evidence
-
-## Final Recommendation
-```
-
-Write `None confirmed` for empty issue sections. State whether the interface is ready, needs revision, or needs major restructuring.
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Implementation guidance
 

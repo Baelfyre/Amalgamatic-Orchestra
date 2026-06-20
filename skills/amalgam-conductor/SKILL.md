@@ -1,6 +1,13 @@
 ---
 name: amalgam-conductor
 description: Amalgam Conductor is the routing and orchestration layer of the Orchestra of Amalgamation. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.
+slug: amalgam-conductor
+role: Routing and orchestration layer
+primary_use: Project orientation, multi-skill routing, workflow planning
+avoid_when: A single obvious specialist suffices
+activation_level: Commander
+depends_on: None
+output_formats: [Routing Plan, Prompts]
 ---
 
 <div align="center">
@@ -22,8 +29,9 @@ Keep the result practical. Route a simple task to one specialist or no specialis
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
-- Read [ROUTING_MATRIX.md](ROUTING_MATRIX.md) after detecting project signals.
+- Load ../../ROUTING_MAP.md only when routing is unclear or multi-skill coordination is needed.
 - Read only the matching profile in [PROJECT_PROFILES.md](PROJECT_PROFILES.md).
 - Read only the matching workflow in [WORKFLOW_PLAYBOOK.md](WORKFLOW_PLAYBOOK.md).
 - Read [TOKEN_EFFICIENCY_RULES.md](TOKEN_EFFICIENCY_RULES.md) only when a proposed route has overlap or more than three skills.
@@ -205,59 +213,9 @@ If generated skill files are inside a project repository, include this warning:
 - Mark actions that require user approval, credentials, production access, schema mutation, data repair, deployment, or external communication.
 - Prefer read-only inspection and reversible next steps.
 
-## Full mode
+## Output formats
 
-Use this structure. Keep it compact for simple tasks.
-
-```markdown
-# Amalgam Conductor Routing Plan
-
-## Project Detection
-- Detected Project Type:
-- Evidence:
-- Confidence:
-
-## User Goal
-- Stated Goal:
-- Implied Goal:
-- Missing Information:
-
-## Recommended Skill Stack
-### [Skill name or capability]
-- Skill:
-- Why this skill is needed:
-- When to use it:
-- Expected output:
-
-## Execution Sequence
-### Step 1
-- Skill:
-- Task:
-- Output:
-
-### Step 2
-- Skill:
-- Task:
-- Output:
-
-## Risks and Conflicts
-- Overlapping skills:
-- Missing project context:
-- Possible unsafe actions:
-- Areas requiring user approval:
-
-## Local and Git Safety
-- Skill and routing-file location:
-- Repository impact:
-- Git status:
-- Approval required:
-
-## Commands or Prompts to Run
-Provide copy-paste-ready Codex prompts. Do not include commit, push, PR, install, or destructive commands unless explicitly approved.
-
-## Final Recommendation
-State the shortest effective workflow.
-```
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Prompt construction
 
@@ -270,10 +228,6 @@ Each specialist prompt must include:
 - The validation expected after any implementation.
 
 Do not paste speculative project facts into prompts. Tell the specialist to verify them.
-
-## Compact mode
-
-For a simple route, use `# Conductor Quick Route` followed by project signal, selected skill, reason, exclusions, approval boundary, and one copy-paste prompt.
 
 ## Examples
 

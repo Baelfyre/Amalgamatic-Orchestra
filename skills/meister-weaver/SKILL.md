@@ -1,6 +1,13 @@
 ---
 name: meister-weaver
 description: Create, review, correct, and document UML class, use case, sequence, activity, state, component, deployment, ERD, database relationship, system architecture, layered architecture, data-flow, workflow, process, user-flow, and feature-interaction diagrams. Use when a diagram must accurately reflect project objectives, system behavior, data relationships, implementation boundaries, or supplied source evidence.
+slug: meister-weaver
+role: Visual modeling and diagram specialist
+primary_use: UML, ERD, architecture, workflow, data-flow diagrams
+avoid_when: Resolving UI accessibility or evaluating functional code without diagrams
+activation_level: Specialist
+depends_on: None
+output_formats: [Compact, Full]
 ---
 
 <div align="center">
@@ -20,6 +27,7 @@ Do not use it for database semantics without a database source, UI/UX review, or
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Load [DIAGRAM_STANDARDS.md](DIAGRAM_STANDARDS.md) and [DIAGRAM_CHECKLIST.md](DIAGRAM_CHECKLIST.md) for the selected diagram type.
 - Load [MERMAID_TEMPLATES.md](MERMAID_TEMPLATES.md) only after selecting Mermaid format.
@@ -64,72 +72,9 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 7. Maintainability
 8. Implementation usefulness
 
-## Compact mode
+## Output formats
 
-```markdown
-# Meister Weaver Quick Diagram Plan
-
-## Diagram Needed
--
-
-## Objective
--
-
-## Inputs Required
--
-
-## Recommended Format
-- Mermaid / PlantUML / Draw.io
-
-## Draft Diagram
-Provide Mermaid or PlantUML only when evidence is sufficient.
-
-## Missing Evidence
--
-```
-
-## Full mode
-
-```markdown
-# Meister Weaver Diagram Review
-
-## Scope Reviewed
-- Diagram Type:
-- Project Objective:
-- Audience:
-- System Boundary:
-- Evidence Reviewed:
-
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
-
-## Executive Summary
-
-## Confirmed Elements
-
-## Missing Elements
-
-## Incorrect or Unclear Elements
-
-## Relationship and Cardinality Issues
-
-## Notation Issues
-
-## Readability Issues
-
-## Recommended Diagram Structure
-
-## Corrected Diagram
-Preferred output order:
-1. Mermaid
-2. PlantUML
-3. Draw.io instructions
-
-## Missing Evidence
-
-## Final Recommendation
-```
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Amalgam Conductor integration
 

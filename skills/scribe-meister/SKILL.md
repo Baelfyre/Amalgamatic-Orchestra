@@ -1,6 +1,13 @@
 ---
 name: scribe-meister
 description: Audit, compile, organize, and improve software project documentation, including READMEs, requirements, setup and user guides, architecture summaries, testing documentation, system readiness reports, implementation summaries, design or decision logs, milestone reports, and final submission materials. Use when documentation must align with a project objective, available evidence, technical standards, portfolio goals, or formal delivery requirements.
+slug: scribe-meister
+role: Documentation compiler and auditor
+primary_use: READMEs, project reports, readiness summaries, handover docs
+avoid_when: Source evidence is unavailable to verify claims
+activation_level: Specialist
+depends_on: None
+output_formats: [Compact, Full]
 ---
 
 <div align="center">
@@ -20,6 +27,7 @@ Do not use it when source evidence is unavailable and claims cannot be verified.
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.
+- Load OUTPUT_FORMATS.md only when generating the final response.
 
 - Load [DOCUMENTATION_STANDARDS.md](DOCUMENTATION_STANDARDS.md) for the relevant document type.
 - Load [AUDIT_CHECKLIST.md](AUDIT_CHECKLIST.md) only when auditing existing documentation.
@@ -71,74 +79,9 @@ Apply IEEE-style requirements qualities, ISO/IEC-style software quality characte
 - Cite the file or artifact supporting each technical correction.
 - Ask only when a missing objective, audience, rubric, or required format blocks a defensible result.
 
-## Compact mode
+## Output formats
 
-Use for quick audits.
-
-```markdown
-# Scribe Meister Quick Audit
-
-## Objective
--
-
-## Documentation Status
-- Complete:
-- Missing:
-- Risk:
-
-## Priority Fixes
-1.
-2.
-3.
-
-## Next Action
--
-```
-
-## Full mode
-
-Use for final documentation or detailed audits.
-
-```markdown
-# Scribe Meister Documentation Audit
-
-## Scope Reviewed
-- Project:
-- Objective:
-- Documentation Type:
-- Intended Reader:
-- Evidence Reviewed:
-
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
-
-## Executive Summary
-
-## Confirmed Documentation Strengths
-
-## Missing Documentation
-
-## Accuracy Issues
-
-## Objective Alignment Issues
-
-## Traceability Issues
-
-## Technical Clarity Issues
-
-## Submission Readiness
-
-## Recommended Documentation Structure
-
-## Priority Fix List
-
-## Copy-Ready Revision Notes
-
-## Missing Evidence
-
-## Final Recommendation
-```
+Load OUTPUT_FORMATS.md when you are ready to generate the final output. Use Compact mode by default unless Full mode is explicitly requested.
 
 ## Amalgam Conductor integration
 
