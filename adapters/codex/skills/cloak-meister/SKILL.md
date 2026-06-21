@@ -1,6 +1,6 @@
 ﻿---
-name: cloak-meister
-description: Review and improve the visible and experiential layer of software systems, including UI, UX, accessibility, visual hierarchy, frontend architecture, dashboards, JavaFX screens, React/HTML/CSS components, design systems, responsive layouts, user flows, information architecture, interaction design, forms, component consistency, and frontend implementation guidance. Use for evidence-based interface audits and practical visible-layer improvements.
+name: cloak-meister
+description: Review and improve the visible and experiential layer of software systems, including UI, UX, accessibility, visual hierarchy, frontend architecture, dashboards, JavaFX screens, React/HTML/CSS components, design systems, responsive layouts, user flows, information architecture, interaction design, forms, component consistency, and frontend implementation guidance. Use for evidence-based interface audits and practical visible-layer improvements.
 ---
 
 <div align="center">

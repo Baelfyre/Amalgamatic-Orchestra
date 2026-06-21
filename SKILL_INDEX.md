@@ -10,3 +10,4 @@
 | Acme Overseer | `acme-overseer` | Quality assurance auditor and release gatekeeper | Test strategy, test cases, defect triage, regression, release readiness | Destructive pressure testing is needed | Specialist | None | Compact, Full |
 | Cipher Meister | `cipher-meister` | Security and privacy auditor | Defensive review, RBAC, data protection, sensitive data handling | Offensive or destructive testing is needed | Specialist | None | Compact, Full |
 | Hidden Dagger | `hidden-dagger` | Controlled resilience tester | Destructive, negative, fuzz, adversarial QA, failure-mode testing | Operating in production, lacking explicit approval, or during early dev | Gated | `amalgam-conductor` | Output |
+| Clockwork Meister | `clockwork-meister` | Engineering / Code Structure | OOP architecture, layered architecture, system design, refactoring | Modifying UI layouts, testing security boundaries, or writing documentation | Specialist | None | Compact, Full |

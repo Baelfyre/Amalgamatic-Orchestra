@@ -88,12 +88,18 @@ Do not infer a framework from a project name. Report evidence and confidence as 
 - Route documentation audits, project reports, README work, system readiness, final submissions, technical writing, and documentation compilation to `scribe-meister`.
 - Route UML, use-case, ERD visuals, sequence, architecture, deployment, workflow, and process diagrams to `meister-weaver`.
 - Route schemas, constraints, SQL, data dictionaries, database documentation, seed data, migrations, and database integration to `meister-chronicler`.
-- Route Java, JavaFX, OOP, classes, services, repositories, or controllers to an available Java or OOP specialist. Use `cloak-meister` only for the visible UI and frontend-experience portion.
+- Route Java, JavaFX, OOP, classes, services, repositories, controllers, architecture, layered architecture, system design, package boundaries, dependency direction, refactoring architecture, and SOLID principles to `clockwork-meister`. Use `cloak-meister` only for the visible UI and frontend-experience portion.
 - Route security and privacy evidence review, authentication and authorization evidence, RBAC, secrets, sensitive data, API and dependency risk, secure SDLC, data protection, privacy risk, documentation gaps, and remediation planning to `cipher-meister`.
 - Route source-level vulnerability scanning, dependency scanning, authentication or authorization implementation analysis, exploit validation in an authorized defensive context, static analysis, and scanner-output interpretation to Codex Security or another dedicated scanner when available.
 - Route testing, QA, test plans, test cases, acceptance criteria, defect triage, smoke and regression planning, verification and validation, quality gates, release readiness, and final quality review to `acme-overseer`.
 - Route destructive, negative, fuzz, boundary, failure-mode, crash, invalid or malformed input, database constraint stress, UI/API guardrail pressure, backend error-path, resilience, and pre-production pressure testing to `hidden-dagger` only as a gated escalation. Never invoke it automatically.
 - Route frontend implementation to an available frontend or framework specialist after UX or architecture decisions are settled.
+- For combination routing:
+  - UI + architecture = `cloak-meister` first for visible UX, then `clockwork-meister` for implementation structure.
+  - Database + architecture = `meister-chronicler` for schema semantics, then `clockwork-meister` for repository/service integration.
+  - Security + architecture = `cipher-meister` for security/privacy risks, then `clockwork-meister` for dependency and boundary cleanup.
+  - QA + architecture = `clockwork-meister` for structural issues, then `acme-overseer` for validation gates.
+  - Diagrams + architecture = `meister-weaver` for diagrams, `clockwork-meister` for source-structure review.
 - For multi-layer tasks, use only the required subset of: architecture, specialist implementation, testing, documentation.
 - Use `cloak-meister` alongside diagram or documentation review only when UI/UX, accessibility, dashboard, or frontend-architecture analysis is also required.
 - Do not route multiple specialists to the same output. Add a specialist only when it owns a distinct artifact, risk, or verification result.

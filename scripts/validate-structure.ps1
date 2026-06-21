@@ -11,7 +11,8 @@ $requiredRoot = @(
 )
 $skills = @(
     'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
-    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger'
+    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
+    'clockwork-meister'
 )
 $adapters = @('codex','vscode','antigravity','claude-code','local-ai')
 $templates = @(

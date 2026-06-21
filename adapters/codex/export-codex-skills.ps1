@@ -5,7 +5,8 @@ param(
 
 $skills = @(
     'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
-    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger'
+    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
+    'clockwork-meister'
 )
 
 $targetSkillsDir = Join-Path $TargetRoot "skills"

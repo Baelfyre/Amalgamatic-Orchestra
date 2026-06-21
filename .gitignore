@@ -5,6 +5,10 @@ Thumbs.db
 .codex/
 .agents/
 AGENTS.md
+SKILLS.md
+SKILL.md
+!skills/**/SKILL.md
+!adapters/codex/skills/**/SKILL.md
 CLAUDE.md
 *.local.md
 *.tmp

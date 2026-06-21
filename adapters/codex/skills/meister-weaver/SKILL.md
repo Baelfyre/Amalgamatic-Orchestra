@@ -1,6 +1,6 @@
 ﻿---
-name: meister-weaver
-description: Create, review, correct, and document UML class, use case, sequence, activity, state, component, deployment, ERD, database relationship, system architecture, layered architecture, data-flow, workflow, process, user-flow, and feature-interaction diagrams. Use when a diagram must accurately reflect project objectives, system behavior, data relationships, implementation boundaries, or supplied source evidence.
+name: meister-weaver
+description: Create, review, correct, and document UML class, use case, sequence, activity, state, component, deployment, ERD, database relationship, system architecture, layered architecture, data-flow, workflow, process, user-flow, and feature-interaction diagrams. Use when a diagram must accurately reflect project objectives, system behavior, data relationships, implementation boundaries, or supplied source evidence.
 ---
 
 <div align="center">

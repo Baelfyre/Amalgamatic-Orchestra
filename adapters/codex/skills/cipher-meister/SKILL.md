@@ -1,6 +1,6 @@
 ﻿---
-name: cipher-meister
-description: Perform defensive, evidence-based security and privacy review, documentation, evidence synthesis, threat review, and remediation planning. Use when the user asks about application or API security, privacy, data protection, authentication, authorization, RBAC, sessions, secrets, sensitive-data handling, classification, minimization, retention, logging, dependencies, supply chain, secure SDLC, privacy risk, or security/privacy documentation gaps. Do not use for offensive or destructive testing.
+name: cipher-meister
+description: Perform defensive, evidence-based security and privacy review, documentation, evidence synthesis, threat review, and remediation planning. Use when the user asks about application or API security, privacy, data protection, authentication, authorization, RBAC, sessions, secrets, sensitive-data handling, classification, minimization, retention, logging, dependencies, supply chain, secure SDLC, privacy risk, or security/privacy documentation gaps. Do not use for offensive or destructive testing.
 ---
 
 <div align="center">

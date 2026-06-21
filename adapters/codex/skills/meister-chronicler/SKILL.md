@@ -1,6 +1,6 @@
 ﻿---
-name: meister-chronicler
-description: Review, document, and improve database architecture, schemas, ERDs, tables, columns, keys, constraints, indexes, normalization, reference and seed data, migrations, stored procedures, views, audit tables, reporting tables, SQL, data dictionaries, integration documentation, and database testing plans. Use when database facts must be validated against schema, migration, dump, live metadata, or project requirements.
+name: meister-chronicler
+description: Review, document, and improve database architecture, schemas, ERDs, tables, columns, keys, constraints, indexes, normalization, reference and seed data, migrations, stored procedures, views, audit tables, reporting tables, SQL, data dictionaries, integration documentation, and database testing plans. Use when database facts must be validated against schema, migration, dump, live metadata, or project requirements.
 ---
 
 <div align="center">

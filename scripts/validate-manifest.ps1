@@ -104,5 +104,5 @@ if ($errors -gt 0) {
     exit 1
 }
 
-Write-Output "Manifest validation successful. All 8 skills perfectly match the frontmatter source of truth."
+Write-Output "Manifest validation successful. All skills perfectly match the frontmatter source of truth."
 exit 0

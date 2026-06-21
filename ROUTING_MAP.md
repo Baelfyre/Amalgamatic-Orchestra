@@ -12,6 +12,7 @@ This file provides a lightweight, scanner-friendly map of common tasks to the co
 | QA, release readiness, test cases, defects | `acme-overseer` | Normal quality assurance |
 | Security, privacy, RBAC, defensive review | `cipher-meister` | Evaluating defensive posture |
 | UML, ERD visuals, architecture workflows | `meister-weaver` | Creating or reviewing system models |
+| OOP, SOLID, code structure, architecture, refactoring | `clockwork-meister` | Reviewing architecture, layering, or object-oriented design |
 | Gated resilience or negative testing | `hidden-dagger` | Requires explicit approval and safe environment |
 | Broad, unclear, or multi-skill tasks | `amalgam-conductor` | When ownership overlaps or dependencies exist |
 

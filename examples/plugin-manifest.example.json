@@ -122,6 +122,22 @@
                                               "Compact",
                                               "Full"
                                           ]
+                   },
+                   {
+                       "primary_use":  "OOP architecture, layered architecture, system design, refactoring",
+                       "slug":  "clockwork-meister",
+                       "description":  "The Clockwork Meister guards the moving framework of the codebase: OOP discipline, architecture layering, service/repository boundaries, dependency flow, transaction safety, and structural refactor integrity.",
+                       "avoid_when":  "Modifying UI layouts, testing security boundaries, or writing documentation",
+                       "skill_path":  "skills/clockwork-meister/SKILL.md",
+                       "role":  "Engineering / Code Structure",
+                       "name":  "clockwork-meister",
+                       "activation_level":  "Specialist",
+                       "depends_on":  "None",
+                       "icon_path":  "assets/icons/clockwork-meister.png",
+                       "output_formats":  [
+                                              "Compact",
+                                              "Full"
+                                          ]
                    }
                ]
 }
