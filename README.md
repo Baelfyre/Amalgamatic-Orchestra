@@ -1,147 +1,80 @@
 <div align="center">
   <img src="assets/logo/orchestra-of-amalgamation.png" alt="Amalgamatic Orchestra" width="280" />
-  <h1>Amalgam Conductor</h1>
-  <p>An installable AI workflow plugin for routing complex software tasks through focused specialist skills.</p>
+  <h1>Amalgam Conductor Ecosystem</h1>
+  <p><strong>The routing, implementation, and communication layer for AI workflow automation.</strong></p>
 </div>
 
-## About
+---
 
-Amalgam Conductor is an installable AI workflow plugin built on the Amalgamatic Orchestra framework. It routes complex software tasks through focused specialist skills while preserving token efficiency, safety gates, and evidence-based review.
+## 🎯 Purpose
 
-The framework remains Markdown-first so the core instructions can stay reusable across tools. The plugin layer provides clean commands and skill discovery for supported plugin environments while the underlying Markdown files remain portable.
+Amalgam Conductor coordinates AI-assisted software engineering. Instead of a single messy prompt, tasks are routed through a highly disciplined trifecta of orchestration, implementation, and communication, backed by domain specialists.
 
-The plugin uses the existing Amalgam Conductor icon at `assets/icons/amalgam-conductor.png`. The broader framework logo remains `assets/logo/orchestra-of-amalgamation.png`.
+## 🏗️ The Ecosystem Trinity
 
-## What this repository is
+The core engine relies on three distinct layers working together to prevent token bloat and over-engineering:
 
-This repository contains reusable Markdown instruction files and a plugin configuration that maps the following commands to specialist skills:
+1. **[Amalgam Conductor](skills/amalgam-conductor/SKILL.md) (Orchestrator)** 
+   - Defines the task boundary. Decides *what* gets built and *who* builds it.
+   - Prevents sequencing errors, unauthorized actions, and overlapping reviews.
+2. **[Ponytail](https://github.com/Baelfyre/ponytail) (Implementation Engine)**
+   - The lazy senior developer. Writes the absolute minimum code required.
+   - Uses native features and standard libraries before adding dependencies. No architecture redesigns.
+3. **[Caveman](https://github.com/Baelfyre/caveman) (Global Protocol)**
+   - The communication standard. Strips out conversational filler and formatting bloat.
+   - Outputs only what matters: actionable code, skipped steps, and required context.
 
-| Command | Mapped Skill |
-| --- | --- |
-| `/amalgam-conductor` | Amalgam Conductor |
-| `/review-architecture` | Clockwork Meister |
-| `/review-ui` | Cloak Meister |
-| `/review-db` | Meister Chronicler |
-| `/review-docs` | Scribe Meister |
-| `/diagram-check` | Meister Weaver |
-| `/qa-check` | Acme Overseer |
-| `/security-check` | Cipher Meister |
-| `/resilience-check` | Hidden Dagger |
+---
 
-## Codex compatibility
+## 🧩 The Specialists
 
-The canonical Amalgamatic Orchestra skills remain metadata-rich. Codex may require simplified frontmatter.
-Use `adapters/codex/` for Codex-compatible export and installation.
-Repository-local `.agents/skills` installation is strongly recommended instead of modifying your global `.codex` directory.
+When Amalgam Conductor identifies a cross-domain feature, it routes the task to the appropriate specialist.
 
-## Getting Started
+| Specialist | Use Case | Avoid When |
+| :---: | :--- | :--- |
+| <img src="assets/icons/amalgam-conductor.png" width="60" /><br>**Amalgam Conductor** | Routing, overlap control, token efficiency | A single obvious specialist suffices |
+| <img src="assets/icons/clockwork-meister.png" width="60" /><br>**Clockwork Meister** | OOP/Layered architecture, system design, refactoring | Modifying UI or writing docs |
+| <img src="assets/icons/cloak-meister.png" width="60" /><br>**Cloak Meister** | UI/UX, layout, components, accessibility | DB or system-diagram ownership |
+| <img src="assets/icons/meister-chronicler.png" width="60" /><br>**Meister Chronicler**| DB schema, migrations, SQL, constraints | UI review |
+| <img src="assets/icons/scribe-meister.png" width="60" /><br>**Scribe Meister** | Documentation, READMEs, technical writing | Inventing technical facts |
+| <img src="assets/icons/meister-weaver.png" width="60" /><br>**Meister Weaver** | UML, ERD visuals, workflow diagrams | DB semantics without source |
+| <img src="assets/icons/acme-overseer.png" width="60" /><br>**Acme Overseer** | QA, tests, release readiness, regression | Destructive pressure testing |
+| <img src="assets/icons/cipher-meister.png" width="60" /><br>**Cipher Meister** | Security/privacy evidence, auth, secrets | Offensive testing |
+| <img src="assets/icons/hidden-dagger.png" width="60" /><br>**Hidden Dagger** | Approved destructive/resilience testing | Unauthorized testing |
 
-Amalgamatic Orchestra uses reusable Markdown instruction files to guide AI assistants through specialized project tasks while keeping responsibilities clear and separated.
+See [SKILL_INDEX.md](SKILL_INDEX.md) for the full skill index and expected output formats.
 
-The goal is to make AI-assisted project work easier to route, review, and verify. Instead of relying on one broad prompt for every task, this framework coordinates focused specialists. For example, one specialist handles UI/UX review, another handles documentation, another handles database review, and another handles QA readiness.
+---
 
-The main coordinating skill is **Amalgam Conductor**. It helps decide which specialist skill should be used, when multiple skills are needed, and what order they should be used in.
+## 🚦 Recommended Workflow
 
-## What this repository is not
+1. **Single-Domain Tasks**: Route directly to the executing specialist (e.g., `Ponytail` for code, `Cloak Meister` for UI).
+2. **Cross-Domain Features**: Start with `Amalgam Conductor`. It will sequence the required specialists in execution order.
+3. **Communication**: All output defaults to the `Caveman` protocol. 
+4. **Implementation**: Code generation defaults to `Ponytail` logic (shortest path, stdlib first).
 
-This repository is not a complete AI tool by itself. It does not automatically install into every IDE, chatbot, or local model environment.
+---
 
-It also does not include private project context, external plugins, or permission to perform risky actions. Any destructive, production-level, offensive, or pressure-testing activity must be reviewed and approved separately.
+## 🚀 Installation
 
-## Skills included
-
-<table>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/amalgam-conductor.png" alt="Amalgam Conductor" width="80" /><br /><b><a href="skills/amalgam-conductor/SKILL.md">Amalgam Conductor</a></b></td>
-    <td><b>Use for:</b> Routing, sequencing, overlap control, and token efficiency<br /><b>Not for:</b> Replacing domain specialists</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/cloak-meister.png" alt="Cloak Meister" width="80" /><br /><b><a href="skills/cloak-meister/SKILL.md">Cloak Meister</a></b></td>
-    <td><b>Use for:</b> UI/UX, accessibility, frontend layout, dashboards, forms, responsiveness<br /><b>Not for:</b> Database or system-diagram ownership</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/scribe-meister.png" alt="Scribe Meister" width="80" /><br /><b><a href="skills/scribe-meister/SKILL.md">Scribe Meister</a></b></td>
-    <td><b>Use for:</b> Documentation audits, reports, README files, readiness documents, technical writing<br /><b>Not for:</b> Inventing technical facts</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/meister-weaver.png" alt="Meister Weaver" width="80" /><br /><b><a href="skills/meister-weaver/SKILL.md">Meister Weaver</a></b></td>
-    <td><b>Use for:</b> UML, use cases, ERD visuals, architecture, workflow, and process diagrams<br /><b>Not for:</b> Database semantics without a database source</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/meister-chronicler.png" alt="Meister Chronicler" width="80" /><br /><b><a href="skills/meister-chronicler/SKILL.md">Meister Chronicler</a></b></td>
-    <td><b>Use for:</b> Schema, constraints, SQL, seeds, migrations, dictionaries, database documentation<br /><b>Not for:</b> UI review</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/acme-overseer.png" alt="Acme Overseer" width="80" /><br /><b><a href="skills/acme-overseer/SKILL.md">Acme Overseer</a></b></td>
-    <td><b>Use for:</b> QA, tests, defects, verification, validation, regression, and release readiness<br /><b>Not for:</b> Destructive pressure testing by default</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/cipher-meister.png" alt="Cipher Meister" width="80" /><br /><b><a href="skills/cipher-meister/SKILL.md">Cipher Meister</a></b></td>
-    <td><b>Use for:</b> Security/privacy evidence, auth, RBAC, secrets, sensitive data, dependencies, remediation<br /><b>Not for:</b> Offensive or destructive testing</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/hidden-dagger.png" alt="Hidden Dagger" width="80" /><br /><b><a href="skills/hidden-dagger/SKILL.md">Hidden Dagger</a></b></td>
-    <td><b>Use for:</b> Approved destructive, negative, fuzz, boundary, failure-mode, guardrail, and resilience testing<br /><b>Not for:</b> Automatic, production, or unauthorized testing</td>
-  </tr>
-  <tr>
-    <td align="center" width="100"><img src="assets/icons/clockwork-meister.png" alt="Clockwork Meister" width="80" /><br /><b><a href="skills/clockwork-meister/SKILL.md">Clockwork Meister</a></b></td>
-    <td><b>Use for:</b> OOP architecture, layered architecture, system design, structural refactoring, SOLID principles<br /><b>Not for:</b> UI layouts, security boundaries, or writing documentation</td>
-  </tr>
-</table>
-
-See [SKILL_INDEX.md](SKILL_INDEX.md) for the full skill index, activation level, and expected output for each skill.
-
-## Recommended routing flow
-
-Use this flow when deciding which skill to apply:
-
-1. Start with **Amalgam Conductor** if the task is broad, unclear, or involves multiple types of work.
-2. Route the main task to one primary specialist.
-3. Add another specialist only when there is a separate required output.
-4. Use **Acme Overseer** for normal QA, validation, regression, and release-readiness review.
-5. Use **Cipher Meister** for normal defensive security and privacy review.
-6. Use **Hidden Dagger** only when the task is explicitly authorized, scoped, isolated from production, and includes rollback, cleanup, and stop conditions.
-7. Follow the [Token Efficiency Rules](skills/amalgam-conductor/TOKEN_EFFICIENCY_RULES.md) to eliminate overlapping review chains.
-
-If the task is obvious, use the correct specialist directly.
-
-## Installation
-
-Amalgam Conductor can be installed directly as a plugin:
+Install the ecosystem directly into your supported AI environment:
 
 ```sh
 agy plugin install https://github.com/Baelfyre/amalgam-conductor
+agy plugin install https://github.com/Baelfyre/ponytail
+agy plugin install https://github.com/Baelfyre/caveman
 ```
 
+For manual setup, copy the respective `skills/` folders into your AI's instruction directory. See [INSTALLATION.md](INSTALLATION.md) for details.
 
-You can also use the framework manually by copying the skill folders from `skills/` into your AI environment's instruction directory.
+---
 
-See [INSTALLATION.md](INSTALLATION.md) and [adapters/](adapters/README.md) for more details.
+## 🛡️ Git Safety & Compatibility
 
-## Plugin support
+- **Markdown-first**: Instructions are portable across tools (Codex, VS Code, Antigravity, Claude Code).
+- **Safety**: Keep experimental AI instruction files isolated. Use `.git/info/exclude` to prevent committing them to your production repositories unless explicitly intended.
 
-Amalgam Conductor is an installable plugin layer over the Amalgamatic Orchestra framework. It provides clean top-level commands to route tasks.
-
-Manifest consistency can be checked with:
-`powershell -ExecutionPolicy Bypass -File .\scripts\validate-manifest.ps1`
-## Compatibility
-
-This repository is designed to be Markdown-first. That means the core instructions are plain Markdown files that can be adapted across different AI coding environments.
-
-Supported or adaptable workflows may include:
-
-- Codex-compatible local skill folders
-- VS Code AI workspace instructions or prompt references
-- Antigravity local skill references or adapted Markdown
-- Claude Code using the supplied CLAUDE template
-- Local AI systems using `SKILL.md` files through prompt context or retrieval
-
-This repository does not guarantee automatic discovery or native integration in every IDE, model runtime, or AI assistant. Tool-specific behavior depends on the current configuration and capabilities of that environment.
-
-See [COMPATIBILITY.md](COMPATIBILITY.md) for more details.
-
-## Git safety
-
-Keep experimental AI instruction files separate from unrelated repositories.
-
-If local instruction files must live inside a project, use `.git/info/exclude` for machine-local exclusions. Use `.gitignore` only when the exclusion should apply to every clone of the repository.
+**Manifest consistency check:**
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-manifest.ps1
+```
