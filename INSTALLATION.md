@@ -2,7 +2,7 @@
 
 ## Plugin Installation
 
-Amalgam Conductor is intended to be installed as an official-style plugin:
+Amalgam Conductor can be installed directly as an AI workflow plugin:
 
 ```sh
 agy plugin install https://github.com/Baelfyre/amalgam-conductor
