@@ -14,6 +14,20 @@ The plugin uses the existing Amalgam Conductor icon at `assets/icons/amalgam-con
 
 ## What this repository is
 
+This repository contains reusable Markdown instruction files and a plugin configuration that maps the following commands to specialist skills:
+
+| Command | Mapped Skill |
+| --- | --- |
+| `/amalgam-conductor` | Amalgam Conductor |
+| `/review-architecture` | Clockwork Meister |
+| `/review-ui` | Cloak Meister |
+| `/review-db` | Meister Chronicler |
+| `/review-docs` | Scribe Meister |
+| `/diagram-check` | Meister Weaver |
+| `/qa-check` | Acme Overseer |
+| `/security-check` | Cipher Meister |
+| `/resilience-check` | Hidden Dagger |
+
 ## Codex compatibility
 
 The canonical Amalgamatic Orchestra skills remain metadata-rich. Codex may require simplified frontmatter.
@@ -87,6 +101,7 @@ Use this flow when deciding which skill to apply:
 4. Use **Acme Overseer** for normal QA, validation, regression, and release-readiness review.
 5. Use **Cipher Meister** for normal defensive security and privacy review.
 6. Use **Hidden Dagger** only when the task is explicitly authorized, scoped, isolated from production, and includes rollback, cleanup, and stop conditions.
+7. Follow the [Token Efficiency Rules](skills/amalgam-conductor/TOKEN_EFFICIENCY_RULES.md) to eliminate overlapping review chains.
 
 If the task is obvious, use the correct specialist directly.
 

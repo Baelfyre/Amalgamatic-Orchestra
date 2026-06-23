@@ -31,7 +31,9 @@ Use it only when the project is mature enough for pressure testing, the user exp
 - Do not use when no safe test environment exists.
 - Treat Hidden Dagger as an escalation after ordinary QA, security, database, or UI review identifies pressure-test targets.
 
-## Mandatory safety gate
+## Mandatory safety gate (Manual Enforcement)
+
+**WARNING:** There is no automated runtime script that prevents execution. You must manually enforce all safety checks.
 
 Before recommending or running destructive tests, complete [SAFETY_GATES.md](SAFETY_GATES.md). Record:
 
