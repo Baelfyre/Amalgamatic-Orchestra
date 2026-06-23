@@ -25,19 +25,26 @@ $tests = @(
     'tests/behavior/MANUAL_TESTING_GUIDE.md'
 )
 
+function Test-ValidFile($Path) {
+    if (-not (Test-Path -LiteralPath $Path)) { return $false }
+    $item = Get-Item -LiteralPath $Path
+    if ($item -is [System.IO.FileInfo] -and $item.Length -lt 10) { return $false }
+    return $true
+}
+
 $missing = [System.Collections.Generic.List[string]]::new()
 foreach ($file in $requiredRoot) {
-    if (-not (Test-Path -LiteralPath (Join-Path $Root $file))) { $missing.Add($file) }
+    if (-not (Test-ValidFile (Join-Path $Root $file))) { $missing.Add($file) }
 }
 foreach ($skill in $skills) {
     $path = Join-Path $Root "skills/$skill/SKILL.md"
-    if (-not (Test-Path -LiteralPath $path)) { $missing.Add("skills/$skill/SKILL.md") }
+    if (-not (Test-ValidFile $path)) { $missing.Add("skills/$skill/SKILL.md") }
 
     $formatPath = Join-Path $Root "skills/$skill/OUTPUT_FORMATS.md"
-    if (-not (Test-Path -LiteralPath $formatPath)) { $missing.Add("skills/$skill/OUTPUT_FORMATS.md") }
+    if (-not (Test-ValidFile $formatPath)) { $missing.Add("skills/$skill/OUTPUT_FORMATS.md") }
 
     $icon = "assets/icons/$skill.png"
-    if (-not (Test-Path -LiteralPath (Join-Path $Root $icon))) { $missing.Add($icon) }
+    if (-not (Test-ValidFile (Join-Path $Root $icon))) { $missing.Add($icon) }
 }
 foreach ($adapter in $adapters) {
     $path = Join-Path $Root "adapters/$adapter"
@@ -45,11 +52,11 @@ foreach ($adapter in $adapters) {
 }
 foreach ($template in $templates) {
     $path = Join-Path $Root "templates/$template"
-    if (-not (Test-Path -LiteralPath $path)) { $missing.Add("templates/$template") }
+    if (-not (Test-ValidFile $path)) { $missing.Add("templates/$template") }
 }
 foreach ($test_file in $tests) {
     $path = Join-Path $Root $test_file
-    if (-not (Test-Path -LiteralPath $path)) { $missing.Add($test_file) }
+    if (-not (Test-ValidFile $path)) { $missing.Add($test_file) }
 }
 
 if ($missing.Count) {
