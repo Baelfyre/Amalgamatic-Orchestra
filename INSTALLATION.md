@@ -1,32 +1,40 @@
 # Installation
 
-## Plugin Installation
+Amalgam Conductor can be installed in three ways depending on your environment:
 
-Amalgam Conductor can be installed directly as an AI workflow plugin:
+## 1. Antigravity Plugin Setup
+
+If you are using the Antigravity ecosystem, install the plugin directly:
 
 ```sh
 agy plugin install https://github.com/Baelfyre/amalgam-conductor
 ```
 
+## 2. Codex Plugin Setup
 
-## Clone or download manually
+If you are using Codex, you can install Amalgam Conductor as a local repository plugin.
 
-If you prefer not to use the plugin manager, you can still clone the repository:
+1. Clone the repository into your global Codex plugins directory or your local workspace's `.agents/plugins` directory.
+   ```sh
+   git clone https://github.com/Baelfyre/amalgam-conductor.git
+   ```
+2. Codex will automatically discover the `.codex-plugin/plugin.json` manifest and map the `skills/` directory into your environment.
+3. The repository's `AGENTS.md` file will provide native instructions to Codex on how to interact with the ecosystem.
 
-```sh
-git clone https://github.com/Baelfyre/amalgam-conductor.git
-cd amalgam-conductor
-```
+## 3. Skills-only Setup (Manual)
 
-## Install selected skills locally
+If you prefer not to use a plugin manager or are using an unsupported environment, you can install the raw skills manually:
 
-Copy only the folders you need from `skills/` into the local skill or instruction location supported by your tool. For Codex-compatible environments, install Amalgam Conductor plus selected specialists in the configured local Codex skills directory.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Baelfyre/amalgam-conductor.git
+   ```
+2. Copy only the specific folders you need from `skills/` into the local skill or instruction location supported by your tool.
+3. Keep the repository copy separate from unrelated source repositories. Follow [LOCAL_ONLY_GUIDE.md](LOCAL_ONLY_GUIDE.md) if you are deliberately referencing skills repo-locally.
 
-Keep the repository copy separate from unrelated source repositories. If you deliberately use repo-local instructions, copy or reference only the required skill text and follow [LOCAL_ONLY_GUIDE.md](LOCAL_ONLY_GUIDE.md).
+## Refresh Installed Integrations
 
-## Refresh installed integrations
-
-To manually refresh your installed skills and plugin configurations, use the refresh script. This runs validation checks automatically.
+To manually refresh your installed skills and run validation checks, use the refresh script.
 
 **For Antigravity:**
 ```sh
@@ -41,4 +49,4 @@ powershell -ExecutionPolicy Bypass -File .\scripts\refresh-installed-integration
 
 ## Verify
 
-Run the structure validator and confirm that normal QA routes to Acme Overseer, normal security/privacy review routes to Cipher Meister, and Hidden Dagger remains gated.
+Run the structure validator (`.\scripts\validate-structure.ps1`) and confirm that normal QA routes to Acme Overseer, normal security/privacy review routes to Cipher Meister, and Hidden Dagger remains gated.
