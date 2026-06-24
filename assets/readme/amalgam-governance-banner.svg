@@ -75,20 +75,20 @@
     <!-- Animated Waving Shapes at the bottom -->
     <g class="wave">
         <!-- Wave 1 (Back) -->
-        <path d="M0,250 L0,210 Q250,150 500,200 T1000,190 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.4" />
-        <path d="M1000,250 L1000,210 Q1250,150 1500,200 T2000,190 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.4" />
+        <path d="M0,250 L0,210 Q125,170 250,210 T500,210 T750,210 T1000,210 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.4" />
+        <path d="M1000,250 L1000,210 Q1125,170 1250,210 T1500,210 T1750,210 T2000,210 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.4" />
 
         <!-- Wave 2 (Middle) -->
-        <path d="M0,250 L0,225 Q250,180 500,210 T1000,205 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.6" />
-        <path d="M1000,250 L1000,225 Q1250,180 1500,210 T2000,205 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.6" />
+        <path d="M0,250 L0,220 Q125,185 250,220 T500,220 T750,220 T1000,220 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.6" />
+        <path d="M1000,250 L1000,220 Q1125,185 1250,220 T1500,220 T1750,220 T2000,220 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.6" />
 
         <!-- Wave 3 (Front solid gilded edge) -->
-        <path d="M0,250 L0,235 Q250,210 500,230 T1000,225 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.8" />
-        <path d="M1000,250 L1000,235 Q1250,210 1500,230 T2000,225 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.8" />
+        <path d="M0,250 L0,230 Q125,200 250,230 T500,230 T750,230 T1000,230 L1000,250 Z" fill="url(#gold-wave-grad)" opacity="0.8" />
+        <path d="M1000,250 L1000,230 Q1125,200 1250,230 T1500,230 T1750,230 T2000,230 L2000,250 Z" fill="url(#gold-wave-grad)" opacity="0.8" />
 
         <!-- Highlight line on top of front wave -->
-        <path d="M0,235 Q250,210 500,230 T1000,225" fill="none" stroke="url(#wave-border)" stroke-width="1.25" opacity="0.85" />
-        <path d="M1000,235 Q1250,210 1500,230 T2000,225" fill="none" stroke="url(#wave-border)" stroke-width="1.25" opacity="0.85" />
+        <path d="M0,230 Q125,200 250,230 T500,230 T750,230 T1000,230" fill="none" stroke="url(#wave-border)" stroke-width="1.25" opacity="0.85" />
+        <path d="M1000,230 Q1125,200 1250,230 T1500,230 T1750,230 T2000,230" fill="none" stroke="url(#wave-border)" stroke-width="1.25" opacity="0.85" />
     </g>
 
     <!-- Content / Typography -->
