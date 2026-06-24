@@ -70,6 +70,52 @@ The governance layer operates contextually. Authorities do not pre-assume jurisd
 ### Context-Missing Behavior
 If the project context profile is incomplete, unclear, or entirely missing, the Steward and Governor must not guess or make assumptions. Instead, they must return `REVISION_REQUIRED` to request the necessary clarity.
 
+## Usage Pattern
+
+To interact with the governance layer, requests must be structured to explicitly declare the project context:
+
+### 1. Project Context Dimensions
+
+| Context Dimension | Purpose |
+|---|---|
+| Project Type | Guides review complexity based on environment (e.g., school project, public commercial release) |
+| Goal | Defines the target objective for alignment checking |
+| Release Target | Establishes where the software will be deployed (e.g., local-only, public SaaS) |
+| Data Use | Declares whether PII, financial, health, or non-sensitive data is processed |
+| Dependencies | Lists all third-party libraries, assets, APIs, or AI models involved |
+| Constraints | Documents structural, legal, or policy constraints that must be preserved |
+| Expected Output | Details the target output artifacts (e.g., changed files, validation checks) |
+
+### 2. Standard Prompt Pattern
+
+```text
+[@ponytail] use amalgam-conductor for this task
+
+Project Context:
+Project Type:
+Goal:
+Release Target:
+Data Use:
+Dependencies or Third-Party Assets:
+Constraints:
+
+Task:
+Describe the work clearly.
+
+Requirements:
+- List what must be changed.
+- List what must be preserved.
+- List any rules the implementation must follow.
+
+Expected Output:
+Changed Files:
+Summary:
+Validation Results:
+Remaining Risks:
+Next Recommended Step:
+```
+
+
 
 ## Risk Classification
 

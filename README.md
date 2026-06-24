@@ -28,6 +28,53 @@
 
 Amalgam Conductor uses a governance-first workflow, but the governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor identify the project context, declared objectives, release target, data use, dependencies, documentation requirements, and known constraints. The Steward then checks alignment against the project’s stated goals, scope, requirements, acceptance criteria, and SDLC needs. The Governor checks only the applicable legal-risk, privacy, IP, licensing, security, and compliance areas based on the supplied project context. If the scope is unclear, governance returns REVISION_REQUIRED instead of assuming.
 
+## Usage Pattern
+
+### 1. Start with a project context
+
+The governance layer does not assume what rules apply. Users should provide enough context for The Steward and The Governor to know what they are reviewing.
+
+Minimum context:
+
+| Context Item | What to Provide |
+|---|---|
+| Project Type | School project, internal tool, open-source repo, client app, public product, data project, AI workflow |
+| Goal | What the task should accomplish |
+| Release Target | Local only, internal use, public release, client delivery, open-source release |
+| Data Use | No user data, test data, personal data, sensitive data, uploaded files, third-party data |
+| Dependencies | Libraries, assets, APIs, models, datasets, or third-party content involved |
+| Constraints | Files to preserve, style rules, framework limits, legal or policy boundaries |
+| Expected Output | Changed files, summary, validation results, risks, next step |
+
+### 2. Use the standard prompt pattern
+
+```text
+[@ponytail] use amalgam-conductor for this task
+
+Project Context:
+Project Type:
+Goal:
+Release Target:
+Data Use:
+Dependencies or Third-Party Assets:
+Constraints:
+
+Task:
+Describe the work clearly.
+
+Requirements:
+- List what must be changed.
+- List what must be preserved.
+- List any rules the implementation must follow.
+
+Expected Output:
+Changed Files:
+Summary:
+Validation Results:
+Remaining Risks:
+Next Recommended Step:
+```
+
 ## Architecture
 
 ```mermaid
@@ -150,39 +197,7 @@ git clone https://github.com/Baelfyre/amalgam-conductor.git
 
 For manual configurations or environment setup details, see the [Installation Guide](docs/setup/INSTALLATION.md).
 
-## How to Use
 
-The plugin operates on a structured, context-first prompt pattern. 
-
-### Step 1: Provide Project Context
-Identify the project context profile (Project Type, Sensitivity, Jurisdiction, etc.) so the Governance Layer can properly scale its review risk.
-
-### Step 2: Use the Governance-First Prompt Pattern
-Always structure your requests to invoke the orchestrator with the necessary context and clear execution goals.
-
-## Recommended Prompt Workflow
-
-Use this format to initiate tasks:
-
-```markdown
-[@ponytail] use amalgam-conductor for this task
-
-Task:
-Describe the work clearly.
-
-Context:
-Provide the project type, current files, constraints, and goal.
-
-Requirements:
-List what must be changed or preserved.
-
-Expected Output:
-Changed Files:
-Summary:
-Validation Results:
-Remaining Risks:
-Next Recommended Step:
-```
 
 ## Token-Efficient Usage
 
