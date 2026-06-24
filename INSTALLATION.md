@@ -12,8 +12,9 @@ agy plugin install https://github.com/Baelfyre/amalgam-conductor
 
 ## 2. Codex Plugin Setup
 
-If you are using Codex, you can install Amalgam Conductor as a local repository plugin.
+Codex compatibility is provided through `.codex-plugin/plugin.json`, `AGENTS.md`, and the shared `skills/` directory. Installation may be done by cloning the repository into the intended Codex workspace or by using Codex plugin discovery/marketplace configuration where available.
 
+If cloning manually:
 1. Clone the repository into your global Codex plugins directory or your local workspace's `.agents/plugins` directory.
    ```sh
    git clone https://github.com/Baelfyre/amalgam-conductor.git
