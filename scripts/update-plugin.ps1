@@ -64,12 +64,25 @@ try {
 
     # 5. Run git fetch
     Write-Host "`nFetching latest changes from remote..." -ForegroundColor Cyan
+    $prevErrorAction = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
     git fetch
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "[ERROR] git fetch failed. Please check your network connection." -ForegroundColor Red
+        exit 1
+    }
+    $ErrorActionPreference = $prevErrorAction
 
     # 6. Pull the latest changes for the current branch
     Write-Host "Pulling latest changes for branch '$currentBranch'..." -ForegroundColor Cyan
-    $pullResult = git pull origin $currentBranch 2>&1
-    Write-Host $pullResult
+    $prevErrorAction = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    git pull origin $currentBranch
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "[ERROR] git pull failed. Please check your network or resolve conflicts manually." -ForegroundColor Red
+        exit 1
+    }
+    $ErrorActionPreference = $prevErrorAction
 
     # 7. Run validations
     Write-Host "`nRunning validation scripts..." -ForegroundColor Cyan
