@@ -3,12 +3,26 @@ param(
 )
 
 $requiredRoot = @(
-    'README.md','LICENSE','CONTRIBUTING.md','CHANGELOG.md',
-    'SKILL_INDEX.md','FOUNDATION.md','INSTALLATION.md','LOCAL_ONLY_GUIDE.md',
-    'COMPATIBILITY.md','VALIDATION.md','ROADMAP.md','ROUTING_MAP.md',
-    'PLUGIN_READINESS.md','MANIFEST_SCHEMA.md','plugin.json',
+    'README.md',
+    'LICENSE',
+    'plugin.json',
+    'AGENTS.md',
+    'ROUTING_MAP.md',
+    'SKILL_INDEX.md',
+    'docs/CONTRIBUTING.md',
+    'docs/meta/CHANGELOG.md',
+    'docs/meta/DISCLAIMER.md',
+    'docs/project/FOUNDATION.md',
+    'docs/project/ROADMAP.md',
+    'docs/project/PLUGIN_READINESS.md',
+    'docs/project/MANIFEST_SCHEMA.md',
+    'docs/project/V1_READINESS_CHECKLIST.md',
+    'docs/setup/INSTALLATION.md',
+    'docs/setup/LOCAL_ONLY_GUIDE.md',
+    'docs/setup/COMPATIBILITY.md',
+    'docs/setup/VALIDATION.md',
     'examples/plugin-manifest.example.json',
-    'V1_READINESS_CHECKLIST.md','assets/logo/orchestra-of-amalgamation.png'
+    'assets/logo/orchestra-of-amalgamation.png'
 )
 
 $skills = @(

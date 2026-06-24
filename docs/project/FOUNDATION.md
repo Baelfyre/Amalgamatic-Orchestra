@@ -18,4 +18,4 @@ Ponytail and Caveman are external tools. They are not included, vendored, or req
 
 ---
 
-*Please review our [Global Disclaimer](DISCLAIMER.md) regarding the use of these AI-assisted tools.*
+*Please review our [Global Disclaimer](../meta/DISCLAIMER.md) regarding the use of these AI-assisted tools.*

@@ -6,10 +6,10 @@
   </p>
 
   <p>
-    <a href="INSTALLATION.md">Installation</a> •
+    <a href="docs/setup/INSTALLATION.md">Installation</a> •
     <a href="docs/governance/GOVERNANCE_LAYER.md">Governance</a> •
     <a href="SKILL_INDEX.md">Skills</a> •
-    <a href="VALIDATION.md">Validation</a>
+    <a href="docs/setup/VALIDATION.md">Validation</a>
   </p>
 </div>
 
@@ -121,7 +121,7 @@ Clone this repository directly into your Codex plugins directory:
 git clone https://github.com/Baelfyre/amalgam-conductor.git
 ```
 
-For manual configurations or environment setup details, see the [Installation Guide](INSTALLATION.md).
+For manual configurations or environment setup details, see the [Installation Guide](docs/setup/INSTALLATION.md).
 
 ## How to Use
 
@@ -175,9 +175,10 @@ Next Recommended Step:
 |---|---|---|
 | Governance | [Governance Layer](docs/governance/GOVERNANCE_LAYER.md) | Understand The Steward, The Governor, risk scaling, and release gates |
 | Skills | [Skill Index](SKILL_INDEX.md) | Review available specialists and routing behavior |
-| Installation | [Installation Guide](INSTALLATION.md) | Set up the plugin in Antigravity or Codex |
-| Validation | [Validation Guide](VALIDATION.md) | Run structure and manifest checks |
-| Disclaimer | [Disclaimer](DISCLAIMER.md) | Understand legal and operational limitations |
+| Installation | [Installation Guide](docs/setup/INSTALLATION.md) | Set up the plugin in Antigravity or Codex |
+| Validation | [Validation Guide](docs/setup/VALIDATION.md) | Run structure and manifest checks |
+| Contributing | [Contributing Guide](docs/CONTRIBUTING.md) | Guidelines for contributing and safety policies |
+| Disclaimer | [Disclaimer](docs/meta/DISCLAIMER.md) | Understand legal and operational limitations |
 
 ## Validation
 
@@ -190,7 +191,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\validate-structure.ps1
 # Verify manifest properties against skill frontmatter
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-manifest.ps1
 ```
-For more information, see the [Validation Guide](VALIDATION.md).
+For more information, see the [Validation Guide](docs/setup/VALIDATION.md).
 
 ---
 
@@ -211,12 +212,28 @@ skills/
 ├── the-governor/
 └── the-steward/
 
-docs/governance/
-├── GOVERNANCE_LAYER.md
-├── GOVERNOR.md
-├── STEWARD.md
-├── GOVERNANCE_REVIEW_FLOW.md
-└── RELEASE_GATES.md
+docs/
+├── CONTRIBUTING.md
+├── governance/
+│   ├── GOVERNANCE_LAYER.md
+│   ├── GOVERNOR.md
+│   ├── STEWARD.md
+│   ├── GOVERNANCE_REVIEW_FLOW.md
+│   └── RELEASE_GATES.md
+├── meta/
+│   ├── CHANGELOG.md
+│   └── DISCLAIMER.md
+├── project/
+│   ├── FOUNDATION.md
+│   ├── ROADMAP.md
+│   ├── PLUGIN_READINESS.md
+│   ├── MANIFEST_SCHEMA.md
+│   └── V1_READINESS_CHECKLIST.md
+└── setup/
+    ├── INSTALLATION.md
+    ├── LOCAL_ONLY_GUIDE.md
+    ├── COMPATIBILITY.md
+    └── VALIDATION.md
 
 tests/behavior/
 └── GOVERNANCE_SCENARIOS.md
@@ -230,4 +247,4 @@ assets/readme/
 ## Disclaimer
 
 > [!CAUTION]
-> The Governor and Steward skills validate compliance frameworks, scope, and best practices. They do not provide legal advice or absolute security guarantees. Please read [DISCLAIMER.md](DISCLAIMER.md) for full terms.
+> The Governor and Steward skills validate compliance frameworks, scope, and best practices. They do not provide legal advice or absolute security guarantees. Please read [docs/meta/DISCLAIMER.md](docs/meta/DISCLAIMER.md) for full terms.

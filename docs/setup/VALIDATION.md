@@ -17,7 +17,7 @@ Run the official skill validator supplied by your Codex installation against eac
 Successful structure validation:
 
 ```text
-Structure valid: 8 skills, 5 adapters, 7 templates.
+Structure valid: 11 skills, 9 commands, 5 adapters, 7 templates, 3 tests.
 ```
 
 Successful stale-reference validation:

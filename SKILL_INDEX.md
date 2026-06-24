@@ -16,4 +16,4 @@
 
 ---
 
-*Please review our [Global Disclaimer](DISCLAIMER.md) regarding the use of these AI-assisted tools.*
+*Please review our [Global Disclaimer](docs/meta/DISCLAIMER.md) regarding the use of these AI-assisted tools.*
