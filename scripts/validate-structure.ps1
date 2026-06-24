@@ -14,8 +14,14 @@ $requiredRoot = @(
 $skills = @(
     'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
     'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
-    'clockwork-meister'
+    'clockwork-meister','the-steward','the-governor'
 )
+
+# Governance skills use camelCase icon filenames
+$iconOverrides = @{
+    'the-steward'  = 'theSteward'
+    'the-governor' = 'theGovernor'
+}
 
 $commands = @(
     'amalgam-conductor','review-architecture','review-ui','review-db',
@@ -33,7 +39,8 @@ $templates = @(
 
 $tests = @(
     'tests/behavior/BEHAVIOR_TEST_MATRIX.md',
-    'tests/behavior/MANUAL_TESTING_GUIDE.md'
+    'tests/behavior/MANUAL_TESTING_GUIDE.md',
+    'tests/behavior/GOVERNANCE_SCENARIOS.md'
 )
 
 function Test-ValidFile($Path) {
@@ -74,7 +81,8 @@ foreach ($skill in $skills) {
         $missing.Add("skills/$skill/OUTPUT_FORMATS.md")
     }
 
-    $icon = "assets/icons/$skill.png"
+    $iconName = if ($iconOverrides.ContainsKey($skill)) { $iconOverrides[$skill] } else { $skill }
+    $icon = "assets/icons/$iconName.png"
     if (-not (Test-ValidFile (Join-Path $Root $icon))) {
         $missing.Add($icon)
     }

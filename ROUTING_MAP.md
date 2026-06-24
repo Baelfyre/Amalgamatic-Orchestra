@@ -2,10 +2,23 @@
 
 This file provides a lightweight, scanner-friendly map of common tasks to the correct specialist skill. Load this file when routing is unclear or when multi-skill coordination is required.
 
+## Governance Layer (Pre-Routing)
+
+All requests pass through the Governance Layer before reaching the routing table:
+
+| Step | Authority | Review Scope |
+|---|---|---|
+| 1 | `the-steward` | Business alignment, scope, requirements, SDLC documentation |
+| 2 | `the-governor` | Legal compliance, privacy, IP, licensing, audit readiness |
+
+If either authority returns `BLOCKED`, the Conductor stops. If `human_review_required: true`, the Conductor pauses until human review completes.
+
 ## Routing Rules
 
 | Task Type | Target Skill | Condition |
 |-----------|--------------|-----------|
+| Business alignment, scope, requirements review | `the-steward` | Validating project direction or SDLC |
+| Legal, compliance, privacy, IP, licensing review | `the-governor` | Validating compliance or legal risk |
 | UI/UX review, accessibility, frontend layout | `cloak-meister` | Reviewing user-facing visible layers |
 | README, documentation, final submission | `scribe-meister` | Source evidence is available to verify claims |
 | SQL, schemas, database testing, migrations | `meister-chronicler` | Analyzing data layers or database relationships |
@@ -18,7 +31,7 @@ This file provides a lightweight, scanner-friendly map of common tasks to the co
 
 ## Conductor Authority
 
-`amalgam-conductor` retains routing authority for complex requests. The Conductor will evaluate the project constraints and select the smallest effective skill stack from this map.
+`amalgam-conductor` retains routing authority for complex requests, subject to governance gates. The Conductor will evaluate the project constraints and select the smallest effective skill stack from this map. The Conductor **cannot override** governance decisions from The Steward or The Governor.
 
 ## Conflict Resolution
 

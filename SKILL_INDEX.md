@@ -2,6 +2,8 @@
 
 | Name | Slug | Role | Primary Use | Avoid When | Activation | Depends On | Output Formats |
 |---|---|---|---|---|---|---|---|
+| The Steward | `the-steward` | Business Alignment and Scope Governance Authority | Business alignment, scope, requirements, SDLC documentation | Legal, compliance, IP, licensing review | Governor | None | Governance Review |
+| The Governor | `the-governor` | Legal, Compliance, Privacy, and IP Governance Authority | Legal compliance, privacy, IP, copyright, licensing, audit | Business alignment, scope, requirements review | Governor | None | Governance Review |
 | Amalgam Conductor | `amalgam-conductor` | Routing and orchestration layer | Project orientation, multi-skill routing, workflow planning | A single obvious specialist suffices | Commander | None | Routing Plan, Prompts |
 | Cloak Meister | `cloak-meister` | UI/UX architect and frontend auditor | UI, UX, accessibility, frontend architecture, responsive layout | Database schema or system architecture diagraming is needed | Specialist | None | Output |
 | Scribe Meister | `scribe-meister` | Documentation compiler and auditor | READMEs, project reports, readiness summaries, handover docs | Source evidence is unavailable to verify claims | Specialist | None | Compact, Full |
