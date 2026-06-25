@@ -48,7 +48,7 @@ flowchart LR
       end
 
       subgraph O[Orchestration Component]
-        Conductor((Amalgam<br/>Conductor)):::orch
+        Conductor((<br/>Conductor)):::orch
       end
 
       subgraph E[Execution Layer]
