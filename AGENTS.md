@@ -1,4 +1,4 @@
-# Amalgam Conductor Ecosystem Guidelines
+# Orchestra ecosystem Guidelines
 
 When operating within this repository or when this plugin is active, adhere to the following routing and execution guidelines:
 

@@ -26,7 +26,7 @@ Execution Layer
 - **Risk-Scaled**: Adjusts review depth based on project risk level (LOW / MEDIUM / HIGH).
 - **Token-Efficient**: Uses compact output by default, expands only when findings exist.
 - **Markdown-First**: All governance artifacts are plain Markdown.
-- **Skill-Compatible**: Integrates with the Amalgamatic Orchestra skill ecosystem.
+- **Skill-Compatible**: Integrates with the Orchestra skill ecosystem.
 - **Reusable**: No hard-coded assumptions about any specific project or platform.
 
 ## Project Context Profile
@@ -68,7 +68,7 @@ The Steward and The Governor do not apply absolute or pre-assumed governance rul
 The governance layer operates contextually. Authorities do not pre-assume jurisdiction, legal obligations, business goals, or requirements. They must review *only* against what is stated or discoverable in the project context.
 
 ### Context-Missing Behavior
-If the project context profile is incomplete, unclear, or entirely missing, the Steward and Governor must not guess or make assumptions. 
+If the project context profile is incomplete, unclear, or entirely missing, the Steward and Governor must not guess or make assumptions.
 - In **Audit**, **Release**, or high-risk **Implementation** modes, they must return `REVISION_REQUIRED` to request the necessary clarity.
 - In **Ideation** or **Prototype** mode, they return `ADVISORY_ONLY` or `NOT_APPLICABLE` to allow exploration to proceed without blocking.
 

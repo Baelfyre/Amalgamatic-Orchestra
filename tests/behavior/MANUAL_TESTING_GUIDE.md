@@ -1,6 +1,6 @@
 # Manual Behavior Testing Guide
 
-This guide explains how to manually test Amalgamatic Orchestra in live AI/LLM environments to verify that Progressive Disclosure and routing bounds are functioning correctly.
+This guide explains how to manually test Orchestra in live AI/LLM environments to verify that Progressive Disclosure and routing bounds are functioning correctly.
 
 Live LLMs (especially highly autonomous agents like Antigravity or Claude Code) vary in how they aggressively load context. The purpose of these tests is not to enforce perfect deterministic behavior, but to ensure that the framework successfully pushes the AI toward token-efficient loading.
 

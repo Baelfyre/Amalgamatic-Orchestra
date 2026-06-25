@@ -33,7 +33,7 @@ This project is actively maintained through the main branch and current feature 
 
 ## Scope
 
-This security policy applies to the Amalgam Conductor ecosystem, including skill routing, orchestration rules, security-related skill behavior, documentation, validation workflows, and related configuration files.
+This security policy applies to the Orchestra ecosystem, including skill routing, orchestration rules, security-related skill behavior, documentation, validation workflows, and related configuration files.
 
 This policy does not authorize testing against systems, accounts, repositories, infrastructure, or third-party services that you do not own or do not have permission to test.
 

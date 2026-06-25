@@ -1,6 +1,6 @@
 # Foundation
 
-The Amalgamatic Orchestra follows these rules:
+The Orchestra follows these rules:
 
 - Align every review with the user's objective and named scope.
 - Prefer evidence over complete-looking output; disclose assumptions and missing evidence.

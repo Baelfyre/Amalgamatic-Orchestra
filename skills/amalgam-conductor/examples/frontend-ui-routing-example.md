@@ -1,4 +1,4 @@
-# Amalgam Conductor Routing Plan
+# Orchestra Routing Plan
 
 ## Project Detection
 - Detected Project Type: React + TypeScript + Vite portfolio frontend

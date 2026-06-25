@@ -1,6 +1,6 @@
 # Plugin Readiness
 
-This document tracks the readiness of the Amalgamatic Orchestra framework for its release as the **Amalgam Conductor** installable plugin.
+This document tracks the readiness of the Orchestra framework for its release as the **Amalgam Conductor** installable plugin.
 
 ## Status
 
@@ -26,7 +26,7 @@ This document tracks the readiness of the Amalgamatic Orchestra framework for it
 
 ---
 
-Amalgamatic Orchestra is intentionally designed as a **Markdown-first** framework. By keeping skill instructions, progressive disclosure rules, and routing metadata in standard markdown format, the framework remains universally readable by any AI assistant capable of file reading (e.g., Claude Code, Cursor, Antigravity) without requiring a proprietary runtime plugin.
+Orchestra is intentionally designed as a **Markdown-first** framework. By keeping skill instructions, progressive disclosure rules, and routing metadata in standard markdown format, the framework remains universally readable by any AI assistant capable of file reading (e.g., Claude Code, Cursor, Antigravity) without requiring a proprietary runtime plugin.
 
 However, as agentic platforms evolve, automated skill discovery and deterministic loading become valuable. This document outlines how future plugin loaders should interact with the Orchestra without breaking its fundamental architecture.
 

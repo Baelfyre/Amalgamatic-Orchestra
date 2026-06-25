@@ -1,4 +1,4 @@
-﻿# Output Formats
+# Output Formats
 
 ## Routing Plan
 
@@ -6,7 +6,7 @@
 Use this structure for comprehensive planning. Keep it compact for simple tasks.
 
 ```markdown
-# Amalgam Conductor Routing Plan
+# Orchestra Routing Plan
 
 ## Project Detection
 - Detected Project Type:

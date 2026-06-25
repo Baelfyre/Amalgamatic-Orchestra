@@ -1,6 +1,6 @@
-# Codex Adapter for Amalgamatic Orchestra
+# Codex Adapter for Orchestra
 
-This adapter provides a Codex-compatible export of the Amalgamatic Orchestra v1.0.1 skills.
+This adapter provides a Codex-compatible export of the Orchestra v1.0.1 skills.
 
 ## Purpose
 
@@ -10,6 +10,6 @@ This adapter exports Codex-compatible skills with only `name` and `description` 
 
 ## Note
 
-* The canonical Amalgamatic Orchestra skills remain the absolute source of truth. They are metadata-rich and Markdown-first.
+* The canonical Orchestra skills remain the absolute source of truth. They are metadata-rich and Markdown-first.
 * This adapter is exclusively for Codex compatibility.
 * It does not replace the Markdown-first framework.

@@ -1,6 +1,6 @@
 # Behavior Test Matrix
 
-This matrix documents the expected routing and file-loading behavior for Amalgamatic Orchestra skills in a live LLM environment (such as Claude Code, Cursor, or an Antigravity subagent). 
+This matrix documents the expected routing and file-loading behavior for Orchestra skills in a live LLM environment (such as Claude Code, Cursor, or an Antigravity subagent).
 
 Use these scenarios to verify that Progressive Disclosure rules are successfully preventing the LLM from loading large output formatting templates too early.
 

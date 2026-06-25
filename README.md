@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/readme/amalgam-governance-banner.svg" alt="Amalgam Conductor Hero Banner" width="100%" />
+  <img src="./assets/readme/amalgam-governance-banner.svg" alt="Orchestra Hero Banner" width="100%" />
 
   <p>
     <strong>Project-agnostic governance and orchestration framework for AI-assisted development.</strong>

@@ -1,9 +1,9 @@
 # Future Plugin Manifest Schema
 
 > [!WARNING]
-> This is a **proposed schema for future plugin readiness**, not an active plugin manifest requirement. Amalgamatic Orchestra is currently a Markdown-first framework that does not use or require a runtime plugin loader.
+> This is a **proposed schema for future plugin readiness**, not an active plugin manifest requirement. Orchestra is currently a Markdown-first framework that does not use or require a runtime plugin loader.
 
-If and when a plugin loader is developed for the Amalgamatic Orchestra, it should extract the existing `SKILL.md` frontmatters to compile a central manifest. 
+If and when a plugin loader is developed for the Orchestra, it should extract the existing `SKILL.md` frontmatters to compile a central manifest.
 
 ## Proposed JSON Schema Structure
 

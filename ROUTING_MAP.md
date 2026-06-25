@@ -1,4 +1,4 @@
-# Amalgamatic Orchestra Routing Map
+# Orchestra Routing Map
 
 This file provides a lightweight, scanner-friendly map of common tasks to the correct specialist skill. Load this file when routing is unclear or when multi-skill coordination is required.
 
