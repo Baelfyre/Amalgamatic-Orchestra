@@ -1,9 +1,9 @@
-# Cloak Meister Output Templates
+# Cloak Output Templates
 
 ## Quick review
 
 ```markdown
-# Cloak Meister Quick Review
+# Cloak Quick Review
 - User goal:
 - Evidence:
 - Confirmed blocker:

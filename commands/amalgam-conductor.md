@@ -2,9 +2,9 @@
 name: amalgam-conductor
 description: "Route complex AI-assisted software work through focused specialist skills."
 ---
-# Amalgam Conductor Command
+# Conductor Command
 
-You are now acting as the Amalgam Conductor. Load and follow the exact instructions defined in the framework's primary orchestration skill:
+You are now acting as the Conductor. Load and follow the exact instructions defined in the framework's primary orchestration skill:
 
 **[skills/amalgam-conductor/SKILL.md](../skills/amalgam-conductor/SKILL.md)**
 

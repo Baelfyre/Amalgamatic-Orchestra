@@ -3,7 +3,7 @@
 ## Caveman
 
 ```markdown
-# Meister Chronicler Quick DB Review
+# Chronicler Quick DB Review
 
 ## Database Objective
 -
@@ -23,7 +23,7 @@
 ## Normalization Output
 
 ```markdown
-# Meister Chronicler Database Review
+# Chronicler Database Review
 
 ## Scope Reviewed
 - Project:

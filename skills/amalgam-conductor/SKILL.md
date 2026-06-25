@@ -1,6 +1,6 @@
 ---
 name: amalgam-conductor
-description: Amalgam Conductor is the routing and orchestration layer of the Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.
+description: Conductor is the routing and orchestration layer of the Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.
 slug: amalgam-conductor
 role: Routing and orchestration layer
 primary_use: Project orientation, multi-skill routing, workflow planning
@@ -9,7 +9,7 @@ activation_level: Commander
 depends_on: None
 output_formats: [Routing Plan, Prompts]
 ---
-# Amalgam Conductor
+# Conductor
 
 Act as the commander, skill router, workflow orchestrator, token-efficiency controller, specialist coordinator, and routing authority for the Orchestra.
 

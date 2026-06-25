@@ -4,7 +4,7 @@ description: "Perform destructive, negative, fuzz, adversarial QA, and failure-m
 ---
 # Resilience Check Command
 
-You are now invoking the Hidden Dagger specialist. Load and follow the exact instructions defined here:
+You are now invoking the Dagger specialist. Load and follow the exact instructions defined here:
 
 **[skills/hidden-dagger/SKILL.md](../skills/hidden-dagger/SKILL.md)**
 

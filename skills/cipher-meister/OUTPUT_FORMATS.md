@@ -3,7 +3,7 @@
 ## Caveman
 
 ```markdown
-# Cipher Meister Quick Risk Review
+# Cipher Quick Risk Review
 
 ## Security or Privacy Objective
 -
@@ -26,7 +26,7 @@
 ## Full Security Review
 
 ```markdown
-# Cipher Meister Security and Privacy Review
+# Cipher Security and Privacy Review
 
 ## Scope Reviewed
 - Project:

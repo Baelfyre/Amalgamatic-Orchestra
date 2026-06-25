@@ -11,13 +11,13 @@
 - Missing Information: Whether architecture diagrams also require revision.
 
 ## Recommended Skill Stack
-### Scribe Meister
+### Scribe
 - Skill: `scribe-meister`.
 - Why this skill is needed: Align structure, setup instructions, evidence, and rubric coverage.
 - When to use it: After technical claims are verified.
 - Expected output: Focused README and design-log edits.
 
-### Meister Weaver
+### Weaver
 - Skill: `meister-weaver`, only if diagrams are in scope.
 - Why this skill is needed: Check diagram notation, clarity, and consistency with the documented architecture.
 - When to use it: Only for named diagrams.

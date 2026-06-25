@@ -1,4 +1,4 @@
-# Scribe Meister Quick Audit
+# Scribe Quick Audit
 
 ## Objective
 - Help a new developer run and verify the project locally.

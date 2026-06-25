@@ -15,7 +15,7 @@ Prevent cross-session drift, preserve latest validated state, and reduce relianc
 - Adding new Governor or Stewardess roles at this stage
 
 **Affected Components:**
-- Amalgam Conductor orchestration behavior
+- Conductor orchestration behavior
 - Repo startup workflow
 - Future audit and implementation safety
 

@@ -2,7 +2,7 @@
 
 > **Authoritative behavior is defined in [`skills/the-governor/SKILL.md`](../../.agents/skills/the-governor/SKILL.md).** This document is a human-facing quick reference only. Do not use it as a behavior source of truth.
 
-The Governor is the legal, compliance, privacy, IP, copyright, and licensing governance authority. It sits above the Amalgam Conductor and reviews every request after the Steward approves it.
+The Governor is the legal, compliance, privacy, IP, copyright, and licensing governance authority. It sits above the Conductor and reviews every request after the Steward approves it.
 
 ## Quick Reference
 

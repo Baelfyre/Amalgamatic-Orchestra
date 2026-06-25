@@ -17,13 +17,13 @@
 - When to use it: Before implementation.
 - Expected output: Confirmed component and authorization boundaries.
 
-### Cipher Meister
+### Cipher
 - Skill: `cipher-meister`; add Codex Security only for source-level vulnerability analysis.
 - Why this skill is needed: Review tenant isolation, RBAC evidence, prompt inputs, privacy, and secrets handling.
 - When to use it: On the affected design and evidence; use a scanner on the affected diff only when requested.
 - Expected output: Evidence-based risks and defensive remediation.
 
-### Cloak Meister
+### Cloak
 - Skill: `cloak-meister`
 - Why this skill is needed: Review workspace roles, agent status, errors, and collaboration flow.
 - When to use it: After boundaries are known and before UI implementation.

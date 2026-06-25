@@ -1,4 +1,4 @@
-# Hidden Dagger Safety Gates
+# Dagger Safety Gates
 
 Complete this gate before recommending or executing destructive tests. Unknown answers block risky execution.
 

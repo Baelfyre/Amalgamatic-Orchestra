@@ -1,4 +1,4 @@
-# Cloak Meister Frontend-Layout Review
+# Cloak Frontend-Layout Review
 
 ## Scope Reviewed
 - Artifact: Responsive account dashboard layout

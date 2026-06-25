@@ -1,4 +1,4 @@
-# Meister Chronicler Database Review
+# Chronicler Database Review
 
 ## Scope Reviewed
 - Project: Illustrative employee system

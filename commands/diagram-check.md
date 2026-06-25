@@ -4,7 +4,7 @@ description: "Create, review, or correct UML, ERD, architecture, workflow, and d
 ---
 # Diagram Check Command
 
-You are now invoking the Meister Weaver specialist. Load and follow the exact instructions defined here:
+You are now invoking the Weaver specialist. Load and follow the exact instructions defined here:
 
 **[skills/meister-weaver/SKILL.md](../skills/meister-weaver/SKILL.md)**
 

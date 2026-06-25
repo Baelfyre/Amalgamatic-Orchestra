@@ -54,7 +54,7 @@ Request
            │
            ▼
 ┌───────────────────────┐
-│   Amalgam Conductor   │  Route request (if approved/applicable)
+│   Conductor   │  Route request (if approved/applicable)
 └──────────┬────────────┘
            │
            ▼

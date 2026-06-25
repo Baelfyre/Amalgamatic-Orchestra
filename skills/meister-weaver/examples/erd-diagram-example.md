@@ -1,4 +1,4 @@
-# Meister Weaver Quick Diagram Plan
+# Weaver Quick Diagram Plan
 
 ## Diagram Needed
 - Logical ERD for employee and employment profile data.

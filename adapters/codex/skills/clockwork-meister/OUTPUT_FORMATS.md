@@ -1,13 +1,13 @@
-# Clockwork Meister Output Formats
+# Clockwork Output Formats
 
-Generate your output using exactly one of the formats below. The Amalgam Conductor or user will specify which format to use. Default to `Compact` unless `Full` is requested.
+Generate your output using exactly one of the formats below. The Conductor or user will specify which format to use. Default to `Compact` unless `Full` is requested.
 
 ## Compact
 
 Use this for quick audits, rapid checks, or mid-workflow feedback. Keep it strictly to the essential findings.
 
 ```markdown
-# Clockwork Meister Quick Check
+# Clockwork Quick Check
 
 **Status:** [Ready / Not ready / Needs clarification]
 **Scope:** [Files inspected / Layers involved]
@@ -32,7 +32,7 @@ Use this for quick audits, rapid checks, or mid-workflow feedback. Keep it stric
 Use this for comprehensive architectural reviews, deep SOLID analysis, or full refactor planning. Do not use this as an implementation plan for Ponytail.
 
 **Example Structure:**
-# Clockwork Meister Architecture Review
+# Clockwork Architecture Review
 
 ## 1. Readiness status
 [Ready / Not ready / Ready with minor notes / Needs clarification]

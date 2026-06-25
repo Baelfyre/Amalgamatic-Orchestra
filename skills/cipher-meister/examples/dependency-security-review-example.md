@@ -1,4 +1,4 @@
-# Cipher Meister Quick Risk Review
+# Cipher Quick Risk Review
 
 Fictional example.
 

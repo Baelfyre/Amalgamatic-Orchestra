@@ -1,4 +1,4 @@
-# Acme Overseer Quick QA Review
+# Overseer Quick QA Review
 
 Fictional example.
 

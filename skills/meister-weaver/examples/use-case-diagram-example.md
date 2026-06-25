@@ -1,4 +1,4 @@
-# Meister Weaver Quick Diagram Plan
+# Weaver Quick Diagram Plan
 
 ## Diagram Needed
 - UML use case diagram for payroll access.

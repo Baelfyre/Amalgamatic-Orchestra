@@ -2,7 +2,7 @@
 
 > **Authoritative behavior is defined in [`skills/the-steward/SKILL.md`](../../.agents/skills/the-steward/SKILL.md).** This document is a human-facing quick reference only. Do not use it as a behavior source of truth.
 
-The Steward is the business alignment, scope, requirements, and SDLC governance authority. It sits above the Amalgam Conductor and reviews every request before it reaches the Conductor.
+The Steward is the business alignment, scope, requirements, and SDLC governance authority. It sits above the Conductor and reviews every request before it reaches the Conductor.
 
 ## Quick Reference
 

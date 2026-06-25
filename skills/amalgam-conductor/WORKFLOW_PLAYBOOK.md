@@ -11,7 +11,7 @@ Verify exact skill availability before routing. Replace capability labels with i
 - [OOP Refactor](#oop-refactor)
 - [Quality Review](#quality-review)
 - [Security and Privacy Review](#security-and-privacy-review)
-- [Hidden Dagger Gated Resilience](#hidden-dagger-gated-resilience)
+- [Dagger Gated Resilience](#hidden-dagger-gated-resilience)
 - [Documentation Cleanup](#documentation-cleanup)
 - [Final Submission Readiness](#final-submission-readiness)
 - [Portfolio Polish](#portfolio-polish)
@@ -22,7 +22,7 @@ Verify exact skill availability before routing. Replace capability labels with i
 Use when the repository or task is unfamiliar and the user wants orientation or a plan.
 
 ### Required skills
-- Amalgam Conductor only initially; add one architecture or domain specialist after detection.
+- Conductor only initially; add one architecture or domain specialist after detection.
 
 ### Step-by-step execution
 1. Read user instructions and repository guidance.
@@ -151,7 +151,7 @@ Use for QA, testing, test plans or cases, defects, regression, smoke tests, acce
 ### Verification checklist
 - [ ] Test results and pass/fail claims are not invented.
 - [ ] Missing evidence is marked.
-- [ ] Hidden Dagger is not used as the normal QA route.
+- [ ] Dagger is not used as the normal QA route.
 
 ## Security and Privacy Review
 
@@ -176,7 +176,7 @@ Use for security, privacy, data protection, authentication, authorization, RBAC,
 - [ ] Scanner claims are validated when a scanner is used.
 - [ ] Privacy risks are separated from legal advice.
 
-## Hidden Dagger Gated Resilience
+## Dagger Gated Resilience
 
 ### When to use
 Recommend only for an explicitly requested adversarial test or a mature QA, staging, release-candidate, pre-production, or final-readiness project with high-risk gaps. Invoke only after the user chooses it and the safety gate passes.

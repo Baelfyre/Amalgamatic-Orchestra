@@ -5,7 +5,7 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "Amalgam Conductor: Safe Plugin Update Workflow" -ForegroundColor Cyan
+Write-Host "Conductor: Safe Plugin Update Workflow" -ForegroundColor Cyan
 Write-Host "==============================================" -ForegroundColor Cyan
 
 # Ensure RepoPath exists

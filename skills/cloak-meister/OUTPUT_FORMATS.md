@@ -45,7 +45,7 @@ HANDOFF TO:
 Use only when the user explicitly requests a full UI/UX audit, scoring matrix, or detailed review report.
 
 ```markdown
-# Cloak Meister Review
+# Cloak Review
 
 ## Scope Reviewed
 - Artifact Type:

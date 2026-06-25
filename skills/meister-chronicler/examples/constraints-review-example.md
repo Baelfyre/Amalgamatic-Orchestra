@@ -1,4 +1,4 @@
-# Meister Chronicler Quick DB Review
+# Chronicler Quick DB Review
 
 ## Database Objective
 - Prevent invalid payroll-period records.

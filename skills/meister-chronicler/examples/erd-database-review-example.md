@@ -1,4 +1,4 @@
-# Meister Chronicler Quick DB Review
+# Chronicler Quick DB Review
 
 ## Database Objective
 - Model course enrollment with per-enrollment date and grade.

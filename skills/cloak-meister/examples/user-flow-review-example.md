@@ -1,4 +1,4 @@
-# Cloak Meister User-Flow Review
+# Cloak User-Flow Review
 
 ## Scope Reviewed
 - Artifact: Checkout user-flow diagram

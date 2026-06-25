@@ -4,7 +4,7 @@ description: "Audit READMEs, project reports, readiness summaries, and handover 
 ---
 # Review Documents Command
 
-You are now invoking the Scribe Meister specialist. Load and follow the exact instructions defined here:
+You are now invoking the Scribe specialist. Load and follow the exact instructions defined here:
 
 **[skills/scribe-meister/SKILL.md](../skills/scribe-meister/SKILL.md)**
 

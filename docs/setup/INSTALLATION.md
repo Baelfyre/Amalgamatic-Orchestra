@@ -1,6 +1,6 @@
 # Installation
 
-Amalgam Conductor can be installed in three ways depending on your environment:
+Conductor can be installed in three ways depending on your environment:
 
 ## 1. Antigravity Plugin Setup
 
@@ -50,7 +50,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\refresh-installed-integration
 
 ## Verify
 
-Run the structure validator (`.\scripts\validate-structure.ps1`) and confirm that normal QA routes to Acme Overseer, normal security/privacy review routes to Cipher Meister, and Hidden Dagger remains gated.
+Run the structure validator (`.\scripts\validate-structure.ps1`) and confirm that normal QA routes to Overseer, normal security/privacy review routes to Cipher, and Dagger remains gated.
 
 ## Updates
 

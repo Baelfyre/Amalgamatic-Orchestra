@@ -42,7 +42,7 @@
 - Added lightweight structured metadata (e.g. `slug`, `role`, `primary_use`, `avoid_when`) to the frontmatter of all core `SKILL.md` files to prevent drift and lay groundwork for automated plugin loading.
 - Created a root-level `ROUTING_MAP.md` that maps common tasks to the correct specialist skill in a concise, scanner-friendly format.
 - Merged the Conductor's legacy conflict resolution logic into `ROUTING_MAP.md` and removed the stale `ROUTING_MATRIX.md` file.
-- Updated Amalgam Conductor to lazily load the routing map only when workflow coordination is unclear.
+- Updated Conductor to lazily load the routing map only when workflow coordination is unclear.
 - Standardized `SKILL_INDEX.md` to precisely reflect the new structured metadata fields.
 
 

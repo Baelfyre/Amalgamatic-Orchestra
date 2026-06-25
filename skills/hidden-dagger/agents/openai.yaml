@@ -1,5 +1,5 @@
 interface:
-  display_name: "Hidden Dagger"
+  display_name: "Dagger"
   short_description: "Run gated adversarial resilience testing"
   default_prompt: "Use $hidden-dagger to create a safety-gated negative and destructive testing plan without executing risky tests."
 policy:

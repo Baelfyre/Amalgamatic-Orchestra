@@ -5,9 +5,9 @@
 3. Confirm every skill folder contains `SKILL.md` and required support files.
 4. Validate local Markdown links and balanced code fences.
 5. Scan for private names, local paths, emails, secrets, unsupported compliance claims, and project-specific examples.
-6. Confirm Amalgam Conductor routes UI, documentation, diagrams, databases, QA, security/privacy, and gated resilience correctly.
-7. Confirm Acme Overseer owns normal QA and Cipher Meister owns normal security/privacy review.
-8. Confirm Hidden Dagger is not automatic, requires a safety gate, excludes production and real user data, and provides defensive guidance only.
+6. Confirm Conductor routes UI, documentation, diagrams, databases, QA, security/privacy, and gated resilience correctly.
+7. Confirm Overseer owns normal QA and Cipher owns normal security/privacy review.
+8. Confirm Dagger is not automatic, requires a safety gate, excludes production and real user data, and provides defensive guidance only.
 9. Confirm external tools are not bundled and adapter guides avoid unsupported native-compatibility claims.
 
 Run the official skill validator supplied by your Codex installation against each `skills/*` folder when available.

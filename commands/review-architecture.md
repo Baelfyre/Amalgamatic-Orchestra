@@ -4,7 +4,7 @@ description: "Review OOP architecture, layered architecture, system design, stru
 ---
 # Review Architecture Command
 
-You are now invoking the Clockwork Meister specialist. Load and follow the exact instructions defined here:
+You are now invoking the Clockwork specialist. Load and follow the exact instructions defined here:
 
 **[skills/clockwork-meister/SKILL.md](../skills/clockwork-meister/SKILL.md)**
 

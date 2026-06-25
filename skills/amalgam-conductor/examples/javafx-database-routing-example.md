@@ -11,7 +11,7 @@
 - Missing Information: Whether live-database mutation is approved for verification.
 
 ## Recommended Skill Stack
-### Cloak Meister
+### Cloak
 - Skill: `cloak-meister`
 - Why this skill is needed: Review the JavaFX field layout and focus behavior.
 - When to use it: First, limited to the employee editor.
@@ -23,7 +23,7 @@
 - When to use it: After the UI scope is fixed.
 - Expected output: Evidence-backed persistence finding or bounded patch.
 
-### Acme Overseer
+### Overseer
 - Skill: `acme-overseer`.
 - Why this skill is needed: Compile and run focused UI or persistence checks.
 - When to use it: After implementation.

@@ -1,4 +1,4 @@
-# Cloak Meister Navigation-Structure Review
+# Cloak Navigation-Structure Review
 
 ## Scope Reviewed
 - Artifact: Analytics dashboard navigation map

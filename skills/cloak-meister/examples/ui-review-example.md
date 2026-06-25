@@ -1,4 +1,4 @@
-# Cloak Meister Review
+# Cloak Review
 
 ## Scope Reviewed
 - Artifact Type: Desktop web checkout screenshot

@@ -1,4 +1,4 @@
-# Cloak Meister Review Checklist
+# Cloak Review Checklist
 
 Use only the sections relevant to the selected review mode. Unchecked items are inspection prompts, not automatic defects.
 

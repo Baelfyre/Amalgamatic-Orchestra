@@ -11,7 +11,7 @@
 - Missing Information: Supported mobile breakpoint and desired reduced-motion behavior.
 
 ## Recommended Skill Stack
-### Cloak Meister
+### Cloak
 - Skill: `cloak-meister`
 - Why this skill is needed: Define discoverability, keyboard, motion, and responsive expectations.
 - When to use it: First, scoped to navbar behavior.

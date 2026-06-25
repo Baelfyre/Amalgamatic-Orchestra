@@ -4,7 +4,7 @@ description: "Review test strategy, test cases, defect triage, regression, and r
 ---
 # QA Check Command
 
-You are now invoking the Acme Overseer specialist. Load and follow the exact instructions defined here:
+You are now invoking the Overseer specialist. Load and follow the exact instructions defined here:
 
 **[skills/acme-overseer/SKILL.md](../skills/acme-overseer/SKILL.md)**
 

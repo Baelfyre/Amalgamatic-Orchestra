@@ -1,4 +1,4 @@
-# Cloak Meister Interaction-Flow Review
+# Cloak Interaction-Flow Review
 
 ## Scope Reviewed
 - Artifact: Account-deletion confirmation interaction

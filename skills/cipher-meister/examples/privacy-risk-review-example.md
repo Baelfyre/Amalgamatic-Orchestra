@@ -1,4 +1,4 @@
-# Cipher Meister Security and Privacy Review
+# Cipher Security and Privacy Review
 
 Fictional example.
 

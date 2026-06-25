@@ -21,12 +21,12 @@
 |---|---|---|
 | Governance | The Steward | Business, scope, SDLC, requirements, and value alignment |
 | Governance | The Governor | Legal risk, privacy, IP, licensing, security, and compliance review |
-| Orchestration | Amalgam Conductor | Routes approved work to the correct specialist skills |
+| Orchestration | Conductor | Routes approved work to the correct specialist skills |
 | Execution | Specialist Skills | Performs focused implementation, documentation, QA, security, or design work |
 
 ## Core Concept
 
-Amalgam Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation. The governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor establish the Governance Basis of Review based on the active operating mode and supplied context. If the scope is unclear and review is required, governance returns `REVISION_REQUIRED` instead of assuming.
+Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation. The governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor establish the Governance Basis of Review based on the active operating mode and supplied context. If the scope is unclear and review is required, governance returns `REVISION_REQUIRED` instead of assuming.
 
 ## Architecture
 
@@ -67,7 +67,7 @@ flowchart LR
 
 ## Governance Layer
 
-The Governance Layer sits above the Conductor. Amalgam Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation.
+The Governance Layer sits above the Conductor. Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation.
 
 The Steward and The Governor are entirely context-driven. They do not pre-assume what rules apply to every project, nor do they apply every governance rule universally. If the project scope is unclear or missing, governance returns `REVISION_REQUIRED` instead of assuming. Conversely, if a risk area does not apply to the current context, the authority returns `NOT_APPLICABLE`.
 
@@ -76,7 +76,7 @@ The Steward and The Governor are entirely context-driven. They do not pre-assume
 
 ### Operating Modes
 
-Amalgam Conductor uses 5 distinct operating modes to scale governance dynamically, ensuring that ideation and dynamic prototyping are not restricted:
+Conductor uses 5 distinct operating modes to scale governance dynamically, ensuring that ideation and dynamic prototyping are not restricted:
 
 1. **Ideation Mode**: Brainstorming, exploration, planning, concept development, prompt refinement. Returns `ADVISORY_ONLY` or `NOT_APPLICABLE`.
 2. **Prototype Mode**: Local experiments, throwaway proofs-of-concept. Lightweight checks only.
@@ -109,12 +109,12 @@ Amalgam Conductor uses 5 distinct operating modes to scale governance dynamicall
 
 | Skill | Focus |
 |---|---|
-| **Amalgam Conductor** | Routing and orchestration |
-| **Clockwork Meister** | Architecture, OOP, refactoring |
-| **Cloak Meister** | UI, UX, layout, accessibility |
-| **Scribe Meister** | Documentation and technical writing |
-| **Acme Overseer** | QA, testing, release readiness |
-| **Cipher Meister** | Security and privacy evidence |
+| **Conductor** | Routing and orchestration |
+| **Clockwork** | Architecture, OOP, refactoring |
+| **Cloak** | UI, UX, layout, accessibility |
+| **Scribe** | Documentation and technical writing |
+| **Overseer** | QA, testing, release readiness |
+| **Cipher** | Security and privacy evidence |
 
 For details on all execution skills, routing logic, and behavioral constraints, see the [Specialist Skill Index](SKILL_INDEX.md).
 
@@ -122,7 +122,7 @@ For details on all execution skills, routing logic, and behavioral constraints, 
 
 ## Installation
 
-To set up Amalgam Conductor as an installable AI workflow plugin:
+To set up Conductor as an installable AI workflow plugin:
 
 ### Antigravity Setup
 ```sh
@@ -194,13 +194,13 @@ Follow this feedback loop:
 5. Commit only after validation passes.
 
 > [!NOTE]
-> When unsure which specialist to use, start with **Amalgam Conductor**. It can route the task to the correct specialist. Use a specialist directly only when the task is narrow and obvious (e.g., UI only, QA only).
+> When unsure which specialist to use, start with **Conductor**. It can route the task to the correct specialist. Use a specialist directly only when the task is narrow and obvious (e.g., UI only, QA only).
 
 ---
 
 ## Output Mode Behavior
 
-Output from Amalgam Conductor and its specialists automatically adapts to your intent:
+Output from Conductor and its specialists automatically adapts to your intent:
 - **Compact mode** is the default for normal iterative tasks.
 - **Full mode** is used only when explicitly requested for formal audits, deep reviews, or comprehensive planning.
 - **Specialized modes** (like Diagram formats) are automatically selected when the artifact type is clear.

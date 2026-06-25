@@ -19,7 +19,7 @@ Release gates enforce governance compliance before any release. **Release Mode**
 | Human legal review completed (if flagged) | The Governor | Yes |
 | Security governance satisfied | The Governor | Yes |
 | Audit documentation sufficient | The Governor | Yes |
-| QA validation passed | Acme Overseer | Yes |
+| QA validation passed | Overseer | Yes |
 | No unresolved `BLOCKED` decisions | Both | Yes |
 | No pending `human_review_required` flags | The Governor | Yes |
 
@@ -42,5 +42,5 @@ EVIDENCE: Governor review [timestamp], decision: APPROVED
 
 ## Enforcement Limitation
 
-Current enforcement is instruction-level governance. The Amalgam Conductor must follow the governance gate before planning or routing work, but no runtime blocker exists yet. Runtime enforcement may be added later if CI checks, schema validation, or automated release gates become necessary.
+Current enforcement is instruction-level governance. The Conductor must follow the governance gate before planning or routing work, but no runtime blocker exists yet. Runtime enforcement may be added later if CI checks, schema validation, or automated release gates become necessary.
 

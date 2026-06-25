@@ -1,6 +1,6 @@
 # Project State
 
-- **Project Name:** Amalgam Conductor
+- **Project Name:** Conductor
 - **Active Repo:** `C:\amalgam-conductor`
 - **Current Branch:** Main (or active working branch)
 - **Current Stable State:** Governance update pending final review/commit

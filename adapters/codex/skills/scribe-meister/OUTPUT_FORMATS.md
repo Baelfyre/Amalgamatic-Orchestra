@@ -5,7 +5,7 @@
 Use for final documentation or detailed audits.
 
 ```markdown
-# Scribe Meister Documentation Audit
+# Scribe Documentation Audit
 
 ## Scope Reviewed
 - Project:
@@ -50,7 +50,7 @@ Reason:
 Use for standard documentation audits.
 
 ```markdown
-# Scribe Meister Documentation Audit
+# Scribe Documentation Audit
 
 ## Objective
 -
@@ -75,7 +75,7 @@ Confidence Level: High / Medium / Low
 Use for quick audits.
 
 ```markdown
-# Scribe Meister Quick Audit
+# Scribe Quick Audit
 
 ## Objective
 -

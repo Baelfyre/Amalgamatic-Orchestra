@@ -15,7 +15,7 @@ Review our release-candidate test plan and decide whether it is ready for regres
 3. Return priority fixes and retest steps.
 
 ## Token-saving decision
-Do not add Hidden Dagger because destructive or adversarial testing was not requested.
+Do not add Dagger because destructive or adversarial testing was not requested.
 
 ## Final copy-paste prompt
 `Use $acme-overseer to audit this release-candidate test plan, acceptance criteria, defect evidence, regression coverage, and release readiness. Do not invent test results.`

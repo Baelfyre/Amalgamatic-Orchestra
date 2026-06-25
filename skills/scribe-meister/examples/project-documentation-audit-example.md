@@ -1,4 +1,4 @@
-# Scribe Meister Documentation Audit
+# Scribe Documentation Audit
 
 ## Scope Reviewed
 - Project: Illustrative JavaFX payroll project

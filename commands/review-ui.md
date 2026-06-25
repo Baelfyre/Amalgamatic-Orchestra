@@ -4,7 +4,7 @@ description: "Review UI, UX, accessibility, frontend architecture, and responsiv
 ---
 # Review UI Command
 
-You are now invoking the Cloak Meister specialist. Load and follow the exact instructions defined here:
+You are now invoking the Cloak specialist. Load and follow the exact instructions defined here:
 
 **[skills/cloak-meister/SKILL.md](../skills/cloak-meister/SKILL.md)**
 

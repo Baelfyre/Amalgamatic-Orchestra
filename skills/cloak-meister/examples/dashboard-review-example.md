@@ -1,4 +1,4 @@
-# Cloak Meister Review
+# Cloak Review
 
 ## Scope Reviewed
 - Artifact Type: Sales performance dashboard screenshot

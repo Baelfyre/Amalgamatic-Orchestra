@@ -1,4 +1,4 @@
-# Acme Overseer Quality Review
+# Overseer Quality Review
 
 Fictional example.
 

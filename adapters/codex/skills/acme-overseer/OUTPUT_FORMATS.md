@@ -3,7 +3,7 @@
 ## Caveman
 
 ```markdown
-# Acme Overseer Quick QA Review
+# Overseer Quick QA Review
 
 ## Quality Objective
 -
@@ -26,7 +26,7 @@
 ## Full QA Review
 
 ```markdown
-# Acme Overseer Quality Review
+# Overseer Quality Review
 
 ## Scope Reviewed
 - Project:

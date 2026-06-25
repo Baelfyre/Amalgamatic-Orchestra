@@ -1,6 +1,6 @@
 # Governance Layer
 
-The Governor and The Steward form a reusable governance layer that sits above the Amalgam Conductor. Their purpose is to ensure that any project, product, repository, or future development effort remains aligned with its objectives, documentation requirements, compliance obligations, legal risk boundaries, privacy expectations, IP and copyright concerns, licensing requirements, and release readiness standards.
+The Governor and The Steward form a reusable governance layer that sits above the Conductor. Their purpose is to ensure that any project, product, repository, or future development effort remains aligned with its objectives, documentation requirements, compliance obligations, legal risk boundaries, privacy expectations, IP and copyright concerns, licensing requirements, and release readiness standards.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ Governance Layer
 ├── The Governor   (Legal, Compliance, Privacy, IP)
 
 Orchestration Layer
-└── Amalgam Conductor
+└── Conductor
 
 Execution Layer
 ├── Skills (Specialists)
@@ -74,7 +74,7 @@ If the project context profile is incomplete, unclear, or entirely missing, the 
 
 ## Freedom-First Development
 
-Amalgam Conductor prioritizes freedom-first, need-based development. The ecosystem ensures that ideation, brainstorming, prototyping, and concept exploration are not restricted by early governance requirements. Governance checks activate only when a task moves into implementation, when files or architecture change, or when risk triggers are explicitly hit.
+Conductor prioritizes freedom-first, need-based development. The ecosystem ensures that ideation, brainstorming, prototyping, and concept exploration are not restricted by early governance requirements. Governance checks activate only when a task moves into implementation, when files or architecture change, or when risk triggers are explicitly hit.
 
 ## Need-To-Only Governance
 
@@ -160,7 +160,7 @@ Next Recommended Step:
 1. **Request enters** the system.
 2. **The Steward** validates alignment, scope, requirements, documentation (scaled to risk).
 3. **The Governor** validates compliance, privacy, IP, licensing, audit readiness (scaled to risk).
-4. **Amalgam Conductor** receives the approved request and routes to execution skills.
+4. **Conductor** receives the approved request and routes to execution skills.
 5. **Execution skills** perform the work.
 6. **Validation** confirms outputs.
 7. **Release Gate** checks governance compliance before release.
@@ -204,12 +204,12 @@ REQUIRED_ACTIONS: [actions needed or "none"]
 |---|---|---|
 | The Steward | Business goals, scope, requirements, SDLC | Legal, compliance, IP, licensing, implementation |
 | The Governor | Legal, compliance, privacy, IP, licensing | Business alignment, scope, implementation |
-| Amalgam Conductor | Routing, orchestration, skill selection | Governance decisions, implementation |
+| Conductor | Routing, orchestration, skill selection | Governance decisions, implementation |
 | Execution Skills | Implementation, code changes | Governance, routing |
 
 ## Enforcement Limitation
 
-Current enforcement is instruction-level governance. The Amalgam Conductor must follow the governance gate before planning or routing work, but no runtime blocker exists yet. Runtime enforcement may be added later if CI checks, schema validation, or automated release gates become necessary.
+Current enforcement is instruction-level governance. The Conductor must follow the governance gate before planning or routing work, but no runtime blocker exists yet. Runtime enforcement may be added later if CI checks, schema validation, or automated release gates become necessary.
 
 ---
 

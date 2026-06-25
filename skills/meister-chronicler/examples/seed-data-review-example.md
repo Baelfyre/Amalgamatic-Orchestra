@@ -1,4 +1,4 @@
-# Meister Chronicler Quick DB Review
+# Chronicler Quick DB Review
 
 ## Database Objective
 - Maintain canonical employment-status reference data.
