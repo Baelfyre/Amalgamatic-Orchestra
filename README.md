@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/readme/amalgam-governance-banner.svg" alt="Orchestra Hero Banner" width="100%" />
+  <img src="./assets/readme/orchestra-governance-banner.svg" alt="Orchestra Hero Banner" width="100%" />
 
   <p>
     <strong>Project-agnostic governance and orchestration framework for AI-assisted development.</strong>
@@ -26,7 +26,7 @@
 
 ## Core Concept
 
-Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation. The governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor establish the Governance Basis of Review based on the active operating mode and supplied context. If the scope is unclear and review is required, governance returns `REVISION_REQUIRED` instead of assuming.
+Orchestra uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation. The governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor establish the Governance Basis of Review based on the active operating mode and supplied context. If the scope is unclear and review is required, governance returns `REVISION_REQUIRED` instead of assuming.
 
 ## Architecture
 
@@ -41,18 +41,20 @@ flowchart LR
     Request([User Request]):::input
     Context([Project Context]):::input
 
-    subgraph G[Governance Layer]
-      Steward{{The Steward<br/>Business • Scope • SDLC}}:::gov
-      Governor{{The Governor<br/>Privacy • IP • Compliance}}:::gov
-    end
+    subgraph Orchestra[Orchestra]
+      subgraph G[Governance Layer]
+        Steward{{The Steward<br/>Business • Scope • SDLC}}:::gov
+        Governor{{The Governor<br/>Privacy • IP • Compliance}}:::gov
+      end
 
-    subgraph O[Orchestration Layer]
-      Conductor((Amalgam<br/>Conductor)):::orch
-    end
+      subgraph O[Orchestration Component]
+        Conductor((Amalgam<br/>Conductor)):::orch
+      end
 
-    subgraph E[Execution Layer]
-      Skills[[Specialist Skills]]:::exec
-      Validate[[Validation]]:::exec
+      subgraph E[Execution Layer]
+        Skills[[Specialist Skills]]:::exec
+        Validate[[Validation]]:::exec
+      end
     end
 
     Output([Release or Response]):::input
@@ -67,7 +69,7 @@ flowchart LR
 
 ## Governance Layer
 
-The Governance Layer sits above the Conductor. Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation.
+The Governance Layer sits above the Conductor. Orchestra uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation.
 
 The Steward and The Governor are entirely context-driven. They do not pre-assume what rules apply to every project, nor do they apply every governance rule universally. If the project scope is unclear or missing, governance returns `REVISION_REQUIRED` instead of assuming. Conversely, if a risk area does not apply to the current context, the authority returns `NOT_APPLICABLE`.
 
@@ -102,22 +104,22 @@ Conductor uses 5 distinct operating modes to scale governance dynamically, ensur
 
 | Authority | Focus |
 |---|---|
-| **The Steward** | Business alignment, scope boundaries, and software development lifecycle (SDLC) documentation. |
-| **The Governor** | Evaluates legal compliance, privacy risks, intellectual property (IP), licensing, and security policies. |
+| <img src="./assets/icons/theSteward.ico" width="16" /> **The Steward** | Business alignment, scope boundaries, and software development lifecycle (SDLC) documentation. |
+| <img src="./assets/icons/theGovernor.ico" width="16" /> **The Governor** | Evaluates legal compliance, privacy risks, intellectual property (IP), licensing, and security policies. |
 
 ### Specialist Skills
 
 | Skill | Focus |
 |---|---|
-| **Conductor** | Routing and orchestration |
-| **Clockwork** | Architecture, OOP, refactoring |
-| **Cloak** | UI, UX, layout, accessibility |
-| **Scribe** | Documentation and technical writing |
-| **Weaver** | Visual modeling and diagram specialist |
-| **Chronicler** | Database architect and schema auditor |
-| **Overseer** | QA, testing, release readiness |
-| **Cipher** | Security and privacy evidence |
-| **Dagger** | Controlled resilience tester |
+| <img src="./assets/icons/amalgam-conductor.ico" width="16" /> **Conductor** | Routing and orchestration |
+| <img src="./assets/icons/clockwork-meister.ico" width="16" /> **Clockwork** | Architecture, OOP, refactoring |
+| <img src="./assets/icons/cloak-meister.ico" width="16" /> **Cloak** | UI, UX, layout, accessibility |
+| <img src="./assets/icons/scribe-meister.ico" width="16" /> **Scribe** | Documentation and technical writing |
+| <img src="./assets/icons/meister-weaver.ico" width="16" /> **Weaver** | Visual modeling and diagram specialist |
+| <img src="./assets/icons/meister-chronicler.ico" width="16" /> **Chronicler** | Database architect and schema auditor |
+| <img src="./assets/icons/acme-overseer.ico" width="16" /> **Overseer** | QA, testing, release readiness |
+| <img src="./assets/icons/cipher-meister.ico" width="16" /> **Cipher** | Security and privacy evidence |
+| <img src="./assets/icons/hidden-dagger.ico" width="16" /> **Dagger** | Controlled resilience tester |
 
 For details on all execution skills, routing logic, and behavioral constraints, see the [Specialist Skill Index](SKILL_INDEX.md).
 
@@ -302,7 +304,7 @@ tests/behavior/
 └── GOVERNANCE_SCENARIOS.md
 
 assets/readme/
-└── amalgam-governance-banner.svg
+└── orchestra-governance-banner.svg
 ```
 
 </details>
