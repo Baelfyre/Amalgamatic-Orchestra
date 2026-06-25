@@ -1,68 +1,58 @@
 # Output Formats
 
-## Compact mode
+## Mermaid
 
-```markdown
-# Meister Weaver Quick Diagram Plan
+Use Mermaid syntax for your diagram. Provide the following strict format before the diagram block:
 
-## Diagram Needed
--
-
-## Objective
--
-
-## Inputs Required
--
-
-## Recommended Format
-- Mermaid / PlantUML / Draw.io
-
-## Draft Diagram
-Provide Mermaid or PlantUML only when evidence is sufficient.
-
-## Missing Evidence
--
+```text
+TASK TYPE:
+DIAGRAM TYPE:
+SOURCE OF TRUTH:
+ENTITIES/ACTORS/CLASSES:
+RELATIONSHIPS:
+CARDINALITY/FLOW:
+DIAGRAM RULES:
+OUTPUT FORMAT: Mermaid
+HANDOFF TO:
 ```
 
-## Full mode
+### Compact Guidance
+For quick diagram generation, ensure you have sufficient evidence before producing the Mermaid block. If evidence is missing, state it clearly.
 
-```markdown
-# Meister Weaver Diagram Review
+### Full Review Guidance
+For a full review of an existing diagram or architecture:
+- Define the project objective, audience, and system boundary.
+- State your review confidence.
+- Identify missing, incorrect, or unclear elements.
+- Note relationship, cardinality, notation, and readability issues.
+- Recommend the diagram structure and provide the corrected Mermaid diagram.
+- List any missing evidence and final recommendations.
 
-## Scope Reviewed
-- Diagram Type:
-- Project Objective:
-- Audience:
-- System Boundary:
-- Evidence Reviewed:
+## PlantUML
 
-## Review Confidence
-Confidence Level: High / Medium / Low
-Reason:
+Use PlantUML syntax for your diagram. Provide the following strict format before the diagram block:
 
-## Executive Summary
-
-## Confirmed Elements
-
-## Missing Elements
-
-## Incorrect or Unclear Elements
-
-## Relationship and Cardinality Issues
-
-## Notation Issues
-
-## Readability Issues
-
-## Recommended Diagram Structure
-
-## Corrected Diagram
-Preferred output order:
-1. Mermaid
-2. PlantUML
-3. Draw.io instructions
-
-## Missing Evidence
-
-## Final Recommendation
+```text
+TASK TYPE:
+DIAGRAM TYPE:
+SOURCE OF TRUTH:
+ENTITIES/ACTORS/CLASSES:
+RELATIONSHIPS:
+CARDINALITY/FLOW:
+DIAGRAM RULES:
+OUTPUT FORMAT: PlantUML
+HANDOFF TO:
 ```
+
+### Compact Guidance
+For quick diagram generation, ensure you have sufficient evidence before producing the PlantUML block. If evidence is missing, state it clearly.
+
+### Full Review Guidance
+For a full review of an existing diagram or architecture:
+- Define the project objective, audience, and system boundary.
+- State your review confidence.
+- Identify missing, incorrect, or unclear elements.
+- Note relationship, cardinality, notation, and readability issues.
+- Recommend the diagram structure and provide the corrected PlantUML diagram.
+- List any missing evidence and final recommendations.
+

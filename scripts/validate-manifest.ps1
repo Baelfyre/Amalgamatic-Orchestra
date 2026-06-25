@@ -24,7 +24,6 @@ $exceptions = @{
     'amalgam-conductor' = 'Semantic routing formats pending dedicated alignment pass'
     'the-steward'       = 'Governance Review is a semantic format covering compact and expanded templates'
     'the-governor'      = 'Governance Review is a semantic format covering compact and expanded templates'
-    'meister-weaver'    = 'Diagram syntax labels pending dedicated alignment pass'
 }
 
 $errors = 0
