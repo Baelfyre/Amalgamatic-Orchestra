@@ -1,4 +1,4 @@
-{
+﻿{
     "name": "amalgam-conductor",
     "display_name": "Orchestra",
     "description": "An installable AI workflow plugin that routes complex software tasks through focused specialist skills for architecture, UI/UX, documentation, diagrams, databases, QA, security, and gated resilience review.",
@@ -30,7 +30,7 @@
             "name": "the-steward",
             "activation_level": "Governor",
             "depends_on": "None",
-            "icon_path": "assets/icons/the-steward.ico",
+            "icon_path": "assets/icons/theSteward.ico",
             "output_formats": [
                 "Governance Review"
             ]
@@ -45,7 +45,7 @@
             "name": "the-governor",
             "activation_level": "Governor",
             "depends_on": "None",
-            "icon_path": "assets/icons/the-governor.ico",
+            "icon_path": "assets/icons/theGovernor.ico",
             "output_formats": [
                 "Governance Review"
             ]
