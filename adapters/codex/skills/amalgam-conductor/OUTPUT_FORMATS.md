@@ -1,8 +1,9 @@
-# Output Formats
+﻿# Output Formats
 
-## Full mode
+## Routing Plan
 
-Use this structure. Keep it compact for simple tasks.
+### Full Orchestration
+Use this structure for comprehensive planning. Keep it compact for simple tasks.
 
 ```markdown
 # Amalgam Conductor Routing Plan
@@ -47,13 +48,13 @@ Use this structure. Keep it compact for simple tasks.
 - Git status:
 - Approval required:
 
-## Commands or Prompts to Run
-Provide copy-paste-ready Codex prompts. Do not include commit, push, PR, install, or destructive commands unless explicitly approved.
-
 ## Final Recommendation
 State the shortest effective workflow.
 ```
 
-## Compact mode
-
+### Compact Routing
 For a simple route, use `# Conductor Quick Route` followed by project signal, selected skill, reason, exclusions, approval boundary, and one copy-paste prompt.
+
+## Prompts
+
+Provide copy-paste-ready Codex prompts to execute the defined Routing Plan. Do not include commit, push, PR, install, or destructive commands unless explicitly approved.
