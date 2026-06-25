@@ -1,8 +1,11 @@
-# The Steward Output Format
+# Output Formats
 
-## Compact (Default)
+## Governance Review
 
-```
+### Compact
+Use this default compact format for general governance reviews.
+
+```text
 REVIEWER: the-steward
 PROJECT_CONTEXT: [project type] | [risk level]
 DECISION: [APPROVED | ADVISORY_ONLY | REVISION_REQUIRED | BLOCKED | NOT_APPLICABLE]
@@ -11,9 +14,10 @@ RISKS: [identified risks or "none"]
 REQUIRED_ACTIONS: [actions needed or "none"]
 ```
 
-## Expanded (When Findings Exist)
+### Expanded
+Use this expanded format when significant findings or risks exist.
 
-```
+```text
 REVIEWER: the-steward
 PROJECT_CONTEXT: [project type] | [risk level]
 DECISION: [APPROVED | ADVISORY_ONLY | REVISION_REQUIRED | BLOCKED | NOT_APPLICABLE]

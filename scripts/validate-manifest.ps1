@@ -21,9 +21,6 @@ $skillFolders = Get-ChildItem -LiteralPath $skillsDir -Directory
 $skillIndexLines = Get-Content -LiteralPath (Join-Path $Root "SKILL_INDEX.md")
 
 $exceptions = @{
-    'amalgam-conductor' = 'Semantic routing formats pending dedicated alignment pass'
-    'the-steward'       = 'Governance Review is a semantic format covering compact and expanded templates'
-    'the-governor'      = 'Governance Review is a semantic format covering compact and expanded templates'
 }
 
 $errors = 0
