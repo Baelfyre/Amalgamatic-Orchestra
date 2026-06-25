@@ -28,196 +28,6 @@
 
 Amalgam Conductor uses freedom-first, need-based governance. Users can ideate freely. Governance review is invoked when the task requires alignment review, implementation readiness, audit, risk review, or release validation. The governance layer does not assume what rules apply to every project. Before review, The Steward and The Governor establish the Governance Basis of Review based on the active operating mode and supplied context. If the scope is unclear and review is required, governance returns `REVISION_REQUIRED` instead of assuming.
 
-## Usage Pattern
-
-### 1. Start with a project context
-
-The governance layer does not assume what rules apply. Users should provide enough context for The Steward and The Governor to know what they are reviewing, scaled to the mode of operation.
-
-Minimum context:
-
-| Context Item | What to Provide |
-|---|---|
-| Project Type | School project, internal tool, open-source repo, client app, public product, data project, AI workflow |
-| Goal | What the task should accomplish |
-| Release Target | Local only, internal use, public release, client delivery, open-source release |
-| Data Use | No user data, test data, personal data, sensitive data, uploaded files, third-party data |
-| Dependencies | Libraries, assets, APIs, models, datasets, or third-party content involved |
-| Constraints | Files to preserve, style rules, framework limits, legal or policy boundaries |
-| Expected Output | Changed files, summary, validation results, risks, next step |
-
-### 2. Use the standard prompt pattern
-
-Add this template to the top of your request:
-
-```text
-[@ponytail] use amalgam-conductor for this task
-
-Project Context:
-Project Type:
-Goal:
-Release Target:
-Data Use:
-Dependencies or Third-Party Assets:
-Constraints:
-
-Task:
-Describe the work clearly.
-
-Requirements:
-- List what must be changed.
-- List what must be preserved.
-- List any rules the implementation must follow.
-
-Expected Output:
-Changed Files:
-Summary:
-Validation Results:
-Remaining Risks:
-Next Recommended Step:
-```
-
-### 3. Operating Modes
-
-Amalgam Conductor uses 5 distinct operating modes to scale governance dynamically, ensuring that ideation and dynamic prototyping are not restricted:
-
-1. **Ideation Mode**
-   - **Purpose**: Brainstorming, exploration, planning, concept development, prompt refinement.
-   - **Governance**: Unblocked. No project context required. Returns `ADVISORY_ONLY` or `NOT_APPLICABLE` with optional light guidance.
-2. **Prototype Mode**
-   - **Purpose**: Local experiments, throwaway proofs-of-concept.
-   - **Governance**: Lightweight checks only if obvious risks exist. Full context not required unless handling user data, third-party assets, or security-sensitive code.
-3. **Implementation Mode**
-   - **Purpose**: Making file, code, documentation, or architecture changes.
-   - **Governance**: Uses fast path by default. Requires minimum context only. Escalate to expanded review only if risk triggers (e.g. user data, licensing, security, compliance) are met.
-4. **Audit Mode**
-   - **Purpose**: Explicit request for a review, compliance check, or risk assessment.
-   - **Governance**: Context-heavy. Establishes the Governance Basis of Review. Returns findings, risks, and required actions.
-5. **Release Mode**
-   - **Purpose**: Production deployment, public release, client delivery, or open-source distribution.
-   - **Governance**: Strictest path. Requires full project context, dependencies, data use, licensing, and constraints. Escalate uncertain legal or compliance issues for human review.
-
-### 4. Let governance classify the request
-
-The Steward and The Governor first establish the Governance Basis of Review. They use the active Operating Mode and supplied context to classify the request and decide whether a check is required.
-
-They do not apply every governance rule to every task.
-
-- If context is missing in Audit, Release, or high-risk Implementation mode, they return:
-  `Decision: REVISION_REQUIRED`
-- If a risk area does not apply, they return:
-  `Decision: NOT_APPLICABLE`
-- If work can proceed, they return:
-  `Decision: APPROVED`
-- If work should not proceed, they return:
-  `Decision: BLOCKED`
-- If the task is in Ideation or Prototype mode, they return:
-  `Decision: ADVISORY_ONLY`
-
-### 5. Interpret the decision
-
-| Decision | Meaning | User Action |
-|---|---|---|
-| **APPROVED** | Work can proceed | Let the conductor route the task |
-| **ADVISORY_ONLY** | Advice given, exploration unblocked | Continue brainstorming or prototyping freely |
-| **REVISION_REQUIRED** | More context or correction is needed | Add missing details and resubmit |
-| **BLOCKED** | Work should not proceed as requested | Resolve the blocking issue first |
-| **NOT_APPLICABLE** | Governance check is not needed | Continue with the fast path |
-
-### 5. Review the IDE output
-
-The AI will output your changes using this expected format:
-
-```text
-Changed Files:
-Summary:
-Validation Results:
-Remaining Risks:
-Next Recommended Step:
-```
-
-### 6. Iterate
-
-Follow this feedback loop:
-1. Draft or refine the prompt in chat.
-2. Send the refined prompt to the IDE.
-3. Let the IDE inspect files and propose changes.
-4. Review changed files and validation results.
-5. Approve, revise, or ask for another iteration.
-6. Commit only after validation passes.
-
-### 7. When to use Amalgam Conductor
-
-Use Amalgam Conductor for:
-- Multi-file changes.
-- Architecture changes.
-- Governance-sensitive work.
-- Documentation and implementation updates.
-- Public release preparation.
-- Tasks involving user data, licensing, privacy, security, or compliance.
-- Cross-domain tasks.
-
-### 8. When to use a specialist directly
-
-Use a specialist directly when the task is narrow and obvious:
-- UI only.
-- Documentation only.
-- SQL only.
-- QA only.
-- Security evidence only.
-- Diagram only.
-
-> [!NOTE]
-> When unsure, start with Amalgam Conductor. It can route the task to the correct specialist.
-
-### 9. Token-efficient usage
-
-> [!TIP]
-> For best token efficiency:
-> - Provide only relevant project context.
-> - Use the standard prompt pattern.
-> - Ask for changed files, summary, validation, risks, and next step.
-> - Do not request expanded governance analysis unless the task is MEDIUM or HIGH risk.
-> - Use fast path for typo fixes, formatting edits, and local documentation cleanup.
-
-### 10. Add one complete example
-
-Here is a complete, real-world prompt showing this pattern in action:
-
-```text
-[@ponytail] use amalgam-conductor for this task
-
-Project Context:
-Project Type: Open-source plugin repository.
-Goal: Improve README usage instructions.
-Release Target: Public GitHub repository.
-Data Use: No user data.
-Dependencies or Third-Party Assets: Existing local SVG banner and Markdown files only.
-Constraints:
-- Keep plugin runtime folders unchanged.
-- Do not add JavaScript or Python.
-- Keep README concise and easy to scan.
-- Preserve validation instructions.
-
-Task:
-Update README.md so users understand exactly how to use the plugin.
-
-Requirements:
-- Add a Usage Pattern section.
-- Explain the required project context.
-- Add the standard prompt template.
-- Explain APPROVED, REVISION_REQUIRED, BLOCKED, and NOT_APPLICABLE.
-- Explain when to use Amalgam Conductor and when to use specialists directly.
-- Keep token-efficiency guidance short.
-
-Expected Output:
-Changed Files:
-Summary:
-Validation Results:
-Remaining Risks:
-Next Recommended Step:
-```
-
 ## Architecture
 
 ```mermaid
@@ -264,55 +74,42 @@ The Steward and The Governor are entirely context-driven. They do not pre-assume
 > [!IMPORTANT]
 > If a request violates alignment, fails scope verification, or breaches compliance boundaries, the Steward or Governor issues a `REVISION_REQUIRED` or `BLOCKED` status. The Conductor will immediately halt execution.
 
-### Compact Decision Examples
+### Operating Modes
 
-#### Example 1: Incomplete Project Scope
-```yaml
-Reviewer: The Steward
-Decision: REVISION_REQUIRED
-Reason: Project scope is incomplete.
-Risks: The request cannot be checked against goals, requirements, or acceptance criteria.
-Required Actions:
-- Provide project type.
-- Provide intended outcome.
-- Provide acceptance criteria.
-Human Review Required: No.
-```
+Amalgam Conductor uses 5 distinct operating modes to scale governance dynamically, ensuring that ideation and dynamic prototyping are not restricted:
 
-#### Example 2: Non-Applicable Request
-```yaml
-Reviewer: The Governor
-Decision: NOT_APPLICABLE
-Reason: The request is a local formatting-only documentation update with no release, user data, licensing, privacy, IP, or security impact.
-Risks: None.
-Required Actions: None.
-Human Review Required: No.
-```
+1. **Ideation Mode**: Brainstorming, exploration, planning, concept development, prompt refinement. Returns `ADVISORY_ONLY` or `NOT_APPLICABLE`.
+2. **Prototype Mode**: Local experiments, throwaway proofs-of-concept. Lightweight checks only.
+3. **Implementation Mode**: Making file, code, documentation, or architecture changes. Uses fast path by default. Escalate to expanded review only if risk triggers are met.
+4. **Audit Mode**: Explicit request for a review, compliance check, or risk assessment. Context-heavy.
+5. **Release Mode**: Production deployment, public release, client delivery, or open-source distribution. Strictest path. Escalate uncertain issues for human review.
 
-### The Steward
+### Interpret the Decision
 
-Validates business alignment, scope boundaries, and software development lifecycle (SDLC) documentation. It ensures changes stay within the scope of work and meet defined acceptance criteria.
-
-### The Governor
-
-Evaluates legal compliance, privacy risks, intellectual property (IP), licensing, and security policies. It flags high-risk regulatory or legal matters for manual human review and does not provide formal legal advice.
+| Decision | Meaning | User Action |
+|---|---|---|
+| **APPROVED** | Work can proceed | Let the conductor route the task |
+| **ADVISORY_ONLY** | Advice given, exploration unblocked | Continue brainstorming or prototyping freely |
+| **REVISION_REQUIRED** | More context or correction is needed | Add missing details and resubmit |
+| **BLOCKED** | Work should not proceed as requested | Resolve the blocking issue first |
+| **NOT_APPLICABLE** | Governance check is not needed | Continue with the fast path |
 
 ---
 
-## The Amalgam Conductor
+## Governance Authorities and Specialist Skills
 
-The Amalgam Conductor operates in the Orchestration Layer. Once governance clearance is granted:
-- It defines execution steps and establishes architectural boundaries.
-- It sequences actions to prevent multi-file conflicts and overlapping agent reviews.
-- It routes implementation tasks to the correct specialized skills.
+### Governance Authorities
 
-## Specialist Skills
+| Authority | Focus |
+|---|---|
+| **The Steward** | Business alignment, scope boundaries, and software development lifecycle (SDLC) documentation. |
+| **The Governor** | Evaluates legal compliance, privacy risks, intellectual property (IP), licensing, and security policies. |
+
+### Specialist Skills
 
 | Skill | Focus |
 |---|---|
 | **Amalgam Conductor** | Routing and orchestration |
-| **The Steward** | Business, scope, SDLC, and requirements alignment |
-| **The Governor** | Privacy, IP, licensing, compliance, and legal-risk review |
 | **Clockwork Meister** | Architecture, OOP, refactoring |
 | **Cloak Meister** | UI, UX, layout, accessibility |
 | **Scribe Meister** | Documentation and technical writing |
@@ -340,17 +137,87 @@ git clone https://github.com/Baelfyre/amalgam-conductor.git
 
 For manual configurations or environment setup details, see the [Installation Guide](docs/setup/INSTALLATION.md).
 
+---
 
+## Quick Start Usage
+
+### 1. Start with a project context
+
+The governance layer does not assume what rules apply. Provide enough context for The Steward and The Governor to know what they are reviewing.
+
+Minimum context:
+- **Project Type**: e.g., open-source repo, internal tool
+- **Goal**: What the task should accomplish
+- **Release Target**: e.g., local only, public release
+- **Data Use**: e.g., no user data, sensitive data
+- **Dependencies**: e.g., libraries, assets
+- **Constraints**: e.g., files to preserve, style rules
+
+### 2. Use the standard prompt pattern
+
+Add this template to the top of your request:
+
+```text
+[@ponytail] use amalgam-conductor for this task
+
+Project Context:
+Project Type:
+Goal:
+Release Target:
+Data Use:
+Dependencies or Third-Party Assets:
+Constraints:
+
+Task:
+Describe the work clearly.
+
+Requirements:
+- List what must be changed.
+- List what must be preserved.
+- List any rules the implementation must follow.
+
+Expected Output:
+Changed Files:
+Summary:
+Validation Results:
+Remaining Risks:
+Next Recommended Step:
+```
+
+### 3. Review the IDE output and Iterate
+
+Follow this feedback loop:
+1. Send the refined prompt to the IDE.
+2. Let the IDE inspect files and propose changes.
+3. Review changed files and validation results.
+4. Approve, revise, or ask for another iteration.
+5. Commit only after validation passes.
+
+> [!NOTE]
+> When unsure which specialist to use, start with **Amalgam Conductor**. It can route the task to the correct specialist. Use a specialist directly only when the task is narrow and obvious (e.g., UI only, QA only).
+
+---
+
+## Output Mode Behavior
+
+Output from Amalgam Conductor and its specialists automatically adapts to your intent:
+- **Compact mode** is the default for normal iterative tasks.
+- **Full mode** is used only when explicitly requested for formal audits, deep reviews, or comprehensive planning.
+- **Specialized modes** (like Diagram formats) are automatically selected when the artifact type is clear.
+- **Clarification** is only asked when output intent is ambiguous.
+
+---
 
 ## Token-Efficient Usage
 
 > [!TIP]
+> For best token efficiency:
 > - Start with a refined prompt.
-> - Provide only relevant context.
+> - Provide only relevant project context.
 > - Ask for changed files, summary, validation, risks, and next step.
-> - Use expanded governance only for medium-risk or high-risk work.
-> - Use fast path for typo fixes, formatting, and local documentation cleanup.
-> - Link to detailed governance docs instead of repeating them in README.
+> - Do not request expanded governance analysis unless the task is MEDIUM or HIGH risk.
+> - Use fast path for typo fixes, formatting edits, and local documentation cleanup.
+> - Link to detailed governance docs instead of repeating them in your prompt.
 
 ---
 
