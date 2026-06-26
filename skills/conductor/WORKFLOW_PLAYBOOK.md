@@ -11,7 +11,7 @@ Verify exact skill availability before routing. Replace capability labels with i
 - [OOP Refactor](#oop-refactor)
 - [Quality Review](#quality-review)
 - [Security and Privacy Review](#security-and-privacy-review)
-- [Dagger Gated Resilience](#hidden-dagger-gated-resilience)
+- [Dagger Gated Resilience](#dagger-gated-resilience)
 - [Documentation Cleanup](#documentation-cleanup)
 - [Final Submission Readiness](#final-submission-readiness)
 - [Portfolio Polish](#portfolio-polish)
@@ -45,7 +45,7 @@ Use when the repository or task is unfamiliar and the user wants orientation or 
 Use for layout, interaction, accessibility, responsiveness, JavaFX screens, or visual hierarchy.
 
 ### Required skills
-- `cloak-meister`; frontend, React, or JavaFX specialist only for implementation.
+- `cloak`; frontend, React, or JavaFX specialist only for implementation.
 
 ### Step-by-step execution
 1. Inspect the rendered artifact and relevant component or view files.
@@ -68,7 +68,7 @@ Use for layout, interaction, accessibility, responsiveness, JavaFX screens, or v
 Use for ERD, UML, sequence, architecture, deployment, or documentation diagrams.
 
 ### Required skills
-- `meister-weaver`; relevant domain specialist for semantic correctness; `cloak-meister` only for user-facing presentation or readability.
+- `weaver`; relevant domain specialist for semantic correctness; `cloak` only for user-facing presentation or readability.
 
 ### Step-by-step execution
 1. Identify diagram type, audience, scope, notation, and source of truth.
@@ -91,7 +91,7 @@ Use for ERD, UML, sequence, architecture, deployment, or documentation diagrams.
 Use for schema consistency, constraints, normalization, migrations, seed data, or live-data repair.
 
 ### Required skills
-- `meister-chronicler`; `acme-overseer`; `cipher-meister` when access or sensitive data is involved.
+- `chronicler`; `overseer`; `cipher` when access or sensitive data is involved.
 
 ### Step-by-step execution
 1. Determine whether the target is a design artifact, migration, seed, or live database.
@@ -114,7 +114,7 @@ Use for schema consistency, constraints, normalization, migrations, seed data, o
 Use when a demonstrated responsibility, coupling, cohesion, inheritance, or layering problem blocks change or testing.
 
 ### Required skills
-- Available Java/OOP or architecture specialist; `acme-overseer`.
+- Available Java/OOP or architecture specialist; `overseer`.
 
 ### Step-by-step execution
 1. Trace the affected use case through current classes.
@@ -137,7 +137,7 @@ Use when a demonstrated responsibility, coupling, cohesion, inheritance, or laye
 Use for QA, testing, test plans or cases, defects, regression, smoke tests, acceptance criteria, verification, validation, quality gates, or release readiness.
 
 ### Required skills
-- `acme-overseer`
+- `overseer`
 
 ### Step-by-step execution
 1. Identify the quality objective and available test evidence.
@@ -159,7 +159,7 @@ Use for QA, testing, test plans or cases, defects, regression, smoke tests, acce
 Use for security, privacy, data protection, authentication, authorization, RBAC, secrets, API or dependency risk, sensitive data, or secure SDLC review.
 
 ### Required skills
-- `cipher-meister`; add Codex Security only when source-level scanning is required.
+- `cipher`; add Codex Security only when source-level scanning is required.
 
 ### Step-by-step execution
 1. Identify protected assets, data, trust boundaries, and supplied evidence.
@@ -182,13 +182,13 @@ Use for security, privacy, data protection, authentication, authorization, RBAC,
 Recommend only for an explicitly requested adversarial test or a mature QA, staging, release-candidate, pre-production, or final-readiness project with high-risk gaps. Invoke only after the user chooses it and the safety gate passes.
 
 ### Required skills
-- `hidden-dagger`
+- `dagger`
 
 ### Recommended prerequisites
-- `acme-overseer` for normal QA coverage
-- `cipher-meister` for security/privacy risk
-- `meister-chronicler` for database constraints
-- `cloak-meister` for UI/frontend validation
+- `overseer` for normal QA coverage
+- `cipher` for security/privacy risk
+- `chronicler` for database constraints
+- `cloak` for UI/frontend validation
 
 ### Step-by-step execution
 1. Confirm project maturity, authorization, non-production isolation, scope, disposable data, backup, rollback, cleanup, and stop conditions.
@@ -213,7 +213,7 @@ Recommend only for an explicitly requested adversarial test or a mature QA, stag
 Use for README files, reports, design logs, handoffs, or project documentation.
 
 ### Required skills
-- `scribe-meister`; domain specialist for fact verification.
+- `scribe`; domain specialist for fact verification.
 
 ### Step-by-step execution
 1. Identify audience, rubric, and source of truth.
@@ -260,7 +260,7 @@ Use before formal submission, release handoff, or evaluation.
 Use when improving presentation, accessibility, project narrative, or demo readiness for a portfolio.
 
 ### Required skills
-- `cloak-meister`; frontend specialist; `scribe-meister` when project copy changes.
+- `cloak`; frontend specialist; `scribe` when project copy changes.
 
 ### Step-by-step execution
 1. Identify target audience and desired action.

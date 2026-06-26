@@ -13,10 +13,10 @@ Pressure-test invalid inputs and transaction rollback on our staging release can
 - Confirm authorization, production exclusion, disposable data, backup or rollback, side effects, cleanup, and stop conditions before invocation or execution.
 
 ## Minimal skill stack
-- `hidden-dagger`
+- `dagger`
 
 ## Recommended prerequisites
-- Add `acme-overseer`, `cipher-meister`, `meister-chronicler`, or `cloak-meister` only when ordinary review evidence is missing in that domain.
+- Add `overseer`, `cipher`, `chronicler`, or `cloak` only when ordinary review evidence is missing in that domain.
 
 ## Execution sequence
 1. Complete the safety gate and obtain approval.
@@ -27,4 +27,4 @@ Pressure-test invalid inputs and transaction rollback on our staging release can
 Do not route every prerequisite when the supplied evidence already defines the pressure-test targets.
 
 ## Final copy-paste prompt
-`Use $hidden-dagger to create a safety-gated invalid-input and transaction-rollback plan for this staging release candidate. Do not execute tests until I approve the scope and rollback plan.`
+`Use $dagger to create a safety-gated invalid-input and transaction-rollback plan for this staging release candidate. Do not execute tests until I approve the scope and rollback plan.`

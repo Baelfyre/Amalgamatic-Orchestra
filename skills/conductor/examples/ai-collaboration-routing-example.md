@@ -18,13 +18,13 @@
 - Expected output: Confirmed component and authorization boundaries.
 
 ### Cipher
-- Skill: `cipher-meister`; add Codex Security only for source-level vulnerability analysis.
+- Skill: `cipher`; add Codex Security only for source-level vulnerability analysis.
 - Why this skill is needed: Review tenant isolation, RBAC evidence, prompt inputs, privacy, and secrets handling.
 - When to use it: On the affected design and evidence; use a scanner on the affected diff only when requested.
 - Expected output: Evidence-based risks and defensive remediation.
 
 ### Cloak
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Why this skill is needed: Review workspace roles, agent status, errors, and collaboration flow.
 - When to use it: After boundaries are known and before UI implementation.
 - Expected output: UX flow and architecture-diagram review.
@@ -36,17 +36,17 @@
 - Output: Current-state architecture and required decisions.
 
 ### Step 2
-- Skill: `cipher-meister`
+- Skill: `cipher`
 - Task: Review authorization, tenant isolation, secrets, and privacy evidence in the affected scope.
 - Output: Validated security requirements.
 
 ### Step 3
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Task: Review the collaboration flow using confirmed roles and states.
 - Output: Prioritized UX findings.
 
 ### Step 4
-- Skill: `acme-overseer`
+- Skill: `overseer`
 - Task: Define tenant-isolation, concurrency, failure, and cancellation checks.
 - Output: Focused verification plan.
 
@@ -65,7 +65,7 @@
 ## Commands or Prompts to Run
 `Inspect the current workspace, tenant, agent, and event boundaries. Produce a current-state architecture review only; do not implement or add dependencies.`
 
-`Use $cipher-meister to review RBAC, tenant-isolation, secrets, and privacy evidence. Add a scoped Codex Security scan only if source-level vulnerability analysis is required.`
+`Use $cipher to review RBAC, tenant-isolation, secrets, and privacy evidence. Add a scoped Codex Security scan only if source-level vulnerability analysis is required.`
 
 ## Final Recommendation
 Resolve ownership and authorization first, then review UX and tests; do not start with UI implementation.

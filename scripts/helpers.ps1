@@ -94,3 +94,27 @@ function Parse-Frontmatter {
     }
     throw "Frontmatter not found in file: $Path"
 }
+
+function Test-WorkflowLocked {
+    $root = Get-ProjectRoot
+    $lockFile = Join-Path $root ".amalgam\lock.json"
+    if (-not (Test-Path -LiteralPath $lockFile)) {
+        return $false
+    }
+    try {
+        $lock = Get-Content -LiteralPath $lockFile -Raw | ConvertFrom-Json
+        $lockPid = $lock.pid
+        $timestamp = [DateTime]$lock.timestamp
+
+        $age = (Get-Date) - $timestamp
+        if ($age.TotalHours -ge 1) { return $false }
+
+        try {
+            $p = Get-Process -Id $lockPid -ErrorAction SilentlyContinue
+            if ($p) { return $true }
+        }
+        catch {}
+    }
+    catch {}
+    return $false
+}

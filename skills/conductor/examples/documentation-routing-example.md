@@ -12,13 +12,13 @@
 
 ## Recommended Skill Stack
 ### Scribe
-- Skill: `scribe-meister`.
+- Skill: `scribe`.
 - Why this skill is needed: Align structure, setup instructions, evidence, and rubric coverage.
 - When to use it: After technical claims are verified.
 - Expected output: Focused README and design-log edits.
 
 ### Weaver
-- Skill: `meister-weaver`, only if diagrams are in scope.
+- Skill: `weaver`, only if diagrams are in scope.
 - Why this skill is needed: Check diagram notation, clarity, and consistency with the documented architecture.
 - When to use it: Only for named diagrams.
 - Expected output: Diagram findings or corrected guidance.
@@ -30,12 +30,12 @@
 - Output: Fact checklist.
 
 ### Step 2
-- Skill: `scribe-meister`
+- Skill: `scribe`
 - Task: Update only rubric-relevant sections using verified facts.
 - Output: Concise documentation diff.
 
 ### Step 3
-- Skill: `meister-weaver`, if required
+- Skill: `weaver`, if required
 - Task: Review named diagrams against confirmed architecture.
 - Output: Diagram corrections.
 
@@ -55,4 +55,4 @@
 `Review README.md, the design log, and the submission rubric. Verify every technical claim against the current project, edit only required sections, and do not add local Codex instructions or new auxiliary documentation.`
 
 ## Final Recommendation
-Use `scribe-meister` after factual verification; add diagram review only if the rubric requires it.
+Use `scribe` after factual verification; add diagram review only if the rubric requires it.

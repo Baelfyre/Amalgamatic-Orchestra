@@ -94,7 +94,7 @@ Use only the sections relevant to the selected review mode. Unchecked items are 
 - [ ] Prioritize debt affecting tasks, accessibility, responsiveness, or change cost.
 
 ## Specialist Handoff
-- [ ] Route diagram semantics and modeling to `meister-weaver`.
-- [ ] Route database design and SQL to `meister-chronicler`.
-- [ ] Route project documentation audits to `scribe-meister`.
-- [ ] Use `amalgam-conductor` when the smallest specialist stack is unclear.
+- [ ] Route diagram semantics and modeling to `weaver`.
+- [ ] Route database design and SQL to `chronicler`.
+- [ ] Route project documentation audits to `scribe`.
+- [ ] Use `conductor` when the smallest specialist stack is unclear.

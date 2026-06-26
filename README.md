@@ -163,7 +163,7 @@ Minimum context:
 Add this template to the top of your request:
 
 ```text
-[@ponytail] use amalgam-conductor for this task
+[@ponytail] use conductor for this task
 
 Project Context:
 Project Type:

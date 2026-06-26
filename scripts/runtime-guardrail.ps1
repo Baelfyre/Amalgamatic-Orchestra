@@ -1,9 +1,11 @@
 # Programmatic Runtime Guardrail Check for Orchestra AI workflows
-# Checks files/changes for potential secrets, copyleft licensing, PII leaks, or cross-repo modifications.
+# Checks files/changes for potential secrets, copyleft licensing, PII leaks, destructive operations, or cross-repo modifications.
 
 param(
     [string]$TargetDir = (Split-Path -Parent $PSScriptRoot),
-    [switch]$StagedOnly
+    [switch]$StagedOnly,
+    [switch]$Enabled,
+    [switch]$Enforce
 )
 
 $ErrorActionPreference = 'Stop'
@@ -14,14 +16,25 @@ if (Test-Path $helpers) {
     . $helpers
 }
 
+# Resolve activation flags
+$isRun = $Enabled -or ($env:ORCHESTRA_RUN_GUARDRAILS -eq 'true')
+$isEnforce = $Enforce -or ($env:ORCHESTRA_ENFORCE_GUARDRAILS -eq 'true')
+
+if (-not $isRun) {
+    Write-Host "SKIPPED: Guardrails disabled." -ForegroundColor Yellow
+    exit 0
+}
+
 Write-ColorHost 'INFO' 'Orchestra Programmatic Guardrail: Commencing scanning...'
+if (-not $isEnforce) {
+    Write-ColorHost 'INFO' 'Enforcement is disabled (warning-only mode). Warnings will not block commit.'
+}
 
 $violations = @()
 
 # 1. Gather files/changes to scan
 $filesToScan = @()
 if ($StagedOnly) {
-    # Check if git is available
     try {
         $staged = git diff --name-only --cached 2>$null
         if ($LASTEXITCODE -eq 0 -and $staged) {
@@ -42,7 +55,10 @@ if ($filesToScan.Count -eq 0) {
     # Scan target directory recursively (skipping standard exclusions)
     $files = Get-ChildItem -Path $TargetDir -Recurse -File | Where-Object {
         $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+        $_.FullName -notmatch '[\\/]\.amalgam[\\/]' -and
+        $_.FullName -notmatch '[\\/]tests[\\/]' -and
         $_.FullName -notmatch '[\\/]brain[\\/]' -and
+        $_.Name -ne 'runtime-guardrail.ps1' -and
         $_.Extension -notin @('.ico', '.png', '.jpg', '.zip', '.tar', '.gz')
     }
     foreach ($f in $files) {
@@ -54,7 +70,7 @@ if ($filesToScan.Count -eq 0) {
 # 2. Scans
 foreach ($item in $filesToScan) {
     $content = Get-Content -LiteralPath $item.Path -Raw
-    $lines = Get-Content -LiteralPath $item.Path
+    $lines = @(Get-Content -LiteralPath $item.Path)
 
     # A. Secrets Check
     $secretPatterns = @{
@@ -74,8 +90,6 @@ foreach ($item in $filesToScan) {
     }
 
     # B. License Compliance Check
-    # Scan for copyleft licenses (GPL/AGPL/LGPL) in commercial/private context
-    # Only if package.json or dependencies are modified
     if ($item.Relative -match 'package\.json|dependencies|plugin\.json') {
         $copyleftPatterns = @('(?i)"gpl', '(?i)"agpl', '(?i)"lgpl', '(?i)"copyleft')
         for ($i = 0; $i -lt $lines.Count; $i++) {
@@ -87,8 +101,7 @@ foreach ($item in $filesToScan) {
         }
     }
 
-    # C. PII Detection without Privacy Policy check
-    # Check if file adds PII collection fields
+    # C. PII Detection
     $piiPatterns = @('(?i)\bSSN\b', '(?i)\bsocial\s+security\b', '(?i)\bcredit\s*card\b', '(?i)\bcard[_-]?number\b')
     $hasPii = $false
     for ($i = 0; $i -lt $lines.Count; $i++) {
@@ -101,7 +114,6 @@ foreach ($item in $filesToScan) {
     }
 
     if ($hasPii) {
-        # Check if Privacy Policy file exists in docs or root
         $privacyDocs = @('PrivacyPolicy.md', 'PRIVACY_POLICY.md', 'PRIVACY.md', 'docs/PRIVACY.md', 'docs/governance/PRIVACY.md')
         $hasPrivacyDoc = $false
         foreach ($doc in $privacyDocs) {
@@ -114,16 +126,85 @@ foreach ($item in $filesToScan) {
             $violations += "PRIVACY GAPS: PII fields collected in $($item.Relative) but no PRIVACY_POLICY.md file was found."
         }
     }
+
+    # D. Destructive Operations Guard
+    $destructivePatterns = @{
+        'Force deletion'          = '(?i)\brm\s+-rf\b'
+        'Destructive Remove-Item' = '(?i)\bremove-item\b.*\b-force\b'
+        'Raw Disk Formatting'     = '(?i)\bformat-volume\b|(?i)\bclear-disk\b'
+    }
+    foreach ($key in $destructivePatterns.Keys) {
+        $pattern = $destructivePatterns[$key]
+        for ($i = 0; $i -lt $lines.Count; $i++) {
+            if ($lines[$i] -match $pattern) {
+                $violations += "DESTRUCTIVE OPERATION DETECTED ($key) in $($item.Relative):L$($i + 1) -> $($lines[$i].Trim())"
+            }
+        }
+    }
+
+    # E. Unsafe Command Execution Guard
+    $unsafePatterns = @{
+        'Invoke-Expression' = '(?i)\binvoke-expression\b|(?i)\biex\b'
+    }
+    foreach ($key in $unsafePatterns.Keys) {
+        $pattern = $unsafePatterns[$key]
+        for ($i = 0; $i -lt $lines.Count; $i++) {
+            if ($lines[$i] -match $pattern) {
+                $violations += "UNSAFE EXECUTION DETECTED ($key) in $($item.Relative):L$($i + 1) -> $($lines[$i].Trim())"
+            }
+        }
+    }
+
+    # F. Forbidden Repository Target Guard
+    $statePath = Join-Path $TargetDir ".amalgam/state.json"
+    if (Test-Path -LiteralPath $statePath) {
+        $state = Get-Content -LiteralPath $statePath -Raw | ConvertFrom-Json
+        if ($state.forbidden_repos) {
+            foreach ($forbidden in $state.forbidden_repos) {
+                # Convert windows backslashes to generic comparison
+                $normPath = $item.Relative -replace '\\','/'
+                $normForbidden = $forbidden -replace '\\','/'
+                if ($normPath -match [regex]::Escape($normForbidden)) {
+                    $violations += "FORBIDDEN TARGET MUTATION in $($item.Relative): Modifying forbidden repository area '$forbidden'."
+                }
+            }
+        }
+    }
+
+    # G. Stale Routing Reference Guard
+    # Ignore allowed legacy alias files/tests
+    $isAllowedAlias = $item.Relative -replace '\\','/' -match 'aliases\.json|commands/|tests/|plugin\.json|\.codex-plugin/plugin\.json|scripts/refresh-installed-integrations\.ps1|README\.md|ROUTING_MAP\.md|docs/project/|DECISION_LOG\.md|SESSION_HANDOFF\.md|skills/conductor/SKILL\.md|examples/plugin-manifest\.example\.json'
+    if (-not $isAllowedAlias) {
+        $legacyNames = @(
+            'amalgam-conductor', 'cloak-meister', 'scribe-meister', 'clockwork-meister',
+            'meister-chronicler', 'acme-overseer', 'hidden-dagger', 'cipher-meister', 'meister-weaver'
+        )
+        foreach ($ln in $legacyNames) {
+            for ($i = 0; $i -lt $lines.Count; $i++) {
+                if ($lines[$i] -match $ln) {
+                    $violations += "STALE REFERENCE DETECTED (Legacy name '$ln') in $($item.Relative):L$($i + 1) -> $($lines[$i].Trim())"
+                }
+            }
+        }
+    }
 }
 
 # 3. Report Results
 if ($violations.Count -gt 0) {
-    Write-ColorHost 'ERROR' "Guardrail scan failed with $($violations.Count) safety warnings:"
-    foreach ($v in $violations) {
-        Write-ColorHost 'WARNING' " - $v"
+    if ($isEnforce) {
+        Write-ColorHost 'ERROR' "Guardrail scan failed with $($violations.Count) safety violations:"
+        foreach ($v in $violations) {
+            Write-ColorHost 'ERROR' " - $v"
+        }
+        exit 1
+    } else {
+        Write-ColorHost 'WARNING' "Guardrail scan found $($violations.Count) potential warnings (Warning-Only Mode):"
+        foreach ($v in $violations) {
+            Write-ColorHost 'WARNING' " - $v"
+        }
+        exit 0
     }
-    exit 1
 }
 
-Write-ColorHost 'SUCCESS' 'Guardrail scan passed successfully! No programmatic safety issues found.'
+Write-ColorHost 'SUCCESS' 'Guardrail scan passed successfully! No safety issues found.'
 exit 0

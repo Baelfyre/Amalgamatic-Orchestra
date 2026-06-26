@@ -12,7 +12,7 @@
 
 ## Recommended Skill Stack
 ### Cloak
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Why this skill is needed: Define discoverability, keyboard, motion, and responsive expectations.
 - When to use it: First, scoped to navbar behavior.
 - Expected output: Small set of evidence-backed interaction requirements.
@@ -25,7 +25,7 @@
 
 ## Execution Sequence
 ### Step 1
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Task: Review navbar hide and reveal behavior only.
 - Output: Interaction, accessibility, and mobile requirements.
 
@@ -35,7 +35,7 @@
 - Output: Scoped patch.
 
 ### Step 3
-- Skill: `acme-overseer` when QA evidence is required, otherwise direct project checks
+- Skill: `overseer` when QA evidence is required, otherwise direct project checks
 - Task: Run the existing build and inspect representative desktop and mobile widths.
 - Output: Build and behavior evidence.
 
@@ -52,7 +52,7 @@
 - Approval required: Staging, commit, push, or PR.
 
 ## Commands or Prompts to Run
-`Use $cloak-meister to review the navbar hide and top-edge reveal behavior across desktop and mobile. Preserve existing links and layout; return only confirmed issues and implementation guidance.`
+`Use $cloak to review the navbar hide and top-edge reveal behavior across desktop and mobile. Preserve existing links and layout; return only confirmed issues and implementation guidance.`
 
 `Implement the approved navbar behavior using existing React and CSS patterns. Do not add dependencies or change unrelated components. Run the repository build afterward.`
 

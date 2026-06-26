@@ -6,4 +6,4 @@
 4. Reuse native controls, current components, and existing tokens before adding code or dependencies.
 5. Verify build output and representative interaction states after implementation.
 
-Route system diagrams to `meister-weaver`, database semantics to `meister-chronicler`, normal QA to `acme-overseer`, and destructive guardrail pressure testing to gated `hidden-dagger`.
+Route system diagrams to `weaver`, database semantics to `chronicler`, normal QA to `overseer`, and destructive guardrail pressure testing to gated `dagger`.

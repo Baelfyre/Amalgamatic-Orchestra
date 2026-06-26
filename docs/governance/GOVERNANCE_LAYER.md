@@ -119,7 +119,7 @@ To interact with the governance layer, requests must be structured to explicitly
 ### 2. Standard Prompt Pattern
 
 ```text
-[@ponytail] use amalgam-conductor for this task
+[@ponytail] use conductor for this task
 
 Project Context:
 Project Type:

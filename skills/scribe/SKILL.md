@@ -87,6 +87,22 @@ Act as a specialist routed by `conductor`.
 - If diagrams are needed, route to **Weaver**.
 - For short database summaries: If the database changes are already known, route directly to Scribe. If the database changes need verification or analysis, route to **Chronicler** first.
 
+## Fallback Documentation & Mode-Based Placeholder Rules
+
+Apply the following evidence verification and fallback rules depending on the active operating mode:
+
+### 1. Release Mode & Audit Mode (Strict Evidence Enforced)
+- **Rule**: All documented claims must have verifying source evidence (source files, code entities, actual schemas, or validated results).
+- **Fallback**: If source evidence is missing or cannot be verified, Scribe must **stop immediately**, report the missing evidence to the Conductor, and request clarification. Scribe must **not** generate placeholder text or speculative descriptions.
+
+### 2. Ideation Mode & Prototype Mode (Flexible Placeholders Allowed)
+- **Rule**: Placeholder text and draft documentation are permitted when source evidence is not yet implemented or fully defined.
+- **Enforcement**: All placeholders, draft sections, or unverified claims must be explicitly tagged with a standardized label:
+  - `[DRAFT]` - for incomplete prose or draft sections.
+  - `[NEEDS SOURCE]` - for claims that require code/source files to verify later.
+  - `[PENDING VALIDATION]` - for documentation describing untested or unvalidated components.
+- Do not halt execution when these labels are used in Ideation or Prototype modes.
+
 ## Local-only and approval safety
 
 - Keep skill files, prompts, and audit notes local unless repository tracking is explicitly approved.

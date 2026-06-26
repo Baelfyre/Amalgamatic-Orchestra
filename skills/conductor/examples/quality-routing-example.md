@@ -7,7 +7,7 @@ Review our release-candidate test plan and decide whether it is ready for regres
 - Test plan, acceptance criteria, prior defect list, and release-candidate status
 
 ## Minimal skill stack
-- `acme-overseer`
+- `overseer`
 
 ## Execution sequence
 1. Review requirements testability and test-case evidence.
@@ -18,4 +18,4 @@ Review our release-candidate test plan and decide whether it is ready for regres
 Do not add Dagger because destructive or adversarial testing was not requested.
 
 ## Final copy-paste prompt
-`Use $acme-overseer to audit this release-candidate test plan, acceptance criteria, defect evidence, regression coverage, and release readiness. Do not invent test results.`
+`Use $overseer to audit this release-candidate test plan, acceptance criteria, defect evidence, regression coverage, and release readiness. Do not invent test results.`

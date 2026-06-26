@@ -57,6 +57,13 @@ The following gates must be enforced across all orchestration, to prevent contex
 - Final output must be findings and fix plan only.
 - Acme must verify `git status` did not change after audit-only tasks.
 
+### 4. Conductor Scalability (Bounded Task Packets)
+**Trigger:** Routing to any specialist execution skill.
+**Behavior:**
+- Divide large requirements into small, discrete task packets.
+- Define a clear, bounded scope for the specialist's target output.
+- Do not detail the code syntax, database columns, or implementation instructions. Delegate the design and syntax choices to the specialist.
+
 ## Lightweight Memory and Token Control
 
 At the start of a repository task, check for `SESSION_HANDOFF.md`, `PROJECT_STATE.md`, or `.amalgam/state.json` in the target repository.

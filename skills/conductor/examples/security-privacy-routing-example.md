@@ -7,7 +7,7 @@ Review authentication, RBAC documentation, API secrets handling, and personal-da
 - Authentication and authorization evidence, credentials, sensitive data, and retention rules
 
 ## Minimal skill stack
-- `cipher-meister`
+- `cipher`
 
 ## Optional secondary skill
 - Add Codex Security only when source-level implementation scanning is required.
@@ -21,4 +21,4 @@ Review authentication, RBAC documentation, API secrets handling, and personal-da
 Do not run both evidence review and code scanning unless both outputs are required.
 
 ## Final copy-paste prompt
-`Use $cipher-meister to review authentication, RBAC, API secrets, and personal-data retention evidence. Provide defensive findings only and mark missing evidence.`
+`Use $cipher to review authentication, RBAC, API secrets, and personal-data retention evidence. Provide defensive findings only and mark missing evidence.`

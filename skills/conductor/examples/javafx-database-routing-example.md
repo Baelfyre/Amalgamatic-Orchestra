@@ -12,7 +12,7 @@
 
 ## Recommended Skill Stack
 ### Cloak
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Why this skill is needed: Review the JavaFX field layout and focus behavior.
 - When to use it: First, limited to the employee editor.
 - Expected output: Confirmed UI findings and the smallest layout correction.
@@ -24,14 +24,14 @@
 - Expected output: Evidence-backed persistence finding or bounded patch.
 
 ### Overseer
-- Skill: `acme-overseer`.
+- Skill: `overseer`.
 - Why this skill is needed: Compile and run focused UI or persistence checks.
 - When to use it: After implementation.
 - Expected output: Build and smoke-test evidence.
 
 ## Execution Sequence
 ### Step 1
-- Skill: `cloak-meister`
+- Skill: `cloak`
 - Task: Review only the employee editor layout and accessibility.
 - Output: Scoped layout recommendation.
 
@@ -41,7 +41,7 @@
 - Output: Minimal code change with evidence.
 
 ### Step 3
-- Skill: `acme-overseer`
+- Skill: `overseer`
 - Task: Compile and run the narrowest existing persistence smoke test.
 - Output: Pass/fail results and remaining risk.
 
@@ -58,7 +58,7 @@
 - Approval required: Staging, commit, push, PR, or live-data mutation.
 
 ## Commands or Prompts to Run
-`Use $cloak-meister to review only the EmployeeEditorDialog contact and employment-status layout. Preserve the existing JavaFX theme and report confirmed findings before editing.`
+`Use $cloak to review only the EmployeeEditorDialog contact and employment-status layout. Preserve the existing JavaFX theme and report confirmed findings before editing.`
 
 `Review the employment-status update path from controller through repository. Make the smallest safe fix, do not change schema or seed files, then compile and run the existing focused smoke test.`
 
