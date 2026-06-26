@@ -277,6 +277,23 @@ Prioritize:
 
 Commit this file only if the repository should permanently share these AI instructions.
 
+#### Optional: Agentic Skill Installer Extension
+
+VS Code users may optionally use the **Agentic Skill Installer** extension to browse, install, and update Orchestra skills, prompts, and agents from GitHub repositories directly inside VS Code.
+
+Basic setup flow:
+
+```text
+1. Install the Agentic Skill Installer extension from the VS Code Marketplace.
+2. Open the Agentic Skill Installer panel from the VS Code Activity Bar.
+3. Click Install Source Repository or Add Source Repository.
+4. Paste the Orchestra repository URL:
+   https://github.com/Baelfyre/Orchestra
+5. Let the extension scan the repository and load the available skills / agents.
+6. Install or use only the skills needed for the active workspace.
+7. Run git status before committing to confirm no local-only skill files were added unintentionally.
+```
+
 ---
 
 ### IntelliJ / JetBrains IDE Setup
@@ -353,6 +370,14 @@ Check whether the AI host supports repo instructions, skill folders, or plugins.
 Do not assume all IDEs use the same plugin model. Antigravity uses a global plugin model, Codex uses repo-local skills, and most traditional IDEs use extension-specific instructions.
 
 For manual configurations or environment setup details, see the [Installation Guide](docs/setup/INSTALLATION.md).
+
+---
+
+### Ponytail and Caveman Notice
+
+Ponytail and Caveman are external tools. They are not included, vendored, or required by Orchestra. Install them separately from their official repositories if desired.
+
+Orchestra may reference Ponytail and Caveman as workflow companions for focused implementation and compressed communication, but they remain separate from the Orchestra plugin and skill package.
 
 ---
 
