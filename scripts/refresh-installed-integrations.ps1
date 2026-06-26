@@ -1,3 +1,6 @@
+# Refresh Installed Integrations (Refactored)
+# Uses shared helper functions.
+
 param(
     [ValidateSet('Antigravity', 'Codex', 'All')]
     [string]$Target = 'All',
@@ -9,7 +12,13 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$Root = Split-Path -Parent $PSScriptRoot
+# Import shared helpers
+$helpersPath = Join-Path $PSScriptRoot 'helpers.ps1'
+if (Test-Path $helpersPath) {
+    . $helpersPath
+}
+
+$Root = Get-ProjectRoot
 $structureValidator = Join-Path $Root 'scripts\validate-structure.ps1'
 $manifestValidator = Join-Path $Root 'scripts\validate-manifest.ps1'
 $codexInstaller = Join-Path $Root 'adapters\codex\install-to-repo.ps1'
@@ -22,7 +31,7 @@ function Invoke-RequiredCommand {
         [string[]]$Arguments
     )
 
-    Write-Output "> $Command $($Arguments -join ' ')"
+    Write-ColorHost 'INFO' "> $Command $($Arguments -join ' ')"
     & $Command @Arguments
 
     if (-not $?) {
@@ -31,7 +40,7 @@ function Invoke-RequiredCommand {
 }
 
 function Invoke-PreRefreshValidation {
-    Write-Output "Running pre-refresh validation..."
+    Write-ColorHost 'INFO' "Running pre-refresh validation..."
 
     if (-not (Test-Path -LiteralPath $structureValidator -PathType Leaf)) {
         throw "Missing validator: $structureValidator"
@@ -41,34 +50,43 @@ function Invoke-PreRefreshValidation {
         throw "Missing validator: $manifestValidator"
     }
 
-    & powershell -ExecutionPolicy Bypass -File $structureValidator
+    $psExe = (Get-Process -Id $PID).Path
+    & $psExe -ExecutionPolicy Bypass -File $structureValidator
     if (-not $?) {
         throw "Structure validation failed."
     }
 
-    & powershell -ExecutionPolicy Bypass -File $manifestValidator
+    & $psExe -ExecutionPolicy Bypass -File $manifestValidator
     if (-not $?) {
         throw "Manifest validation failed."
     }
 
-    Write-Output "Pre-refresh validation passed."
+    Write-ColorHost 'SUCCESS' "Pre-refresh validation passed."
 }
 
 function Refresh-Antigravity {
-    Write-Output "Refreshing Antigravity plugin..."
+    Write-ColorHost 'INFO' "Refreshing Antigravity plugin..."
 
     try {
-        & agy plugin uninstall $pluginName
-        Write-Output "Existing Antigravity plugin uninstalled."
+        & agy plugin uninstall 'amalgam-conductor'
+        Write-ColorHost 'SUCCESS' "Existing legacy Antigravity plugin uninstalled."
     }
     catch {
-        Write-Warning "Uninstall failed or plugin was not installed. Continuing with install."
+        Write-ColorHost 'WARNING' "Legacy uninstall failed or plugin was not installed."
+    }
+
+    try {
+        & agy plugin uninstall 'conductor'
+        Write-ColorHost 'SUCCESS' "Existing Antigravity plugin uninstalled."
+    }
+    catch {
+        Write-ColorHost 'WARNING' "Uninstall failed or plugin was not installed. Continuing with install."
     }
 
     Invoke-RequiredCommand -Command 'agy' -Arguments @('plugin', 'install', $pluginUrl)
     Invoke-RequiredCommand -Command 'agy' -Arguments @('plugin', 'list')
 
-    Write-Output "Antigravity refresh complete."
+    Write-ColorHost 'SUCCESS' "Antigravity refresh complete."
 }
 
 function Refresh-Codex {
@@ -84,16 +102,16 @@ function Refresh-Codex {
         throw "Codex installer not found: $codexInstaller"
     }
 
-    Write-Output "Refreshing Codex skills into: $CodexRepoPath"
+    Write-ColorHost 'INFO' "Refreshing Codex skills into: $CodexRepoPath"
 
     $args = @('-ExecutionPolicy', 'Bypass', '-File', $codexInstaller, '-TargetRepo', $CodexRepoPath)
     if ($Force) {
         $args += '-Force'
     }
 
-    Invoke-RequiredCommand -Command 'powershell' -Arguments $args
+    Invoke-RequiredCommand -Command (Get-Process -Id $PID).Path -Arguments $args
 
-    Write-Output "Codex refresh complete."
+    Write-ColorHost 'SUCCESS' "Codex refresh complete."
 }
 
 Invoke-PreRefreshValidation
@@ -113,4 +131,4 @@ switch ($Target) {
     }
 }
 
-Write-Output "Refresh complete for target: $Target"
+Write-ColorHost 'SUCCESS' "Refresh complete for target: $Target"

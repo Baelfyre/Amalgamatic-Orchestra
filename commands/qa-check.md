@@ -1,11 +1,11 @@
 ---
 name: qa-check
-description: "Review test strategy, test cases, defect triage, regression, and release readiness."
+description: "DEPRECATED: Legacy alias for Overseer review. Please use /overseer instead."
 ---
-# QA Check Command
+# QA Check Command Alias
 
-You are now invoking the Overseer specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Overseer review. Load and follow the exact instructions defined here:
 
-**[skills/acme-overseer/SKILL.md](../skills/acme-overseer/SKILL.md)**
+**[skills/overseer/SKILL.md](../skills/overseer/SKILL.md)**
 
-Assess quality gates, test completeness, and validation evidence without destructive pressure.
+Review testing plans, verify logs, and assess CI pipeline validity.

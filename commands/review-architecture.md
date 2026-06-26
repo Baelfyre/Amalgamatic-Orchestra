@@ -1,11 +1,11 @@
 ---
 name: review-architecture
-description: "Review OOP architecture, layered architecture, system design, structural refactoring, and SOLID principles."
+description: "DEPRECATED: Legacy alias for Clockwork review. Please use /clockwork instead."
 ---
-# Review Architecture Command
+# Review Architecture Command Alias
 
-You are now invoking the Clockwork specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Clockwork review. Load and follow the exact instructions defined here:
 
-**[skills/clockwork-meister/SKILL.md](../skills/clockwork-meister/SKILL.md)**
+**[skills/clockwork/SKILL.md](../skills/clockwork/SKILL.md)**
 
 Apply strict code structure, dependency flow, and OOP architectural discipline.

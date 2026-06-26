@@ -1,11 +1,14 @@
 param()
 
 $codexSkillsDir = Join-Path $PSScriptRoot "skills"
-$skills = @(
-    'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
-    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
-    'clockwork-meister'
-)
+$SourceRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+$manifestPath = Join-Path $SourceRoot "plugin.json"
+if (-not (Test-Path $manifestPath)) {
+    Write-Error "plugin.json not found at $manifestPath"
+    exit 1
+}
+$manifest = Get-Content -Raw -Path $manifestPath | ConvertFrom-Json
+$skills = $manifest.skills | Where-Object { $_.activation_level -ne 'Governor' } | Select-Object -ExpandProperty slug
 
 $errors = 0
 
@@ -55,10 +58,10 @@ foreach ($skill in $skills) {
         $errors++
     }
 
-    if ($skill -eq 'amalgam-conductor') {
+    if ($skill -eq 'conductor') {
         $mapFile = Join-Path $skillDir "ROUTING_MAP.md"
         if (-not (Test-Path $mapFile)) {
-            Write-Error "Missing ROUTING_MAP.md in exported amalgam-conductor"
+            Write-Error "Missing ROUTING_MAP.md in exported conductor"
             $errors++
         }
     }

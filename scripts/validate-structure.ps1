@@ -1,6 +1,19 @@
+# Re-architected Structure Validator Script
+# Uses single source of truth (plugin.json) for active skills and commands, and shared helper functions.
+
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
+
+$ErrorActionPreference = 'Stop'
+
+# Import shared helpers
+$helpersPath = Join-Path $PSScriptRoot 'helpers.ps1'
+if (-not (Test-Path $helpersPath)) {
+    Write-Error "Helpers module missing at: $helpersPath"
+    exit 1
+}
+. $helpersPath
 
 $requiredRoot = @(
     'README.md',
@@ -25,24 +38,6 @@ $requiredRoot = @(
     'assets/logo/orchestra-of-amalgamation.ico'
 )
 
-$skills = @(
-    'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
-    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
-    'clockwork-meister','the-steward','the-governor'
-)
-
-# Governance skills use camelCase icon filenames
-$iconOverrides = @{
-    'the-steward'  = 'theSteward'
-    'the-governor' = 'theGovernor'
-}
-
-$commands = @(
-    'amalgam-conductor','review-architecture','review-ui','review-db',
-    'review-docs','diagram-check','qa-check','security-check',
-    'resilience-check'
-)
-
 $adapters = @('codex','vscode','antigravity','claude-code','local-ai')
 
 $templates = @(
@@ -57,58 +52,52 @@ $tests = @(
     'tests/behavior/GOVERNANCE_SCENARIOS.md'
 )
 
-function Test-ValidFile($Path) {
-    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
-        return $false
-    }
-
-    try {
-        $item = Get-Item -LiteralPath $Path -ErrorAction Stop
-    }
-    catch {
-        return $false
-    }
-
-    if ($item.Length -lt 10) {
-        return $false
-    }
-
-    return $true
-}
-
 $missing = [System.Collections.Generic.List[string]]::new()
 
+# Load manifest as single source of truth
+$manifest = Get-JsonManifest (Join-Path $Root 'plugin.json')
+$manifestSkills = $manifest.skills
+$manifestCommands = $manifest.commands
+
+Write-ColorHost 'INFO' 'Structure Validator: Verifying root repository files...'
 foreach ($file in $requiredRoot) {
-    if (-not (Test-ValidFile (Join-Path $Root $file))) {
+    if (-not (Test-FileNotEmpty (Join-Path $Root $file))) {
         $missing.Add($file)
     }
 }
 
-foreach ($skill in $skills) {
-    $path = Join-Path $Root "skills/$skill/SKILL.md"
-    if (-not (Test-ValidFile $path)) {
-        $missing.Add("skills/$skill/SKILL.md")
+Write-ColorHost 'INFO' 'Structure Validator: Verifying manifest-declared skills and assets...'
+foreach ($skill in $manifestSkills) {
+    # Verify SKILL.md exists
+    $skillMd = Join-Path $Root $skill.skill_path
+    if (-not (Test-FileNotEmpty $skillMd)) {
+        $missing.Add($skill.skill_path)
     }
 
-    $formatPath = Join-Path $Root "skills/$skill/OUTPUT_FORMATS.md"
-    if (-not (Test-ValidFile $formatPath)) {
-        $missing.Add("skills/$skill/OUTPUT_FORMATS.md")
+    # Verify OUTPUT_FORMATS.md exists in same directory
+    $skillFolder = Split-Path $skillMd -Parent
+    $formatsFile = Join-Path $skillFolder 'OUTPUT_FORMATS.md'
+    $formatsFileRelative = $formatsFile.Substring($Root.Length + 1)
+    if (-not (Test-FileNotEmpty $formatsFile)) {
+        $missing.Add($formatsFileRelative)
     }
 
-    $iconName = if ($iconOverrides.ContainsKey($skill)) { $iconOverrides[$skill] } else { $skill }
-    $icon = "assets/icons/$iconName.ico"
-    if (-not (Test-ValidFile (Join-Path $Root $icon))) {
-        $missing.Add($icon)
-    }
-}
-
-foreach ($command in $commands) {
-    $path = Join-Path $Root "commands/$command.md"
-    if (-not (Test-ValidFile $path)) {
-        $missing.Add("commands/$command.md")
+    # Verify icon_path exists
+    $iconPath = Join-Path $Root $skill.icon_path
+    if (-not (Test-FileNotEmpty $iconPath)) {
+        $missing.Add($skill.icon_path)
     }
 }
 
+Write-ColorHost 'INFO' 'Structure Validator: Verifying manifest-declared commands...'
+foreach ($command in $manifestCommands) {
+    $commandFile = "commands/$command.md"
+    if (-not (Test-FileNotEmpty (Join-Path $Root $commandFile))) {
+        $missing.Add($commandFile)
+    }
+}
+
+Write-ColorHost 'INFO' 'Structure Validator: Verifying adapters, templates and test configurations...'
 foreach ($adapter in $adapters) {
     $path = Join-Path $Root "adapters/$adapter"
     if (-not (Test-Path -LiteralPath $path -PathType Container)) {
@@ -118,22 +107,24 @@ foreach ($adapter in $adapters) {
 
 foreach ($template in $templates) {
     $path = Join-Path $Root "templates/$template"
-    if (-not (Test-ValidFile $path)) {
+    if (-not (Test-FileNotEmpty $path)) {
         $missing.Add("templates/$template")
     }
 }
 
 foreach ($test_file in $tests) {
     $path = Join-Path $Root $test_file
-    if (-not (Test-ValidFile $path)) {
+    if (-not (Test-FileNotEmpty $path)) {
         $missing.Add($test_file)
     }
 }
 
-if ($missing.Count) {
-    $missing | ForEach-Object { Write-Error "Missing or invalid: $_" }
+if ($missing.Count -gt 0) {
+    foreach ($m in $missing) {
+        Write-ColorHost 'ERROR' "Missing or invalid file: $m"
+    }
     exit 1
 }
 
-Write-Output "Structure valid: $($skills.Count) skills, $($commands.Count) commands, $($adapters.Count) adapters, $($templates.Count) templates, $($tests.Count) tests."
-Write-Output "Note: This script checks required file existence and rejects near-empty files. Run .\scripts\validate-manifest.ps1 to verify frontmatter-to-manifest consistency."
+Write-ColorHost 'SUCCESS' "Structure valid: $($manifestSkills.Count) skills, $($manifestCommands.Count) commands, $($adapters.Count) adapters, $($templates.Count) templates, $($tests.Count) tests verified."
+exit 0

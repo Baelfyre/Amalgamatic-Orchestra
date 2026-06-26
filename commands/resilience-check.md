@@ -1,14 +1,12 @@
 ---
 name: resilience-check
-description: "Perform destructive, negative, fuzz, adversarial QA, and failure-mode testing."
+description: "DEPRECATED: Legacy alias for Dagger review. Please use /dagger instead."
 ---
-# Resilience Check Command
+# Resilience Check Command Alias
 
-You are now invoking the Dagger specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Dagger review. Load and follow the exact instructions defined here:
 
-**[skills/hidden-dagger/SKILL.md](../skills/hidden-dagger/SKILL.md)**
+**[skills/dagger/SKILL.md](../skills/dagger/SKILL.md)**
 
 > [!CAUTION]
 > **GATED CAPABILITY:** Destructive, fuzz, adversarial, or failure-mode testing requires explicit user approval, non-production scope, and a safety gate before execution.
->
-> You MUST explicitly ask the user for authorization before performing these tests. Do not proceed in a production environment.

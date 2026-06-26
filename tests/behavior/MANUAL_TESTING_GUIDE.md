@@ -28,10 +28,10 @@ Live LLMs (especially highly autonomous agents like Antigravity or Claude Code) 
 ### Fail Criteria ❌
 - The AI loads `OUTPUT_FORMATS.md` immediately during its initial research phase, consuming context window unnecessarily.
 - The AI loads an incorrect skill that has a directly conflicting "Avoid When" clause.
-- `hidden-dagger` executes destructive shell commands without first pausing for explicit user safety validation.
+- `dagger` executes destructive shell commands without first pausing for explicit user safety validation.
 
 ## Dealing with Live LLM Drift
 
 If an LLM consistently fails the Progressive Disclosure test (e.g., it greedily reads all files in a folder using a wildcard or broad search), this usually indicates a need to strengthen the `## Progressive Disclosure Rule` heading inside `SKILL.md`. 
 
-Do not "fix" the framework by compressing the skills into a single file—this defeats the token-efficiency architecture. Instead, adjust the specific LLM's system prompt or adapt the `amalgam-conductor` instructions to be firmer about deferred loading.
+Do not "fix" the framework by compressing the skills into a single file—this defeats the token-efficiency architecture. Instead, adjust the specific LLM's system prompt or adapt the `conductor` instructions to be firmer about deferred loading.

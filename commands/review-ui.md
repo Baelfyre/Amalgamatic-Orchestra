@@ -1,11 +1,11 @@
 ---
 name: review-ui
-description: "Review UI, UX, accessibility, frontend architecture, and responsive layout."
+description: "DEPRECATED: Legacy alias for Cloak review. Please use /cloak instead."
 ---
-# Review UI Command
+# Review UI Command Alias
 
-You are now invoking the Cloak specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Cloak review. Load and follow the exact instructions defined here:
 
-**[skills/cloak-meister/SKILL.md](../skills/cloak-meister/SKILL.md)**
+**[skills/cloak/SKILL.md](../skills/cloak/SKILL.md)**
 
-Apply strict front-end, visual hierarchy, user experience, and accessibility standards.
+Review layouts, design consistency, responsiveness, and accessibility compliance.

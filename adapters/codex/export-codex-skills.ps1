@@ -3,11 +3,13 @@ param(
     [string]$TargetRoot = $PSScriptRoot
 )
 
-$skills = @(
-    'amalgam-conductor','cloak-meister','scribe-meister','meister-weaver',
-    'meister-chronicler','acme-overseer','cipher-meister','hidden-dagger',
-    'clockwork-meister'
-)
+$manifestPath = Join-Path $SourceRoot "plugin.json"
+if (-not (Test-Path $manifestPath)) {
+    Write-Error "plugin.json not found at $manifestPath"
+    exit 1
+}
+$manifest = Get-Content -Raw -Path $manifestPath | ConvertFrom-Json
+$skills = $manifest.skills | Where-Object { $_.activation_level -ne 'Governor' } | Select-Object -ExpandProperty slug
 
 $targetSkillsDir = Join-Path $TargetRoot "skills"
 if (-not (Test-Path $targetSkillsDir)) {
@@ -39,8 +41,8 @@ foreach ($skill in $skills) {
     $bodyMatch = [regex]::Match($content, '(?s)^---.*?---(.*)$')
     $body = if ($bodyMatch.Success) { $bodyMatch.Groups[1].Value } else { "" }
 
-    # Ensure amalgam-conductor refers to local ROUTING_MAP.md instead of ../../
-    if ($skill -eq 'amalgam-conductor') {
+    # Ensure conductor refers to local ROUTING_MAP.md instead of ../../
+    if ($skill -eq 'conductor') {
         $body = $body -replace '\.\./\.\./ROUTING_MAP\.md', './ROUTING_MAP.md'
     }
 
@@ -61,8 +63,8 @@ description: $desc
         Copy-Item -Path $sourceOutFile -Destination $targetOutFile -Force
     }
 
-    # 3. For amalgam-conductor, copy ROUTING_MAP.md
-    if ($skill -eq 'amalgam-conductor') {
+    # 3. For conductor, copy ROUTING_MAP.md
+    if ($skill -eq 'conductor') {
         $sourceRouting = Join-Path $SourceRoot "ROUTING_MAP.md"
         $targetRouting = Join-Path $targetDir "ROUTING_MAP.md"
         if (Test-Path $sourceRouting) {

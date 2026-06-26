@@ -1,143 +1,208 @@
 {
-    "_notice":  "EXAMPLE ONLY. This framework is Markdown-first. Plugin support does not currently exist.",
-    "skills":  [
-                   {
-                       "primary_use":  "Test strategy, test cases, defect triage, regression, release readiness",
-                       "slug":  "acme-overseer",
-                       "description":  "Review quality assurance, test strategy and plans, test cases, acceptance criteria, requirements testability, unit/integration/system/user-acceptance testing, smoke and regression planning, defect triage, verification and validation evidence, CI test workflows, quality gates, release readiness, and quality documentation. Use when project quality or readiness must be assessed from available evidence.",
-                       "avoid_when":  "Destructive pressure testing is needed",
-                       "skill_path":  "skills/acme-overseer/SKILL.md",
-                       "role":  "Quality assurance auditor and release gatekeeper",
-                       "name":  "acme-overseer",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/acme-overseer.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "Project orientation, multi-skill routing, workflow planning",
-                       "slug":  "amalgam-conductor",
-                       "description":  "Conductor is the routing and orchestration layer of the Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.",
-                       "avoid_when":  "A single obvious specialist suffices",
-                       "skill_path":  "skills/amalgam-conductor/SKILL.md",
-                       "role":  "Routing and orchestration layer",
-                       "name":  "amalgam-conductor",
-                       "activation_level":  "Commander",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/amalgam-conductor.ico",
-                       "output_formats":  [
-                                              "Routing Plan",
-                                              "Prompts"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "Defensive review, RBAC, data protection, sensitive data handling",
-                       "slug":  "cipher-meister",
-                       "description":  "Perform defensive, evidence-based security and privacy review, documentation, evidence synthesis, threat review, and remediation planning. Use when the user asks about application or API security, privacy, data protection, authentication, authorization, RBAC, sessions, secrets, sensitive-data handling, classification, minimization, retention, logging, dependencies, supply chain, secure SDLC, privacy risk, or security/privacy documentation gaps. Do not use for offensive or destructive testing.",
-                       "avoid_when":  "Offensive or destructive testing is needed",
-                       "skill_path":  "skills/cipher-meister/SKILL.md",
-                       "role":  "Security and privacy auditor",
-                       "name":  "cipher-meister",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/cipher-meister.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "UI, UX, accessibility, frontend architecture, responsive layout",
-                       "slug":  "cloak-meister",
-                       "description":  "Review and improve the visible and experiential layer of software systems, including UI, UX, accessibility, visual hierarchy, frontend architecture, dashboards, JavaFX screens, React/HTML/CSS components, design systems, responsive layouts, user flows, information architecture, interaction design, forms, component consistency, and frontend implementation guidance. Use for evidence-based interface audits and practical visible-layer improvements.",
-                       "avoid_when":  "Database schema or system architecture diagraming is needed",
-                       "skill_path":  "skills/cloak-meister/SKILL.md",
-                       "role":  "UI/UX architect and frontend auditor",
-                       "name":  "cloak-meister",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/cloak-meister.ico",
-                       "output_formats":  "Output"
-                   },
-                   {
-                       "primary_use":  "Destructive, negative, fuzz, adversarial QA, failure-mode testing",
-                       "slug":  "hidden-dagger",
-                       "description":  "Use only when the user explicitly requests controlled destructive testing, negative testing, fuzz testing, adversarial QA, boundary or failure-mode testing, guardrail or crash testing, invalid-input testing, database constraint stress testing, resilience testing, or pre-production pressure testing. Do not invoke automatically. Operate only on authorized, non-production systems with a completed safety gate and explicit approval for risky execution.",
-                       "avoid_when":  "Operating in production, lacking explicit approval, or during early dev",
-                       "skill_path":  "skills/hidden-dagger/SKILL.md",
-                       "role":  "Controlled resilience tester",
-                       "name":  "hidden-dagger",
-                       "activation_level":  "Gated",
-                       "depends_on":  "amalgam-conductor",
-                       "icon_path":  "assets/icons/hidden-dagger.ico",
-                       "output_formats":  "Output"
-                   },
-                   {
-                       "primary_use":  "Schemas, ERDs, constraints, migrations, SQL validation",
-                       "slug":  "meister-chronicler",
-                       "description":  "Review, document, and improve database architecture, schemas, ERDs, tables, columns, keys, constraints, indexes, normalization, reference and seed data, migrations, stored procedures, views, audit tables, reporting tables, SQL, data dictionaries, integration documentation, and database testing plans. Use when database facts must be validated against schema, migration, dump, live metadata, or project requirements.",
-                       "avoid_when":  "Evaluating visible UI or system-level testing",
-                       "skill_path":  "skills/meister-chronicler/SKILL.md",
-                       "role":  "Database architect and schema auditor",
-                       "name":  "meister-chronicler",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/meister-chronicler.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "UML, ERD, architecture, workflow, data-flow diagrams",
-                       "slug":  "meister-weaver",
-                       "description":  "Create, review, correct, and document UML class, use case, sequence, activity, state, component, deployment, ERD, database relationship, system architecture, layered architecture, data-flow, workflow, process, user-flow, and feature-interaction diagrams. Use when a diagram must accurately reflect project objectives, system behavior, data relationships, implementation boundaries, or supplied source evidence.",
-                       "avoid_when":  "Resolving UI accessibility or evaluating functional code without diagrams",
-                       "skill_path":  "skills/meister-weaver/SKILL.md",
-                       "role":  "Visual modeling and diagram specialist",
-                       "name":  "meister-weaver",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/meister-weaver.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "READMEs, project reports, readiness summaries, handover docs",
-                       "slug":  "scribe-meister",
-                       "description":  "Audit, compile, organize, and improve software project documentation, including READMEs, requirements, setup and user guides, architecture summaries, testing documentation, system readiness reports, implementation summaries, design or decision logs, milestone reports, and final submission materials. Use when documentation must align with a project objective, available evidence, technical standards, portfolio goals, or formal delivery requirements.",
-                       "avoid_when":  "Source evidence is unavailable to verify claims",
-                       "skill_path":  "skills/scribe-meister/SKILL.md",
-                       "role":  "Documentation compiler and auditor",
-                       "name":  "scribe-meister",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/scribe-meister.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   },
-                   {
-                       "primary_use":  "OOP architecture, layered architecture, system design, refactoring",
-                       "slug":  "clockwork-meister",
-                       "description":  "The Clockwork guards the moving framework of the codebase: OOP discipline, architecture layering, service/repository boundaries, dependency flow, transaction safety, and structural refactor integrity.",
-                       "avoid_when":  "Modifying UI layouts, testing security boundaries, or writing documentation",
-                       "skill_path":  "skills/clockwork-meister/SKILL.md",
-                       "role":  "Engineering / Code Structure",
-                       "name":  "clockwork-meister",
-                       "activation_level":  "Specialist",
-                       "depends_on":  "None",
-                       "icon_path":  "assets/icons/clockwork-meister.ico",
-                       "output_formats":  [
-                                              "Compact",
-                                              "Full"
-                                          ]
-                   }
-               ]
+    "name": "conductor",
+    "display_name": "Orchestra",
+    "description": "An installable AI workflow plugin that routes complex software tasks through focused specialist skills for architecture, UI/UX, documentation, diagrams, databases, QA, security, and gated resilience review.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "https://github.com/Baelfyre/Orchestra",
+    "icon_path": "assets/icons/conductor.ico",
+    "logo_path": "assets/logo/orchestra-of-amalgamation.ico",
+    "safety_note": "The dagger skill and resilience-check command execute destructive, negative, fuzz, adversarial QA, and failure-mode testing. They require explicit user approval, non-production scope, and a safety gate before execution. WARNING: There is no automated runtime guardrail script. You must manually enforce safety gates.",
+    "commands": [
+        "conductor",
+        "amalgam-conductor",
+        "clockwork",
+        "review-architecture",
+        "cloak",
+        "review-ui",
+        "chronicler",
+        "review-db",
+        "scribe",
+        "review-docs",
+        "weaver",
+        "diagram-check",
+        "overseer",
+        "qa-check",
+        "cipher",
+        "security-check",
+        "dagger",
+        "resilience-check"
+    ],
+    "skills": [
+        {
+            "primary_use": "Business alignment validation, scope validation, requirements traceability, SDLC documentation completeness, acceptance criteria review",
+            "slug": "the-steward",
+            "description": "The Steward is a reusable, project-agnostic business alignment, scope, requirements, and SDLC governance authority. Validates that requested work supports project goals, meets documented requirements, stays within scope, has acceptance criteria, and has sufficient documentation. Dynamically scales review depth based on project context and risk level. Sits in the Governance Layer above the Conductor.",
+            "avoid_when": "Legal, regulatory, privacy, licensing, or IP compliance review is needed (route to the-governor)",
+            "skill_path": "skills/the-steward/SKILL.md",
+            "role": "Business Alignment and Scope Governance Authority",
+            "name": "the-steward",
+            "activation_level": "Governor",
+            "depends_on": "None",
+            "icon_path": "assets/icons/the-steward.ico",
+            "output_formats": [
+                "Governance Review"
+            ]
+        },
+        {
+            "primary_use": "Legal compliance validation, privacy risk review, IP and copyright review, open-source license compatibility, Terms of Service and Privacy Policy impact, audit documentation, security governance",
+            "slug": "the-governor",
+            "description": "The Governor is a reusable, project-agnostic legal, regulatory, privacy, IP, copyright, licensing, and compliance governance authority. Dynamically scales review depth based on project context and risk level. Does not provide legal advice. Flags uncertain issues for human review. Sits in the Governance Layer above the Conductor.",
+            "avoid_when": "Business alignment, scope, requirements, or SDLC review is needed (route to the-steward)",
+            "skill_path": "skills/the-governor/SKILL.md",
+            "role": "Legal, Compliance, Privacy, and IP Governance Authority",
+            "name": "the-governor",
+            "activation_level": "Governor",
+            "depends_on": "None",
+            "icon_path": "assets/icons/the-governor.ico",
+            "output_formats": [
+                "Governance Review"
+            ]
+        },
+        {
+            "primary_use": "QA strategy, test planning, validation gates, release readiness, CI/CD validation",
+            "slug": "overseer",
+            "description": "The QA, Test Strategy, Validation, CI, and Release Readiness Specialist. Owns validation strategy, test planning, QA gates, release readiness, CI checks, smoke tests, regression tests, acceptance criteria, and pass/fail criteria.",
+            "avoid_when": "Implementing test code, architecture design, security policy, or long documentation",
+            "skill_path": "skills/overseer/SKILL.md",
+            "role": "QA, Test Strategy, Validation, CI, and Release Readiness Specialist",
+            "name": "overseer",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/overseer.ico",
+            "output_formats": [
+                "Caveman",
+                "Full QA Review"
+            ]
+        },
+        {
+            "primary_use": "Project orientation, multi-skill routing, workflow planning",
+            "slug": "conductor",
+            "description": "Conductor is the routing and orchestration layer of the Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.",
+            "avoid_when": "A single obvious specialist suffices",
+            "skill_path": "skills/conductor/SKILL.md",
+            "role": "Routing and orchestration layer",
+            "name": "conductor",
+            "activation_level": "Commander",
+            "depends_on": "None",
+            "icon_path": "assets/icons/conductor.ico",
+            "output_formats": [
+                "Routing Plan",
+                "Prompts"
+            ]
+        },
+        {
+            "primary_use": "Security policy, RBAC, authorization, authentication risk, privacy, secrets",
+            "slug": "cipher",
+            "description": "The Security, Privacy, Access Control, and Threat Review Specialist. Owns security policy, RBAC, authorization rules, authentication risk review, secrets handling, privacy, threat modeling, abuse-case review, secure configuration, and security remediation requirements. Use when the user asks about application security, privacy, data protection, RBAC, or secrets handling. Do not use for offensive or destructive testing.",
+            "avoid_when": "Offensive testing is needed, or for implementation, database design, or application architecture",
+            "skill_path": "skills/cipher/SKILL.md",
+            "role": "Security, Privacy, Access Control, and Threat Review Specialist",
+            "name": "cipher",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/cipher.ico",
+            "output_formats": [
+                "Caveman",
+                "Full Security Review"
+            ]
+        },
+        {
+            "primary_use": "UI, UX, accessibility, visual hierarchy, responsive layout, interaction design",
+            "slug": "cloak",
+            "description": "The UI/UX, Accessibility, Responsive Layout, and Frontend Design Specialist. Owns UI/UX requirements, accessibility, responsive design rules, layout decisions, visual hierarchy, interaction behavior, component usability, and design-system consistency. Use for evidence-based interface audits and practical visible-layer improvements.",
+            "avoid_when": "Frontend implementation code, backend logic, security policy, or architecture diagrams",
+            "skill_path": "skills/cloak/SKILL.md",
+            "role": "UI/UX, Accessibility, Responsive Layout, and Frontend Design Specialist",
+            "name": "cloak",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/cloak.ico",
+            "output_formats": [
+                "QUICK_UI_HANDOFF",
+                "DOCUMENT_REVIEW",
+                "FORMAL_UI_AUDIT"
+            ]
+        },
+        {
+            "primary_use": "Chaos scenarios, resilience weaknesses, failure-paths, negative tests, guardrail gaps",
+            "slug": "dagger",
+            "description": "The Chaos, Resilience, and Adversarial Scenario Specialist. Generates controlled chaos scenarios, failure paths, negative tests, and resilience weaknesses. Use only for finding missing guardrails, crash conditions, and failure modes. Operates strictly within safety boundaries and never executes unauthorized, destructive, or production-impacting tests.",
+            "avoid_when": "Code implementation, QA test planning, CI validation, security policy, database design",
+            "skill_path": "skills/dagger/SKILL.md",
+            "role": "Chaos, Resilience, and Adversarial Scenario Specialist",
+            "name": "dagger",
+            "activation_level": "Gated",
+            "depends_on": "conductor",
+            "icon_path": "assets/icons/dagger.ico",
+            "output_formats": [
+                "Caveman"
+            ]
+        },
+        {
+            "primary_use": "SQL schemas, NoSQL documents, JSON, ORM, migrations, constraints, indexes, normalization",
+            "slug": "chronicler",
+            "description": "The Data Persistence and Database Management Specialist. Owns SQL, NoSQL, JSON, schemas, ERDs, ORM/JPA alignments, migrations, seed data, constraints, indexes, audit log persistence, data validation at the persistence layer, and database normalization. Use when data persistence facts or normalization forms must be reviewed, mapped, or validated against business requirements.",
+            "avoid_when": "Evaluating visible UI, testing plans, business workflows, architecture boundaries, or security policy",
+            "skill_path": "skills/chronicler/SKILL.md",
+            "role": "Data Persistence and Database Management Specialist",
+            "name": "chronicler",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/chronicler.ico",
+            "output_formats": [
+                "Caveman",
+                "Normalization Output"
+            ]
+        },
+        {
+            "primary_use": "Visual modeling, UML, ERD, architecture, workflow, data-flow diagrams via Mermaid/PlantUML",
+            "slug": "weaver",
+            "description": "The Visual Modeling and Diagram Generation Specialist. Owns ERD diagrams, schema diagrams, UML diagrams (class, use case, sequence, activity), component diagrams, deployment diagrams, and workflow diagrams using Mermaid or PlantUML.",
+            "avoid_when": "Database design decisions, documentation prose, code implementation, security policy",
+            "skill_path": "skills/weaver/SKILL.md",
+            "role": "Visual Modeling and Diagram Generation Specialist",
+            "name": "weaver",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/weaver.ico",
+            "output_formats": [
+                "Mermaid",
+                "PlantUML"
+            ]
+        },
+        {
+            "primary_use": "Documentation prose, READMEs, setup guides, release notes, SDLC, technical summaries",
+            "slug": "scribe",
+            "description": "The Documentation and Knowledge Transfer Specialist. Owns documentation prose, README updates, setup guides, release notes, changelogs, SDLC documentation, and technical summaries based on input from other specialists.",
+            "avoid_when": "Architecture decisions, database design, normalization analysis, UI design, diagram generation, or code implementation",
+            "skill_path": "skills/scribe/SKILL.md",
+            "role": "Documentation and Knowledge Transfer Specialist",
+            "name": "scribe",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/scribe.ico",
+            "output_formats": [
+                "Mode 1",
+                "Mode 2",
+                "Mode 3"
+            ]
+        },
+        {
+            "primary_use": "OOP architecture, layered architecture, system design, refactoring",
+            "slug": "clockwork",
+            "description": "The Clockwork guards the moving framework of the codebase: OOP discipline, architecture layering, service/repository boundaries, dependency flow, transaction safety, and structural refactor integrity.",
+            "avoid_when": "Modifying UI layouts, testing security boundaries, or writing documentation",
+            "skill_path": "skills/clockwork/SKILL.md",
+            "role": "Engineering / Code Structure",
+            "name": "clockwork",
+            "activation_level": "Specialist",
+            "depends_on": "None",
+            "icon_path": "assets/icons/clockwork.ico",
+            "output_formats": [
+                "Compact",
+                "Full"
+            ]
+        }
+    ]
 }

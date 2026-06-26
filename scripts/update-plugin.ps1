@@ -1,3 +1,6 @@
+# Safe Plugin Update Workflow (Refactored)
+# Dot-sources shared helper functions.
+
 param (
     [string]$RepoPath = ".",
     [switch]$DryRun
@@ -5,12 +8,19 @@ param (
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "Conductor: Safe Plugin Update Workflow" -ForegroundColor Cyan
-Write-Host "==============================================" -ForegroundColor Cyan
+# Import shared helpers from the script directory
+$scriptDir = $PSScriptRoot
+$helpersPath = Join-Path $scriptDir 'helpers.ps1'
+if (Test-Path $helpersPath) {
+    . $helpersPath
+}
+
+Write-ColorHost 'INFO' "Conductor: Safe Plugin Update Workflow"
+Write-ColorHost 'INFO' "=============================================="
 
 # Ensure RepoPath exists
 if (-not (Test-Path -Path $RepoPath)) {
-    Write-Host "[ERROR] The specified RepoPath does not exist: $RepoPath" -ForegroundColor Red
+    Write-ColorHost 'ERROR' "The specified RepoPath does not exist: $RepoPath"
     exit 1
 }
 
@@ -23,24 +33,24 @@ try {
     try {
         $isGitRepo = git rev-parse --is-inside-work-tree 2>&1
     } catch {
-        Write-Host "[ERROR] Not a git repository. The safe update script requires a git-cloned installation." -ForegroundColor Red
+        Write-ColorHost 'ERROR' "Not a git repository. The safe update script requires a git-cloned installation."
         exit 1
     }
 
     if ($isGitRepo -notmatch "true") {
-        Write-Host "[ERROR] Not a git repository. The safe update script requires a git-cloned installation." -ForegroundColor Red
+        Write-ColorHost 'ERROR' "Not a git repository. The safe update script requires a git-cloned installation."
         exit 1
     }
 
     # 2. Detect the actual git repo root
     $repoRoot = git rev-parse --show-toplevel
-    Write-Host "Repository root detected: $repoRoot"
+    Write-ColorHost 'INFO' "Repository root detected: $repoRoot"
 
     # 3. Stop if the working tree has uncommitted changes
     $status = git status --porcelain
     if ($status) {
-        Write-Host "[ERROR] Working tree has uncommitted changes. Please commit or stash them before updating." -ForegroundColor Red
-        Write-Host "Changes:"
+        Write-ColorHost 'ERROR' "Working tree has uncommitted changes. Please commit or stash them before updating."
+        Write-ColorHost 'WARNING' "Changes:"
         Write-Host $status
         exit 1
     }
@@ -48,73 +58,73 @@ try {
     # 4. Detect current branch
     $currentBranch = git branch --show-current
     if ([string]::IsNullOrWhiteSpace($currentBranch)) {
-        Write-Host "[ERROR] Could not detect the current branch. Are you in a detached HEAD state?" -ForegroundColor Red
+        Write-ColorHost 'ERROR' "Could not detect the current branch. Are you in a detached HEAD state?"
         exit 1
     }
-    Write-Host "Current branch: $currentBranch"
+    Write-ColorHost 'INFO' "Current branch: $currentBranch"
 
     if ($DryRun) {
-        Write-Host "`n[DRY RUN] Would run: git fetch" -ForegroundColor Yellow
-        Write-Host "[DRY RUN] Would run: git pull origin $currentBranch" -ForegroundColor Yellow
-        Write-Host "[DRY RUN] Would run: .\scripts\validate-manifest.ps1" -ForegroundColor Yellow
-        Write-Host "[DRY RUN] Would run: .\scripts\validate-structure.ps1" -ForegroundColor Yellow
-        Write-Host "`nDry run complete. No changes made." -ForegroundColor Green
+        Write-ColorHost 'WARNING' "[DRY RUN] Would run: git fetch"
+        Write-ColorHost 'WARNING' "[DRY RUN] Would run: git pull origin $currentBranch"
+        Write-ColorHost 'WARNING' "[DRY RUN] Would run: .\scripts\validate-manifest.ps1"
+        Write-ColorHost 'WARNING' "[DRY RUN] Would run: .\scripts\validate-structure.ps1"
+        Write-ColorHost 'SUCCESS' "Dry run complete. No changes made."
         exit 0
     }
 
     # 5. Run git fetch
-    Write-Host "`nFetching latest changes from remote..." -ForegroundColor Cyan
+    Write-ColorHost 'INFO' "Fetching latest changes from remote..."
     $prevErrorAction = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
     git fetch
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "[ERROR] git fetch failed. Please check your network connection." -ForegroundColor Red
+        Write-ColorHost 'ERROR' "git fetch failed. Please check your network connection."
         exit 1
     }
     $ErrorActionPreference = $prevErrorAction
 
     # 6. Pull the latest changes for the current branch
-    Write-Host "Pulling latest changes for branch '$currentBranch'..." -ForegroundColor Cyan
+    Write-ColorHost 'INFO' "Pulling latest changes for branch '$currentBranch'..."
     $prevErrorAction = $ErrorActionPreference
     $ErrorActionPreference = "Continue"
     git pull origin $currentBranch
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "[ERROR] git pull failed. Please check your network or resolve conflicts manually." -ForegroundColor Red
+        Write-ColorHost 'ERROR' "git pull failed. Please check your network or resolve conflicts manually."
         exit 1
     }
     $ErrorActionPreference = $prevErrorAction
 
     # 7. Run validations
-    Write-Host "`nRunning validation scripts..." -ForegroundColor Cyan
+    Write-ColorHost 'INFO' "Running validation scripts..."
     
     $manifestScript = Join-Path $repoRoot "scripts\validate-manifest.ps1"
     $structureScript = Join-Path $repoRoot "scripts\validate-structure.ps1"
 
+    $psExe = (Get-Process -Id $PID).Path
     if (Test-Path $manifestScript) {
-        Write-Host "Validating manifest..."
-        powershell -ExecutionPolicy Bypass -File $manifestScript
+        Write-ColorHost 'INFO' "Validating manifest..."
+        & $psExe -ExecutionPolicy Bypass -File $manifestScript
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "[ERROR] Manifest validation failed! Rollback recommended." -ForegroundColor Red
+            Write-ColorHost 'ERROR' "Manifest validation failed! Rollback recommended."
             exit 1
         }
     } else {
-        Write-Host "[WARNING] validate-manifest.ps1 not found." -ForegroundColor Yellow
+        Write-ColorHost 'WARNING' "validate-manifest.ps1 not found."
     }
 
     if (Test-Path $structureScript) {
-        Write-Host "Validating structure..."
-        powershell -ExecutionPolicy Bypass -File $structureScript
+        Write-ColorHost 'INFO' "Validating structure..."
+        & $psExe -ExecutionPolicy Bypass -File $structureScript
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "[ERROR] Structure validation failed! Rollback recommended." -ForegroundColor Red
+            Write-ColorHost 'ERROR' "Structure validation failed! Rollback recommended."
             exit 1
         }
     } else {
-        Write-Host "[WARNING] validate-structure.ps1 not found." -ForegroundColor Yellow
+        Write-ColorHost 'WARNING' "validate-structure.ps1 not found."
     }
 
-    # 8. Print success and reload instructions
-    Write-Host "`n[SUCCESS] Update and validation completed successfully!" -ForegroundColor Green
-    Write-Host "`nNext Steps:" -ForegroundColor Cyan
+    Write-ColorHost 'SUCCESS' "Update and validation completed successfully!"
+    Write-ColorHost 'INFO' "Next Steps:"
     Write-Host "  - For Antigravity: Reload your plugins or restart the terminal session."
     Write-Host "  - For Codex: Restart the agent workspace to load the updated skills."
 

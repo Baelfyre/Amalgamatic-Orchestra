@@ -1,11 +1,11 @@
 ---
 name: security-check
-description: "Review defensive security, RBAC, data protection, and sensitive data handling."
+description: "DEPRECATED: Legacy alias for Cipher review. Please use /cipher instead."
 ---
-# Security Check Command
+# Security Check Command Alias
 
-You are now invoking the Cipher specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Cipher review. Load and follow the exact instructions defined here:
 
-**[skills/cipher-meister/SKILL.md](../skills/cipher-meister/SKILL.md)**
+**[skills/cipher/SKILL.md](../skills/cipher/SKILL.md)**
 
-Ensure defensive and evidence-based reviews of secrets, authorization, and risk without offensive exploits.
+Evaluate security risks, PII boundaries, and credential safeguards.

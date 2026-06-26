@@ -1,11 +1,11 @@
 ---
 name: review-db
-description: "Review schemas, ERDs, constraints, migrations, and SQL validation."
+description: "DEPRECATED: Legacy alias for Chronicler review. Please use /chronicler instead."
 ---
-# Review Database Command
+# Review DB Command Alias
 
-You are now invoking the Chronicler specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Chronicler review. Load and follow the exact instructions defined here:
 
-**[skills/meister-chronicler/SKILL.md](../skills/meister-chronicler/SKILL.md)**
+**[skills/chronicler/SKILL.md](../skills/chronicler/SKILL.md)**
 
-Apply strict database architecture, normalization, and semantic constraint standards.
+Review relational integrity, SQL standards, normalization forms, and indices.

@@ -18,14 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Validate repository structure
+      - name: Run behavior validation suite
         shell: pwsh
-        run: ./scripts/validate-structure.ps1
-
-      - name: Validate manifest consistency
-        shell: pwsh
-        run: ./scripts/validate-manifest.ps1
-
-      - name: Validate Codex adapter export
-        shell: pwsh
-        run: ./adapters/codex/validate-codex-export.ps1
+        run: ./tests/behavior/run-tests.ps1

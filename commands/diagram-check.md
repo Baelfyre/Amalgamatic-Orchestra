@@ -1,11 +1,11 @@
 ---
 name: diagram-check
-description: "Create, review, or correct UML, ERD, architecture, workflow, and data-flow diagrams."
+description: "DEPRECATED: Legacy alias for Weaver review. Please use /weaver instead."
 ---
-# Diagram Check Command
+# Diagram Check Command Alias
 
-You are now invoking the Weaver specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Weaver review. Load and follow the exact instructions defined here:
 
-**[skills/meister-weaver/SKILL.md](../skills/meister-weaver/SKILL.md)**
+**[skills/weaver/SKILL.md](../skills/weaver/SKILL.md)**
 
-Ensure all visuals accurately reflect system boundaries, logic, and structure.
+Review or draw models using Mermaid or PlantUML.

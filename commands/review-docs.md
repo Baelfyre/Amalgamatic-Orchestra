@@ -1,11 +1,11 @@
 ---
 name: review-docs
-description: "Audit READMEs, project reports, readiness summaries, and handover docs."
+description: "DEPRECATED: Legacy alias for Scribe review. Please use /scribe instead."
 ---
-# Review Documents Command
+# Review Docs Command Alias
 
-You are now invoking the Scribe specialist. Load and follow the exact instructions defined here:
+This is a legacy alias for Scribe review. Load and follow the exact instructions defined here:
 
-**[skills/scribe-meister/SKILL.md](../skills/scribe-meister/SKILL.md)**
+**[skills/scribe/SKILL.md](../skills/scribe/SKILL.md)**
 
-Apply strict technical writing, readiness, and documentation alignment standards.
+Compile structured documentation, release notes, and setup manuals without speculative content.
