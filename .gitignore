@@ -3,6 +3,7 @@ Thumbs.db
 .idea/
 .vscode/
 .codex/
+# Local runtime or installed agent copy; should not be tracked
 .agents/
 AGENTS.md
 SKILLS.md

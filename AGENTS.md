@@ -8,3 +8,7 @@ When operating within this repository or when this plugin is active, adhere to t
 4. **Communication Layer**: `Caveman` controls output compression to preserve context limits during long multi-file operations.
 5. **Domain Specialists**: Specialists (`Clockwork`, `Cloak`, `Cipher`, `Chronicler`, `Weaver`, `Scribe`, `Overseer`, `Dagger`) exclusively own their respective domains.
 6. **Source of Truth**: Do not guess specialist logic or rules. The authoritative source of truth for any skill's behavior is always located in its corresponding `skills/*/SKILL.md` file. Always defer to the explicit instructions in those files.
+
+## Repo Source vs Runtime Rule
+
+Apply persistent project updates only to Git-tracked repo source paths. Do not treat `.agents/`, generated runtime copies, installed adapter copies, cache folders, or local execution mirrors as the source of truth. Before editing, verify the target file path is inside the tracked repo source and not inside `.agents/`. If a task touches skill files, update `skills/<skill>/...` in the repository source, not `.agents/skills/<skill>/...`. Runtime copies may be inspected for comparison, but persistent fixes must be applied to the Git-tracked source.
