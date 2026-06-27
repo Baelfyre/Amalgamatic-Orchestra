@@ -19,16 +19,22 @@ Release gates enforce governance compliance before any release. **Release Mode**
 | Human legal review completed (if flagged) | The Governor | Yes |
 | Security governance satisfied | The Governor | Yes |
 | Audit documentation sufficient | The Governor | Yes |
+| Continuation state verified | Arbiter | Yes |
+| Source of truth confirmed | Arbiter | Yes |
+| Branch and merge readiness reviewed | Arbiter | Yes |
 | QA validation passed | Overseer | Yes |
-| No unresolved `BLOCKED` decisions | Both | Yes |
+| No unresolved `BLOCKED` decisions | Governance authorities | Yes |
+| No unresolved Arbiter `HOLD` verdicts | Arbiter | Yes |
 | No pending `human_review_required` flags | The Governor | Yes |
 
 ## Gate Enforcement
 
-- **Release Mode Enforcement**: The Conductor and Governance authorities (The Steward and The Governor) enforce complete Basis of Review context checking for all release activities. Bypassing compliance or scope checks is prohibited.
+- **Release Mode Enforcement**: The Conductor and Governance authorities (The Steward, The Governor, and Arbiter) enforce complete Basis of Review and continuation-state checks for all release activities. Bypassing compliance, scope, validation, or continuity checks is prohibited.
 - The Conductor must check for unresolved governance findings before routing release work.
+- The Conductor must call Arbiter before merge, pull request, release handoff, or continuation after uncertain state.
 - Release-related requests (publish, deploy, tag, distribute, client delivery, or public distribution) require explicit governance clearance.
 - High-impact releases require both Steward and Governor `APPROVED` decisions.
+- Transition-sensitive releases require Arbiter `READY` or `READY_WITH_MINOR_FIXES`.
 
 ## Evidence
 

@@ -24,6 +24,9 @@
 ## Relationships
 - [ ] Direction and relationship type are correct and supported.
 
+## Notation
+- [ ] Connector semantics, arrow direction, line types, shapes, and labels follow established diagram type conventions.
+
 ## Cardinality
 - [ ] Multiplicity and optionality are shown only when known.
 

@@ -1,6 +1,6 @@
 # Governance Layer
 
-The Governor and The Steward form a reusable governance layer that sits above the Conductor. Their purpose is to ensure that any project, product, repository, or future development effort remains aligned with its objectives, documentation requirements, compliance obligations, legal risk boundaries, privacy expectations, IP and copyright concerns, licensing requirements, and release readiness standards.
+The Governor, The Steward, and Arbiter form a reusable governance layer that sits above the Conductor. Their purpose is to ensure that any project, product, repository, or future development effort remains aligned with its objectives, documentation requirements, compliance obligations, legal risk boundaries, privacy expectations, IP and copyright concerns, licensing requirements, release readiness standards, and verified continuation state.
 
 ## Architecture
 
@@ -8,6 +8,8 @@ The Governor and The Steward form a reusable governance layer that sits above th
 Governance Layer
 ├── The Steward    (Business, Scope, SDLC)
 ├── The Governor   (Legal, Compliance, Privacy, IP)
+
+â”œâ”€â”€ Arbiter        (Continuity, Validation, Transition Safety)
 
 Orchestration Layer
 └── Conductor
@@ -28,6 +30,7 @@ Execution Layer
 - **Markdown-First**: All governance artifacts are plain Markdown.
 - **Skill-Compatible**: Integrates with the Orchestra skill ecosystem.
 - **Reusable**: No hard-coded assumptions about any specific project or platform.
+- **Continuity-Safe**: Transition, handoff, branch, and merge decisions rely on verified project state instead of memory.
 
 ## Project Context Profile
 
@@ -79,6 +82,8 @@ Conductor prioritizes freedom-first, need-based development. The ecosystem ensur
 ## Need-To-Only Governance
 
 The Governor and The Steward operate on a need-to-only basis. They must not interrupt early-stage planning, rough drafting, or prompt refinement. Full formal checks are reserved for high-impact phases (like Release or Audit), while lightweight, non-blocking pathways are used for low-risk work.
+
+Arbiter also operates on a need-to-only basis. It activates when continuation safety is uncertain, including interrupted tasks, token or context exhaustion risk, branch switches, workspace or IDE changes, unclear source of truth, failed or missing validation, handoff, merge preparation, or branch divergence.
 
 ## Operating Modes
 
@@ -160,10 +165,11 @@ Next Recommended Step:
 1. **Request enters** the system.
 2. **The Steward** validates alignment, scope, requirements, documentation (scaled to risk).
 3. **The Governor** validates compliance, privacy, IP, licensing, audit readiness (scaled to risk).
-4. **Conductor** receives the approved request and routes to execution skills.
-5. **Execution skills** perform the work.
-6. **Validation** confirms outputs.
-7. **Release Gate** checks governance compliance before release.
+4. **Arbiter** validates continuity, source of truth, branch state, validation evidence, and handoff or merge readiness when a transition risk exists.
+5. **Conductor** receives the approved request and routes to execution skills.
+6. **Execution skills** perform the work.
+7. **Validation** confirms outputs.
+8. **Release Gate** checks governance compliance before release.
 
 ## Decision Model
 
@@ -178,6 +184,8 @@ All governance reviews use the same decision values:
 | `NOT_APPLICABLE` | No review needed for this request |
 
 The Governor adds `human_review_required` for uncertain legal, regulatory, privacy, licensing, or IP issues.
+
+Arbiter adds continuation verdicts: `READY`, `READY_WITH_MINOR_FIXES`, `HOLD`, and `BLOCKED`.
 
 ## Default Output Format
 
@@ -194,6 +202,7 @@ REQUIRED_ACTIONS: [actions needed or "none"]
 
 - Conductor stops on `BLOCKED` from either authority.
 - Conductor pauses on `human_review_required: true` until human review completes.
+- Conductor pauses on Arbiter `HOLD` or `BLOCKED` until required validation, context, or remediation is complete.
 - Conductor addresses all findings on `REVISION_REQUIRED`.
 - Execution agents cannot bypass governance gates.
 - Governance authorities produce decisions, not code.
@@ -204,6 +213,7 @@ REQUIRED_ACTIONS: [actions needed or "none"]
 |---|---|---|
 | The Steward | Business goals, scope, requirements, SDLC | Legal, compliance, IP, licensing, implementation |
 | The Governor | Legal, compliance, privacy, IP, licensing | Business alignment, scope, implementation |
+| Arbiter | Continuity, validation state, branch safety, source of truth, handoff readiness | Feature implementation, architecture design, legal compliance, business scope |
 | Conductor | Routing, orchestration, skill selection | Governance decisions, implementation |
 | Execution Skills | Implementation, code changes | Governance, routing |
 

@@ -12,6 +12,14 @@ Complete this gate before recommending or executing destructive tests. Unknown a
 - Disposable test data:
 - Real user or customer data present:
 
+## QA Baseline Alignment
+
+- Overseer baseline reviewed: Yes / No / Not applicable
+- Related requirement or acceptance criterion:
+- Related smoke, regression, UAT, or defect evidence:
+- Stress scope derived from QA evidence:
+- Exploratory Dagger scope clearly marked: Yes / No
+
 ## Authorization and scope
 
 - System owner or authorized tester:

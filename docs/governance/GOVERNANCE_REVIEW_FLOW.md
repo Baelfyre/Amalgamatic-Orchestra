@@ -13,6 +13,8 @@ Mode Selection (Ideation, Prototype, Implementation, Audit, Release)
 ↓
 Need-Based Governance Review (if applicable)
 ↓
+Arbiter Continuity Review (if transition, validation, branch, source-of-truth, or handoff risk exists)
+â†“
 Conductor Routing or Advisory Response
 ↓
 Validation when files change
@@ -80,6 +82,20 @@ For trivial or low-risk requests:
 - Governor returns `NOT_APPLICABLE` or lightweight `APPROVED`.
 - Conductor proceeds immediately.
 - Governance adds near-zero token overhead.
+
+## Continuity Path
+
+Arbiter runs only when continuation safety is uncertain:
+- interrupted task
+- token or context exhaustion risk
+- branch switch or divergence
+- workspace or IDE transition
+- unclear source of truth
+- failed or missing validation
+- handoff
+- merge or pull request preparation
+
+Arbiter returns `READY`, `READY_WITH_MINOR_FIXES`, `HOLD`, or `BLOCKED`. `HOLD` and `BLOCKED` pause continuation until the required evidence, validation, or remediation is complete.
 
 ## Standard Path (MEDIUM Risk)
 

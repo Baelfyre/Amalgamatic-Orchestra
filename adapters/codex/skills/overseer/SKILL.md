@@ -16,7 +16,7 @@ You own the validation boundaries: QA strategy, test planning, validation gates,
 
 ## Activation Conditions
 
-Use Overseer for test strategy, test plans, acceptance criteria, verification and validation scoping, smoke and regression planning, defect triage, CI test workflows, quality gates, and release readiness checks.
+Use Overseer for test strategy, test plans, acceptance criteria, verification and validation scoping, smoke and regression planning, defect triage, CI test workflows, quality gates, release readiness checks, user testing, usability testing, UAT, stakeholder validation, and acceptance testing.
 
 ### Audit Mode / No-Edit Gate
 **Trigger:** User says audit, review, inspect, check, analyze, investigate, report, or audit-only.
@@ -50,6 +50,7 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 - Load [QUALITY_STANDARDS.md](QUALITY_STANDARDS.md) only for standards, principles, or formal review framing.
 - Load [TESTING_CHECKLIST.md](TESTING_CHECKLIST.md) only when auditing quality evidence.
 - Load [QA_REVIEW_GUIDE.md](QA_REVIEW_GUIDE.md) only when planning a QA workflow.
+- Load [USER_TESTING_FOUNDATIONS_GUIDE.md](USER_TESTING_FOUNDATIONS_GUIDE.md) only when the task involves user testing, usability testing, UAT, participant scenarios, task observation, user feedback, acceptance testing, usability defects, or stakeholder validation.
 
 ## Operating principles
 

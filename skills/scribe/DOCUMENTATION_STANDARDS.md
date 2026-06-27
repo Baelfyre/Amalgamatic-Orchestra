@@ -2,6 +2,11 @@
 
 Use only the sections relevant to the document. Evidence and project requirements override generic structure.
 
+## Source-Backed Documentation
+- Map important claims to source evidence, specialist output, or verified project artifacts.
+- Mark unverified, draft, planned, blocked, skipped, or not-run items explicitly.
+- Do not present proposals, assumptions, or planned work as completed behavior.
+
 ## README
 
 - State purpose, target user, current status, and primary capabilities.
