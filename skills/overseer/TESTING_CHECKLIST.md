@@ -18,9 +18,11 @@
 ## System Testing
 - [ ] Critical end-to-end workflows run in a representative environment.
 
-## User Acceptance Testing
-- [ ] Scenarios map to user goals and agreed acceptance criteria.
-- [ ] Stakeholder outcome evidence is recorded.
+## User Testing and UAT
+- [ ] Participant roles match intended user groups.
+- [ ] Task scenarios map to user goals and acceptance criteria.
+- [ ] Observed behavior, issues, severity, and evidence are recorded without inventing feedback.
+- [ ] Stakeholder acceptance is tied to explicit criteria and approval authority.
 
 ## Smoke Testing
 - [ ] Critical availability paths are short, stable, and run after relevant builds or deployments.
