@@ -70,7 +70,7 @@
             "name": "arbiter",
             "activation_level": "Governance",
             "depends_on": "conductor",
-            "icon_path": "assets/icons/overseer.ico",
+            "icon_path": "assets/icons/arbiter.ico",
             "output_formats": [
                 "Continuity Review"
             ]

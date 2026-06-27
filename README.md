@@ -26,8 +26,10 @@
 |---|---|---|
 | Governance | The Steward | Business, scope, SDLC, requirements, and value alignment |
 | Governance | The Governor | Legal risk, privacy, IP, licensing, security, and compliance review |
+| Governance | Arbiter | Continuity, validation, transition governance, and merge readiness |
 | Orchestration | Conductor | Routes approved work to the correct specialist skills |
-| Execution | Specialist Skills | Performs focused implementation, documentation, QA, security, or design work |
+| Execution | Specialist Skills | Performs focused architecture, documentation, QA, security, or design work |
+| Execution | Ponytail | Implementation, code navigation, and safe edits |
 
 ## Core Concept
 
@@ -50,14 +52,16 @@ flowchart LR
       subgraph G[Governance Layer]
         Steward{{The Steward<br/>Business • Scope • SDLC}}:::gov
         Governor{{The Governor<br/>Privacy • IP • Compliance}}:::gov
+        Arbiter{{Arbiter<br/>Continuity • Transition}}:::gov
       end
 
-      subgraph O[Orchestration Component]
+      subgraph O[Orchestration Layer]
         Conductor((<br/>Conductor)):::orch
       end
 
       subgraph E[Execution Layer]
-        Skills[[Specialist Skills]]:::exec
+        Skills[[Specialist Skills<br/>Design & Review]]:::exec
+        Ponytail[[Ponytail<br/>Implementation]]:::exec
         Validate[[Validation]]:::exec
       end
     end
@@ -65,9 +69,15 @@ flowchart LR
     Output([Release or Response]):::input
     Revision([Revision Required<br/>or Blocked]):::stop
 
-    Request --> Context --> Steward --> Governor --> Conductor --> Skills --> Validate --> Output
+    Request --> Context --> Steward --> Governor --> Conductor
+    Conductor --> Arbiter
+    Conductor --> Skills
+    Arbiter --> Ponytail
+    Skills --> Ponytail
+    Ponytail --> Validate --> Output
     Steward -.-> Revision
     Governor -.-> Revision
+    Arbiter -.-> Revision
 ```
 
 ---
@@ -111,12 +121,14 @@ Conductor uses 5 distinct operating modes to scale governance dynamically, ensur
 |---|---|
 | <img src="./assets/readme/icons/the-steward.png" width="16" /> **The Steward** | Business alignment, scope boundaries, and software development lifecycle (SDLC) documentation. |
 | <img src="./assets/readme/icons/the-governor.png" width="16" /> **The Governor** | Evaluates legal compliance, privacy risks, intellectual property (IP), licensing, and security policies. |
+| <img src="./assets/readme/icons/arbiter.png" width="16" /> **Arbiter** | Continuity, validation-state review, branch transition, and source-of-truth governance. |
 
 ### Specialist Skills
 
 | Skill | Focus |
 |---|---|
 | <img src="./assets/readme/icons/amalgam-conductor.png" width="16" /> **Conductor** | Routing and orchestration |
+| <img src="./assets/readme/icons/ponytail.png" width="16" /> **Ponytail** | Implementation and safe code edits |
 | <img src="./assets/readme/icons/clockwork-meister.png" width="16" /> **Clockwork** | Architecture, OOP, refactoring |
 | <img src="./assets/readme/icons/cloak-meister.png" width="16" /> **Cloak** | UI, UX, layout, accessibility |
 | <img src="./assets/readme/icons/scribe-meister.png" width="16" /> **Scribe** | Documentation and technical writing |
@@ -509,6 +521,7 @@ GitHub displays repository files above the README by default. This README keeps 
 
 ```
 skills/
+├── arbiter/
 ├── chronicler/
 ├── cipher/
 ├── cloak/
@@ -516,6 +529,7 @@ skills/
 ├── conductor/
 ├── dagger/
 ├── overseer/
+├── ponytail/
 ├── scribe/
 ├── the-governor/
 ├── the-steward/
