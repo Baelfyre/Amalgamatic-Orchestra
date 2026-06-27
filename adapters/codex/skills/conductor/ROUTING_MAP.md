@@ -30,15 +30,16 @@ If Arbiter returns `HOLD` or `BLOCKED`, the Conductor pauses continuation, merge
 |-----------|--------------|-----------|
 | Business alignment, scope, requirements review | `the-steward` | Validating project direction or SDLC |
 | Legal, compliance, privacy, IP, licensing review | `the-governor` | Validating compliance or legal risk |
-| Continuity, handoff, merge readiness, branch divergence, source-of-truth review | `arbiter` | Transition, validation, or continuation safety is uncertain |
-| UI/UX review, accessibility, frontend layout | `cloak` | Reviewing user-facing visible layers |
-| README, documentation, final submission | `scribe` | Source evidence is available to verify claims. **Fallback**: if source evidence is unavailable, Scribe must stop, report the missing evidence, and return control to the Conductor. It must not generate speculative documentation. |
-| SQL, schemas, database testing, migrations | `chronicler` | Analyzing data layers or database relationships |
-| QA, release readiness, test cases, defects | `overseer` | Normal quality assurance |
-| Security, privacy, RBAC, defensive review | `cipher` | Evaluating defensive posture |
-| UML, ERD visuals, architecture workflows | `weaver` | Creating or reviewing system models |
+| Continuity, handoff, merge readiness, branch drift, source-of-truth checks | `arbiter` | Transition, validation, or continuation safety is uncertain |
+| Implementation, code editing, minimal safe edits | `ponytail` | Design/architecture is clear and ready for code |
 | OOP, SOLID, code structure, architecture, refactoring | `clockwork` | Reviewing architecture, layering, or object-oriented design |
-| Gated resilience or negative testing | `dagger` | Requires explicit approval and safe environment |
+| SQL, schemas, persistence, ORM, migrations, normalization | `chronicler` | Analyzing data layers or database relationships |
+| Security, privacy, RBAC, auth, API hardening | `cipher` | Evaluating defensive posture |
+| UI/UX review, accessibility, frontend layout, secure UX | `cloak` | Reviewing user-facing visible layers |
+| QA, release readiness, test cases, defects, validation gates | `overseer` | Normal quality assurance |
+| Controlled stress, failure scenarios, chaos, negative testing | `dagger` | Requires explicit approval and safe environment |
+| README, documentation, source-backed prose | `scribe` | Source evidence is available to verify claims. |
+| UML, ERD visuals, architecture workflows, Mermaid/PlantUML | `weaver` | Creating or reviewing system models |
 | Broad, unclear, or multi-skill tasks | `conductor` | When ownership overlaps or dependencies exist |
 
 ## Conductor Authority
