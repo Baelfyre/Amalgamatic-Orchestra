@@ -390,7 +390,7 @@ For manual configurations or environment setup details, see the [Installation Gu
 Ponytail and Caveman are external tools. They are not included, vendored, or required by Orchestra. Install them separately from their official repositories if desired:
 
 - Ponytail: https://github.com/DietrichGebert/ponytail
-- Caveman: https://github.com/Baelfyre/caveman
+- Caveman: https://github.com/JuliusBrussee/caveman
 
 Orchestra may reference Ponytail and Caveman as workflow companions for focused implementation and compressed communication, but they remain separate from the Orchestra plugin and skill package.
 
