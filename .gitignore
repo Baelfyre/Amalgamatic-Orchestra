@@ -13,3 +13,7 @@ SKILL.md
 CLAUDE.md
 *.local.md
 *.tmp
+
+# Python cache
+__pycache__/
+*.py[cod]
