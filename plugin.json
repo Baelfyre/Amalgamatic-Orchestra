@@ -61,7 +61,7 @@
             ]
         },
         {
-            "primary_use": "Continuity review, validation-state review, branch and merge readiness, source-of-truth checks, handoff readiness",
+            "primary_use": "Continuity review, validation-state review, branch and merge readiness, source-of-truth checks, handoff readiness, access/visibility closeout",
             "slug": "arbiter",
             "description": "Arbiter is the workflow continuity, validation, and transition governance specialist. Use it when work may be interrupted, validation is missing or failed, branch or workspace context changed, merge readiness is uncertain, source of truth is unclear, or handoff state must be verified before continuing.",
             "avoid_when": "Designing architecture, implementing features, writing documentation content, or replacing normal QA ownership",
@@ -76,7 +76,7 @@
             ]
         },
         {
-            "primary_use": "QA strategy, test planning, validation gates, release readiness, CI/CD validation",
+            "primary_use": "QA strategy, test planning, validation gates, release readiness, CI/CD validation, persona validation",
             "slug": "overseer",
             "description": "The QA, Test Strategy, Validation, CI, and Release Readiness Specialist. Owns validation strategy, test planning, QA gates, release readiness, CI checks, smoke tests, regression tests, acceptance criteria, and pass/fail criteria.",
             "avoid_when": "Implementing test code, architecture design, security policy, or long documentation",
@@ -92,7 +92,7 @@
             ]
         },
         {
-            "primary_use": "Project orientation, multi-skill routing, workflow planning",
+            "primary_use": "Project orientation, multi-skill routing, workflow planning, access/visibility routing",
             "slug": "conductor",
             "description": "Conductor is the routing and orchestration layer of the Orchestra. Use it for project orientation, multi-skill routing, workflow planning, readiness reviews, or deciding which specialist should handle UI/UX, documentation, diagrams, databases, QA, security/privacy, or gated resilience testing. It chooses the smallest effective skill stack, sequences work by dependency, controls token usage, prevents duplicate reviews, and protects projects from unnecessary or risky actions.",
             "avoid_when": "A single obvious specialist suffices",
@@ -108,7 +108,7 @@
             ]
         },
         {
-            "primary_use": "Security policy, RBAC, authorization, authentication risk, privacy, secrets",
+            "primary_use": "Security policy, RBAC, authorization, authentication risk, privacy, secrets, visibility/access-control",
             "slug": "cipher",
             "description": "The Security, Privacy, Access Control, and Threat Review Specialist. Owns security policy, RBAC, authorization rules, authentication risk review, secrets handling, privacy, threat modeling, abuse-case review, secure configuration, and security remediation requirements. Use when the user asks about application security, privacy, data protection, RBAC, or secrets handling. Do not use for offensive or destructive testing.",
             "avoid_when": "Offensive testing is needed, or for implementation, database design, or application architecture",
