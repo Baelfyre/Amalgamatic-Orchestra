@@ -79,6 +79,37 @@ The following gates must be enforced across all orchestration, to prevent contex
 - Continue only when Arbiter returns `READY` or `READY_WITH_MINOR_FIXES`.
 - Pause on `HOLD` or `BLOCKED` until required validation, context, or remediation is complete.
 
+### 6. Authority Evidence Gate
+**Trigger:** Any issue involving access, visibility, routing, permissions, approvals, delegation, ownership, reporting chain, role grants, feature flags, or workflow authorization.
+**Required evidence packet before implementation:**
+- expected personas
+- positive examples
+- negative examples
+- canonical authority sources
+- current behavior proof
+**Authority source order:**
+1. permission or role grants
+2. delegation or assignment records
+3. ownership or reporting relationships
+4. route or feature flags
+5. temporary title/name keyword fallback only when explicitly labeled temporary
+**Policy-vs-data check:**
+- Conductor must classify the issue before routing:
+  - policy defect
+  - data defect
+  - validation defect
+  - mixed defect
+**Routing rule:**
+- Do not route directly to Ponytail if authority source is unverified.
+- Route access/visibility ambiguity through:
+  1. Conductor
+  2. Cipher for authorization policy
+  3. Chronicler if authority data or seed/live records are involved
+  4. Cloak if navigation or visible UI state is involved
+  5. Ponytail only after expected rule and source of truth are clear
+  6. Overseer for persona validation
+  7. Arbiter for closeout if validation, source-of-truth, or parity proof is incomplete
+
 ## Lightweight Memory and Token Control
 
 At the start of a repository task, check for `SESSION_HANDOFF.md`, `PROJECT_STATE.md`, or `.amalgam/state.json` in the target repository.

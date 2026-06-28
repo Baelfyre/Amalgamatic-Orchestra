@@ -19,6 +19,7 @@ Release gates enforce governance compliance before any release. **Release Mode**
 | Human legal review completed (if flagged) | The Governor | Yes |
 | Security governance satisfied | The Governor | Yes |
 | Audit documentation sufficient | The Governor | Yes |
+| Access / Visibility Authorization Parity | Arbiter and Overseer | Yes (for release mode & access/visibility tasks) |
 | Continuation state verified | Arbiter | Yes |
 | Source of truth confirmed | Arbiter | Yes |
 | Branch and merge readiness reviewed | Arbiter | Yes |
@@ -45,6 +46,15 @@ GATE: license_compatibility
 STATUS: PASSED
 EVIDENCE: Governor review [timestamp], decision: APPROVED
 ```
+
+### Access / Visibility Authorization Parity Evidence
+Must include:
+- named persona proof
+- source-of-truth authority source
+- UI navigation result
+- direct route or screen result
+- backend/service authorization result
+- known unsupported cases
 
 ## Enforcement Limitation
 

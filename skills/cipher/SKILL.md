@@ -67,6 +67,16 @@ Use `SKILL.md` first. Do not load every supporting document by default or consum
 6. Recommend minimal defensive remediation boundaries and verification.
 7. Require approval before changing authentication, authorization, permissions, secrets handling, deployment, or production state.
 
+### Authorization Decision Ladder
+
+Fix order:
+1. correct existing permission logic
+2. reuse existing delegation or reporting data
+3. repair authority data if policy is correct but records are wrong
+4. add temporary fallback only when the real authority model is incomplete
+5. label every heuristic fallback as temporary
+6. never treat title/name keyword matching as final policy
+
 ## Supported work
 
 - Security policy, RBAC, and authorization rules
@@ -105,7 +115,7 @@ SECURITY IMPACT:
 ASSETS AFFECTED:
 TRUST BOUNDARY:
 AUTHENTICATION:
-AUTHORIZATION/RBAC:
+AUTHORIZATION/RBAC: (must distinguish policy rule, authority data, enforcement point, temporary heuristic)
 SECRETS/CONFIG:
 PRIVACY/DATA EXPOSURE:
 AUDIT LOG REQUIREMENT:

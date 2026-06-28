@@ -43,6 +43,21 @@ Use this format for handoff, branch, merge, interruption, workspace-transition, 
 - Dependencies:
 - Important Notes:
 
+## Access / Visibility Closeout (Optional)
+- Expected Actor:
+- Expected Authority Source:
+- Actual Authority Source Found:
+- Positive Persona Proof:
+- Negative Persona Proof:
+- Edge-Case Persona Proof:
+- Navigation Visibility:
+- Direct Route / Screen Switching:
+- Backend / Service Authorization:
+- Gap Type: policy | data | validation | mixed
+- Workaround or Durable Fix:
+- Unsupported Cases:
+- Final Closeout Decision:
+
 ## Final Verdict
 READY | READY_WITH_MINOR_FIXES | HOLD | BLOCKED
 

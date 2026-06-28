@@ -41,6 +41,26 @@ The Conductor must call Arbiter when it detects any of these conditions:
 
 Arbiter may also be triggered before merge, before pull request, after interruption, after context reset, after branch change, after workspace change, before release validation, before handoff, or when continuation state is uncertain.
 
+### Access / Visibility Closeout Trigger
+
+Arbiter must return HOLD when any of these are missing:
+- named persona verification
+- source-of-truth confirmation
+- positive proof
+- negative proof
+- route and content authorization parity
+- distinction between workaround and durable fix
+
+**Closeout rule:**
+An access or visibility issue cannot be marked READY unless the report states:
+- root cause
+- expected authority source
+- actual authority source found
+- exact enforcement point changed
+- exact validation commands run
+- unsupported cases
+- whether the fix is temporary workaround or durable policy fix
+
 ## Responsibilities
 
 ### 1. Workflow Continuity
