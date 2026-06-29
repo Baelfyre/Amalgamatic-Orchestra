@@ -25,6 +25,22 @@ def test_file_not_empty(path):
     except OSError:
         return False
 
+def _sanitize_log_message(message):
+    import re
+    text = str(message)
+    redaction_patterns = [
+        re.compile(r'\bAKIA[0-9A-Z]{16}\b'),
+        re.compile(r'https://hooks\.slack\.com/services/T[A-Z0-9]+/B[A-Z0-9]+/[A-Za-z0-9]+'),
+        re.compile(r'(api[_-]?key\s*[:=]\s*["\'])[A-Za-z0-9_\-+=]{16,}(["\'])', re.IGNORECASE),
+        re.compile(r'-----BEGIN[ A-Z]+PRIVATE KEY-----')
+    ]
+    for pattern in redaction_patterns:
+        if pattern.pattern.startswith('(api'):
+            text = pattern.sub(r'\1[REDACTED]\2', text)
+        else:
+            text = pattern.sub('[REDACTED]', text)
+    return text
+
 def write_color_host(msg_type, message):
     colors = {
         'SUCCESS': '\033[92m', # Green
@@ -34,7 +50,8 @@ def write_color_host(msg_type, message):
     }
     reset = '\033[0m'
     color = colors.get(msg_type, '\033[96m')
-    print(f"{color}[{msg_type}] {message}{reset}")
+    safe_message = _sanitize_log_message(message)
+    print(f"{color}[{msg_type}] {safe_message}{reset}")
 
 def get_json_manifest(path=""):
     root = get_project_root()
