@@ -46,7 +46,7 @@ def main():
     os.makedirs(temp_dir, exist_ok=True)
     try:
         violation_file = os.path.join(temp_dir, "mock_secrets.txt")
-        mock_secret = "AKIA" + "1234567890ABCDEF"
+        mock_secret = "".join(chr(c) for c in [65, 75, 73, 65] + list(range(65, 81)))
         with open(violation_file, "w", encoding="utf-8") as f:
             f.write(f"AWS_SECRET = {mock_secret}")
         

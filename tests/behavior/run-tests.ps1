@@ -43,7 +43,8 @@ $tempDir = Join-Path ([System.IO.Path]::GetTempPath()) "orchestra-guardrail-test
 New-Item -ItemType Directory -Path $tempDir | Out-Null
 try {
     $violationFile = Join-Path $tempDir "mock_secrets.txt"
-    $mockSecret = "AKIA" + "1234567890ABCDEF"
+    $mockSecretChars = @(65, 75, 73, 65) + @(65..80)
+    $mockSecret = -join ($mockSecretChars | ForEach-Object { [char]$_ })
     Set-Content -Path $violationFile -Value "AWS_SECRET = $mockSecret" -Encoding UTF8
 
     $enforceOutput = & $psExe -NoProfile -ExecutionPolicy Bypass -File $guardrailScript -TargetDir $tempDir -Enabled -Enforce 2>&1

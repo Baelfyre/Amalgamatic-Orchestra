@@ -85,11 +85,10 @@ foreach ($item in $filesToScan) {
         'Private Key Header' = '-----BEGIN[ A-Z]+PRIVATE KEY-----'
     }
 
-    foreach ($key in $secretPatterns.Keys) {
-        $pattern = $secretPatterns[$key]
+    foreach ($pattern in $secretPatterns.Values) {
         for ($i = 0; $i -lt $lines.Count; $i++) {
             if ($lines[$i] -match $pattern) {
-                $violations += "SECRET EXPOSURE ($key) in $($item.Relative):L$($i + 1) -> [REDACTED]"
+                $violations += "SECRET EXPOSURE in $($item.Relative):L$($i + 1) -> [REDACTED]"
             }
         }
     }

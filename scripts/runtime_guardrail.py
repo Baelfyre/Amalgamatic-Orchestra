@@ -106,9 +106,9 @@ def main():
         has_pii = False
         
         for i, line in enumerate(lines):
-            for key, pattern in secret_patterns.items():
+            for pattern in secret_patterns.values():
                 if pattern.search(line):
-                    violations.append(f"SECRET EXPOSURE ({key}) in {item['Relative']}:L{i+1} -> [REDACTED]")
+                    violations.append(f"SECRET EXPOSURE in {item['Relative']}:L{i+1} -> [REDACTED]")
                     
             if re.search(r'package\.json|dependencies|plugin\.json', rel):
                 for p in copyleft_patterns:
