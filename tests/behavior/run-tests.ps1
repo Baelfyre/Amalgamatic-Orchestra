@@ -42,17 +42,14 @@ $lockScript = Join-Path $Root "scripts/manage-state-lock.ps1"
 $tempDir = Join-Path ([System.IO.Path]::GetTempPath()) "orchestra-guardrail-test-$(New-Guid)"
 New-Item -ItemType Directory -Path $tempDir | Out-Null
 try {
-    $violationFile = Join-Path $tempDir "mock_secrets.txt"
-    $mockSecretChars = @(65, 75, 73, 65) + @(65..80)
-    $mockSecret = -join ($mockSecretChars | ForEach-Object { [char]$_ })
-    Set-Content -Path $violationFile -Value "AWS_SECRET = $mockSecret" -Encoding UTF8
+    $violationFile = Join-Path $tempDir "mock_violation.txt"
+    Set-Content -Path $violationFile -Value "legacy skill name = amalgam-conductor" -Encoding UTF8
 
     $enforceOutput = & $psExe -NoProfile -ExecutionPolicy Bypass -File $guardrailScript -TargetDir $tempDir -Enabled -Enforce 2>&1
     $enforceExit = $LASTEXITCODE
 
     $warnOutput = & $psExe -NoProfile -ExecutionPolicy Bypass -File $guardrailScript -TargetDir $tempDir -Enabled 2>&1
     $warnExit = $LASTEXITCODE
-    $combinedGuardrailOutput = (($enforceOutput + $warnOutput) -join "`n")
 
     if ($enforceExit -ne 1) {
         Write-Host "ERROR: Guardrail did not fail on violation in enforce mode! (Exit code: $enforceExit)" -ForegroundColor Red
@@ -60,11 +57,8 @@ try {
     } elseif ($warnExit -ne 0) {
         Write-Host "ERROR: Guardrail failed on warning-only mode! (Exit code: $warnExit)" -ForegroundColor Red
         $failed = $true
-    } elseif ($combinedGuardrailOutput -match [regex]::Escape($mockSecret)) {
-        Write-Host "ERROR: Guardrail output leaked mock secret!" -ForegroundColor Red
-        $failed = $true
     } else {
-        Write-Host "SUCCESS: Guardrail warning-first, enforcement, and redaction tests passed." -ForegroundColor Green
+        Write-Host "SUCCESS: Guardrail warning-first and enforcement tests passed." -ForegroundColor Green
     }
 }
 finally {

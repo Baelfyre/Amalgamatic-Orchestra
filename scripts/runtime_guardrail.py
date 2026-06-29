@@ -7,6 +7,9 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import helpers
 
+def format_secret_violation(relative_path, line_number):
+    return f"SECRET EXPOSURE in {relative_path}:L{line_number} -> [REDACTED]"
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--target-dir", default=helpers.get_project_root())
@@ -108,7 +111,7 @@ def main():
         for i, line in enumerate(lines):
             for pattern in secret_patterns.values():
                 if pattern.search(line):
-                    violations.append(f"SECRET EXPOSURE in {item['Relative']}:L{i+1} -> [REDACTED]")
+                    violations.append(format_secret_violation(item['Relative'], i + 1))
                     
             if re.search(r'package\.json|dependencies|plugin\.json', rel):
                 for p in copyleft_patterns:

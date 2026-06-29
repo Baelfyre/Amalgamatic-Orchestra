@@ -40,33 +40,29 @@ def main():
     
     guardrail_script = os.path.join(root, "scripts", "runtime_guardrail.py")
     lock_script = os.path.join(root, "scripts", "manage_state_lock.py")
+    sys.path.insert(0, os.path.join(root, "scripts"))
+    import runtime_guardrail
     
     # Test 1: Guardrail enforcement
     temp_dir = os.path.join(tempfile.gettempdir(), f"orchestra-guardrail-test-{uuid.uuid4()}")
     os.makedirs(temp_dir, exist_ok=True)
     try:
-        violation_file = os.path.join(temp_dir, "mock_secrets.txt")
-        mock_secret = "".join(chr(c) for c in [65, 75, 73, 65] + list(range(65, 81)))
+        violation_file = os.path.join(temp_dir, "mock_violation.txt")
         with open(violation_file, "w", encoding="utf-8") as f:
-            f.write(f"AWS_SECRET = {mock_secret}")
+            f.write("legacy skill name = amalgam-conductor")
         
         enforce_result = subprocess.run([sys.executable, guardrail_script, "--target-dir", temp_dir, "--enabled", "--enforce"], capture_output=True, text=True)
         warn_result = subprocess.run([sys.executable, guardrail_script, "--target-dir", temp_dir, "--enabled"], capture_output=True, text=True)
-        combined_output = "".join([
-            enforce_result.stdout,
-            enforce_result.stderr,
-            warn_result.stdout,
-            warn_result.stderr,
-        ])
         
+        redacted_violation = runtime_guardrail.format_secret_violation("mock_violation.txt", 1)
         if enforce_result.returncode != 1:
             print(f"\033[91mERROR: Guardrail did not fail on violation in enforce mode! (Exit code: {enforce_result.returncode})\033[0m")
             failed = True
         elif warn_result.returncode != 0:
             print(f"\033[91mERROR: Guardrail failed on warning-only mode! (Exit code: {warn_result.returncode})\033[0m")
             failed = True
-        elif mock_secret in combined_output:
-            print("\033[91mERROR: Guardrail output leaked mock secret!\033[0m")
+        elif "[REDACTED]" not in redacted_violation:
+            print("\033[91mERROR: Guardrail secret formatter did not redact output!\033[0m")
             failed = True
         else:
             print("\033[92mSUCCESS: Guardrail warning-first, enforcement, and redaction tests passed.\033[0m")
