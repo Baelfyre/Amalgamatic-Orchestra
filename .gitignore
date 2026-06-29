@@ -10,6 +10,7 @@ Thumbs.db
 !.agents/plugins/
 .agents/plugins/*
 !.agents/plugins/marketplace.json
+.amalgam/
 AGENTS.md
 SKILLS.md
 SKILL.md

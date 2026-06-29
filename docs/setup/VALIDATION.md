@@ -44,10 +44,10 @@ Runtime guardrails scan repository files and staged changes for safety and namin
 - **PII Leak Protection**: Detects SSNs or credit card patterns and requires a corresponding `PRIVACY_POLICY.md` file.
 - **Destructive Operations Block**: Catches raw volume formatting or unsafe recursive force deletions (`rm -rf`, `Remove-Item -Force`).
 - **Unsafe Command Execution**: Prevents dangerous expressions like `Invoke-Expression` or `iex`.
-- **Forbidden Target Mutations**: Blocks edits to folders designated in `forbidden_repos` inside `.amalgam/state.json`.
+- **Forbidden Target Mutations**: Blocks edits to folders designated in local runtime state at `.amalgam/state.json`, when that file exists locally.
 
 ### How to Enable Guardrail Enforcement
-By default, guardrail scans are **warning-only and non-blocking** (they output warning logs but exit with code `0` to keep early prototyping fast). 
+By default, guardrail scans are **warning-only and non-blocking** (they output warning logs but exit with code `0` to keep early prototyping fast).
 
 To turn on strict enforcement (where any violation throws an error and exits with code `1`), set the environment variable:
 ```powershell
@@ -70,7 +70,9 @@ powershell -File .\scripts\runtime-guardrail.ps1 -Enabled -Enforce
 
 ## 3. Workspace State Locking
 
-State locking prevents concurrent agent executions or developers from accidentally overwriting shared project state files (`PROJECT_STATE.md`, `SESSION_HANDOFF.md`, `DECISION_LOG.md`, `.amalgam/state.json`) during parallel runs.
+State locking prevents concurrent agent executions or developers from accidentally overwriting shared project state files (`PROJECT_STATE.md`, `SESSION_HANDOFF.md`, `DECISION_LOG.md`) during parallel runs.
+
+Runtime lock files and session state are local-only and are written under `.amalgam/`. The `.amalgam/` folder is intentionally ignored by git and should not be committed.
 
 ### How State Locking Works
 1. **Lock File**: When an agent begins a workflow task (e.g. implementation or audit), it checks for the existence of `.amalgam/lock.json`.
