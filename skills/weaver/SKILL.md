@@ -38,6 +38,10 @@ You must **not** own:
 - Security policy
 - Test strategy
 
+## Scope Enforcement
+
+If the request is outside this specialist's scope, do not execute it. Return `SPECIALIST_REROUTE_REQUIRED` and recommend the correct specialist or Conductor.
+
 ## Progressive Disclosure Rule
 
 Use `SKILL.md` first. Do not load every supporting document by default or consume context with unused material.

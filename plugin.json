@@ -7,7 +7,7 @@
     "repository": "https://github.com/Baelfyre/Orchestra",
     "icon_path": "assets/icons/conductor.ico",
     "logo_path": "assets/logo/orchestra.ico",
-    "safety_note": "The dagger skill and resilience-check command execute destructive, negative, fuzz, adversarial QA, and failure-mode testing. They require explicit user approval, non-production scope, and a safety gate before execution. WARNING: There is no automated runtime guardrail script. You must manually enforce safety gates.",
+    "safety_note": "The dagger skill and resilience-check command execute destructive, negative, fuzz, adversarial QA, and failure-mode testing. They require explicit user approval, non-production scope, and a passing scripts/dagger_guardrail.py validation before execution. WARNING: Phase 2 allows simulation only and blocks live destructive execution. Do not proceed in a production environment.",
     "commands": [
         "conductor",
         "arbiter",

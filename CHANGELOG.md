@@ -32,6 +32,13 @@ Changes after `v1.0.1` currently tracked in this checkout:
 - Added `scripts/governance_check.py --strict` support, strict Dagger live-execution contract checks, and a small governance-check helper self-test.
 - Updated the Governance Check workflow summary and execution path for Stage 1 strict deterministic enforcement without adding deployment or release automation.
 - Corrected strict forbidden-file scanning so untracked CI-generated artifacts do not fail repository-content checks, while tracked forbidden files still block Stage 1 strict CI.
+- Added Phase 6.6 specialist reroute output contract to standardize wrong-specialist behavior.
+- Updated 10 specialist SKILL.md files and 9 active command files with scope-enforcement routing requirements.
+- Updated Conductor routing rules and routing output templates to correctly process and route `SPECIALIST_REROUTE_REQUIRED` responses.
+- Updated Arbiter severity classification to flag specialist-scope misuse without reroute as a Major finding.
+- Updated behavior test fixtures to cover templates, commands, Arbiter severity, and specialist self-boundary reroute contracts.
+- Cleaned up stale Acme handoff references in Scribe and Dagger.
+- Updated the plugin.json safety note to accurately reflect Phase 2 simulation-only guardrail restrictions.
 
 ## v1.0.1 - Codex compatibility adapter (2026-06-21)
 

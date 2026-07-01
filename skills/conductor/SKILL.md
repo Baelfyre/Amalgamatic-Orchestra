@@ -208,6 +208,7 @@ Before routing any request to execution skills, the Conductor **must** perform *
 - **Secure UX Routing:** Conductor must not route security-sensitive UI concerns only to `cloak`; use `cipher` first, then `cloak`.
 - **Database Safety:** Conductor must not route database-backed implementation directly to `ponytail` without `chronicler` when schema/persistence rules are unclear.
 - **Architecture Safety:** Conductor must not route architecture refactors directly to `ponytail` without `clockwork` when boundaries are unclear.
+- **Specialist Scope Enforcement:** Conductor must classify `SPECIALIST_REROUTE_REQUIRED` responses when a specialist refuses out-of-scope work. Conductor must re-route the task to the correct specialist and must not allow a specialist to execute outside its documented scope.
 
 ### Routing Examples
 

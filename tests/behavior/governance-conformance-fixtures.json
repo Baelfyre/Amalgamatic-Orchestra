@@ -58,5 +58,41 @@
         "skill": "arbiter",
         "pattern": "keep CI advisory|Dagger remains simulation-only and unpromoted",
         "type": "Governance Calibration"
+    },
+    {
+        "scenario": "Routing template enforces specialist reroute",
+        "file": "templates/routing-output-template.md",
+        "pattern": "SPECIALIST_REROUTE_REQUIRED.*(do not execute|must not execute)|(do not execute|must not execute).*SPECIALIST_REROUTE_REQUIRED",
+        "type": "Routing Gate"
+    },
+    {
+        "scenario": "Conductor output formats defines specialist reroute",
+        "file": "skills/conductor/OUTPUT_FORMATS.md",
+        "pattern": "SPECIALIST_REROUTE_REQUIRED.*route the task to the correct specialist",
+        "type": "Routing Gate"
+    },
+    {
+        "scenario": "Conductor SKILL enforces scope routing",
+        "skill": "conductor",
+        "pattern": "classify.*SPECIALIST_REROUTE_REQUIRED.*must not allow a specialist to execute outside",
+        "type": "Routing Gate"
+    },
+    {
+        "scenario": "Specialist self-boundary reroute contract",
+        "skill": "ponytail",
+        "pattern": "SPECIALIST_REROUTE_REQUIRED.*do not execute|do not execute.*SPECIALIST_REROUTE_REQUIRED",
+        "type": "Routing Gate"
+    },
+    {
+        "scenario": "Arbiter severity handles specialist scope misuse",
+        "skill": "arbiter",
+        "pattern": "specialist-scope misuse without reroute",
+        "type": "Governance Calibration"
+    },
+    {
+        "scenario": "Command files contain mismatch preamble",
+        "file": "commands/dagger.md",
+        "pattern": "SPECIALIST_REROUTE_REQUIRED.*do not execute|do not execute.*SPECIALIST_REROUTE_REQUIRED",
+        "type": "Routing Gate"
     }
 ]

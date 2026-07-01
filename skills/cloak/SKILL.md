@@ -119,6 +119,10 @@ Load `OUTPUT_FORMATS.md` when ready to generate the final response. Use the temp
 - `DOCUMENT_REVIEW` for README, SKILL.md, docs, and other static Markdown documents.
 - `FORMAL_UI_AUDIT` only when explicitly requested by the user.
 
+## Scope Enforcement
+
+If the request is outside this specialist's scope, do not execute it. Return `SPECIALIST_REROUTE_REQUIRED` and recommend the correct specialist or Conductor.
+
 ## Conductor integration (Handoff Rules)
 
 Cloak owns:
