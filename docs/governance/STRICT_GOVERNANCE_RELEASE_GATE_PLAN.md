@@ -4,7 +4,7 @@
 
 Define the policy and enforcement plan for moving Orchestra from advisory governance checks to strict merge and release gates.
 
-This document began as planning-only. Phase 6 Stage 1 now enables strict deterministic CI failures, but it still does not change branch protection, does not require signed commits, does not promote Dagger, and does not add deployment or release automation.
+This document began as planning-only. Phase 6 Stage 1 enabled strict deterministic CI failures. Phase 7 now adds a repository-level `main` ruleset requirement for pull requests, review, conversation resolution, and strict required status checks. CI remains non-deployment and non-release, Dagger remains simulation-only and unpromoted, and no release automation was added.
 
 ## Phase 6 Stage 1 Status
 
@@ -38,10 +38,14 @@ Current confirmed baseline:
 
 - `Governance Check` runs on pull requests, pushes to `main`, and manual dispatch.
 - The workflow passes on `ubuntu-latest` and uploads `governance-validation-report`.
-- CI remains advisory and non-deployment.
+- `main` is covered by an active repository ruleset named `Protect main`.
+- The active ruleset requires pull requests, one approval, conversation resolution, and strict required status checks before merge.
+- The required GitHub status-check contexts are `governance-check`, `validate`, `Analyze (actions)`, and `Analyze (python)`.
+- Those contexts correspond to the `Governance Check`, `validate`, and `CodeQL` workflows currently used by the repository.
+- CI remains non-deployment and non-release.
 - Dagger remains simulation-only and unpromoted.
 - Arbiter Phase 4 calibration and output alignment are complete.
-- `main` branch-rule bypasses were observed on the last push: direct-push protection and unverified-signature protection were bypassed. This is a governance planning concern for Phase 5, not a current workflow failure.
+- Repository-role and integration bypass entries still exist on the active ruleset and should remain a documented maintainer-control concern.
 
 ## Phase 5 Scope
 
@@ -120,12 +124,18 @@ Recommended `main` branch protection policy:
 
 - require pull requests before merge
 - require status checks before merge
-- require the `Governance Check` workflow specifically
+- require the `Governance Check`, `validate`, and `CodeQL` workflow outcomes through the active check contexts `governance-check`, `validate`, `Analyze (actions)`, and `Analyze (python)`
 - require the branch to be up to date before merge
 - restrict direct pushes to `main`
 - require conversation resolution before merge
 - add code owner review later if `CODEOWNERS` is introduced
 - use linear history only if the maintainer wants a stricter commit graph
+
+Phase 7 implementation status:
+
+- applied: pull request requirement, one approval, conversation resolution, strict required status checks, no force pushes, no branch deletion
+- already active before Phase 7 and left unchanged: required signed commits, required linear history
+- still deferred from this phase: code owner review, admin-bypass tightening, signed-commit tooling rollout planning, deployment automation, release automation, auto-merge
 
 Bypass policy recommendation:
 
@@ -135,16 +145,17 @@ Bypass policy recommendation:
 
 ## Signed Commit Recommendation
 
-Signed commits are recommended, but should not be enforced until the maintainer confirms the operational model:
+Signed commits are recommended, but should not be expanded or changed until the maintainer confirms the operational model:
 
 - which signature mechanism will be accepted
 - whether all human and automation paths can produce verified signatures
 - who is allowed to bypass signature requirements in emergencies
 
-Recommendation:
+Current state and recommendation:
 
-- plan for verified signatures on merges to `main`
-- do not enforce the setting until contributor workflow and maintainer tooling are ready
+- the repository ruleset currently includes `required_signatures`
+- this phase did not broaden or remove that existing setting
+- confirm maintainer and contributor signing readiness before making signed-commit policy a broader rollout requirement in later phases
 
 ## Pull Request Review Recommendation
 
@@ -215,9 +226,8 @@ Before Phase 6 implements strict enforcement, the maintainer should confirm:
 
 Deferred to later phases:
 
-- turning advisory warnings into blocking workflow failures
-- changing GitHub branch protection settings
-- requiring signed commits
+- changing repository bypass scope beyond the current maintainer-controlled entries
+- changing signed-commit policy beyond the current pre-existing ruleset state
 - enforcing Arbiter as a hard repository status check
 - promoting Dagger beyond simulation-only mode
 - adding deployment or release automation

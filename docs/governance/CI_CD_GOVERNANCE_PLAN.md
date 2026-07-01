@@ -39,6 +39,14 @@ This document outlines the governance validation foundation for the Orchestra re
 * Keep Dagger simulation-only and unpromoted.
 * Defer branch protection, signed commits, and release automation to later phases.
 
+## Phase 7 Objectives
+* Audit the current `main` protection state in GitHub repository settings.
+* Require pull requests and required status checks on `main`.
+* Bind the `main` ruleset to the current governance and validation workflows.
+* Keep CI non-deployment and non-release.
+* Keep Dagger simulation-only and unpromoted.
+* Defer any new deployment, release, auto-merge, or Dagger-promotion behavior.
+
 ## Required Governance Checks
 
 The following checks are part of the initial governance validation plan. In Phase 1-3, they are evaluated in advisory mode (non-blocking for deployments, though safe technical failures will fail the CI check).
@@ -73,4 +81,8 @@ Phase 4 calibration is documented in `docs/governance/ARBITER_CALIBRATION_PLAN.m
 
 Phase 5 planning is documented in `docs/governance/STRICT_GOVERNANCE_RELEASE_GATE_PLAN.md`.
 
-Phase 6 Stage 1 enables strict deterministic governance failures through `python scripts/governance_check.py --strict` inside `.github/workflows/governance-check.yml`. Branch protection, signed commits, pull request review policy, and release automation are still deferred.
+Phase 6 Stage 1 enables strict deterministic governance failures through `python scripts/governance_check.py --strict` inside `.github/workflows/governance-check.yml`.
+
+Phase 7 adds repository-level protection on `main` through the active `Protect main` ruleset. The applied Stage 1 protection set requires pull requests, one approval, conversation resolution, strict required status checks, and an up-to-date branch before merge. The required GitHub check contexts are `governance-check`, `validate`, `Analyze (actions)`, and `Analyze (python)`, which correspond to the repository's `Governance Check`, `validate`, and `CodeQL` workflows.
+
+Signed commits and linear history are currently present in the repository ruleset, but this phase did not change or broaden those pre-existing settings. Deployment automation, release automation, and Dagger promotion remain deferred.

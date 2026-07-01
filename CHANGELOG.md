@@ -39,6 +39,8 @@ Changes after `v1.0.1` currently tracked in this checkout:
 - Updated Python and PowerShell behavior test fixtures to cover templates, commands, Arbiter severity, and specialist self-boundary reroute contracts.
 - Cleaned up stale Acme handoff references in Scribe and Dagger.
 - Updated the plugin.json safety note to accurately reflect Phase 2 simulation-only guardrail restrictions.
+- Applied Phase 7 `main` repository protection updates by requiring strict status checks for `governance-check`, `validate`, `Analyze (actions)`, and `Analyze (python)` on the active `Protect main` ruleset.
+- Updated governance and contributor documentation to reflect pull-request-only `main` changes, required review and conversation resolution, and the still-deferred deployment and release posture.
 
 ## v1.0.1 - Codex compatibility adapter (2026-06-21)
 
