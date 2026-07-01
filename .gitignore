@@ -11,6 +11,7 @@ Thumbs.db
 .agents/plugins/*
 !.agents/plugins/marketplace.json
 .amalgam/
+artifacts/dagger_guardrail_report.json
 AGENTS.md
 SKILLS.md
 SKILL.md

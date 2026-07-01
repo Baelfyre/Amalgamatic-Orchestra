@@ -9,6 +9,6 @@ You are now invoking the Dagger specialist. Load and follow the exact instructio
 **[skills/dagger/SKILL.md](../skills/dagger/SKILL.md)**
 
 > [!CAUTION]
-> **GATED CAPABILITY:** Destructive, fuzz, adversarial, or failure-mode testing requires explicit user approval, non-production scope, and a safety gate before execution.
+> **GATED CAPABILITY:** Destructive, fuzz, adversarial, or failure-mode testing requires explicit user approval, non-production scope, and a passing Dagger guardrail result before execution.
 >
-> You MUST explicitly ask the user for authorization before performing these tests. Do not proceed in a production environment.
+> You MUST explicitly ask the user for authorization before performing these tests. You MUST fail closed when approval, scope, dry-run, or rollback requirements are missing. Use `scripts/dagger_guardrail.py` as a validation-only gate. Phase 2 allows simulation only and blocks live destructive execution. Do not proceed in a production environment.

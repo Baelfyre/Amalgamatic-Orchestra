@@ -50,6 +50,9 @@ You must **not** own:
 ## Safety Rule
 
 You must never execute destructive, unauthorized, production-impacting, or externally targeted tests. Any execution must be explicitly approved by **Conductor** and limited to an authorized local, test, or sandbox environment.
+Before any destructive recommendation or execution step, require a passing result from `scripts/dagger_guardrail.py`.
+Fail closed when approval, target scope, dry-run, or rollback requirements are missing or unclear.
+Phase 2 is simulation-only: the guardrail validates requests and writes a structured report, but it does not execute destructive operations and it blocks live destructive execution.
 
 ## Required Output Format
 

@@ -14,7 +14,8 @@ def main():
         {"Name": "check_stale_references.py", "Path": "scripts/check_stale_references.py"},
         {"Name": "validate_codex_export.py", "Path": "adapters/codex/validate_codex_export.py"},
         {"Name": "evaluate_governance.py", "Path": "tests/behavior/evaluate_governance.py"},
-        {"Name": "runtime_guardrail.py", "Path": "scripts/runtime_guardrail.py"}
+        {"Name": "runtime_guardrail.py", "Path": "scripts/runtime_guardrail.py"},
+        {"Name": "test_dagger_guardrail.py", "Path": "scripts/test_dagger_guardrail.py"}
     ]
     
     failed = False
