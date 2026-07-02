@@ -3,6 +3,8 @@
 ## Purpose
 This document defines the validation benchmarks used to evaluate the efficiency, accuracy, and safety of the Conductor's router-first execution model against the legacy monolithic context approach.
 
+If you need to add or edit benchmarks, please read the [ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md](ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md).
+
 ## Scope
 These benchmarks apply exclusively to the Conductor's intent classification, mode selection, context retrieval filtering, governance escalation, and skill routing precision. They do not test the actual execution quality of the downstream specialist skills.
 

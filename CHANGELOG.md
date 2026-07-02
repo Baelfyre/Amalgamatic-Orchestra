@@ -167,4 +167,5 @@ Changes after `v1.0.1` currently tracked in this checkout:
  -   a l l o w   r u n n e r   t o   a c c e p t   e x p l i c i t   f i x t u r e   p a t h   a r g u m e n t  
  -   a d d e d   n e g a t i v e   r o u t e r   b e n c h m a r k   f i x t u r e   v a l i d a t i o n   t o   C I   p i p e l i n e  
  -   r e c o r d e d   n e g a t i v e   f i x t u r e   t e s t   a r t i f a c t s   i n   C I   a r t i f a c t   i n d e x  
+ -   a d d e d   r o u t e r   b e n c h m a r k   m a i n t e n a n c e   g u i d e   w i t h   r e v i e w   c h e c k l i s t s   a n d   v a l i d a t i o n   p r o c e d u r e s  
  

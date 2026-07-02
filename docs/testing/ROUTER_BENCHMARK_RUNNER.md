@@ -9,7 +9,10 @@ This runner script is scoped exclusively to parsing, validating, and summarizing
 ## Source of Truth
 - **Machine-Readable Fixture**: Benchmark definitions live in `tests/fixtures/router_benchmarks.json`. The runner loads and validates this fixture.
 - **Fixture Schema**: The exact schema contract is defined in [ROUTER_BENCHMARK_FIXTURE_SCHEMA.md](ROUTER_BENCHMARK_FIXTURE_SCHEMA.md).
+- **Maintenance Guide**: Refer to [ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md](ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md) before making edits to the fixture.
 - **Human-Readable Guide**: `docs/testing/ROUTER_VALIDATION_BENCHMARKS.md` remains the primary human-readable benchmark guide.
+
+## Validation Scope
 
 ## What It Validates
 - Ensures every benchmark case has all required keys: `case_id`, `request_type`, `expected_mode`, `expected_skill_route`, `required_context`, `excluded_context`, `governance_status`, and `pass_criteria`.
