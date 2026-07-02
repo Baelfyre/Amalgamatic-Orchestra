@@ -4,7 +4,11 @@
 The router benchmark runner automates the validation of benchmark case definitions for the Conductor's router-first execution model. It ensures that all benchmark scenarios are structurally sound, well-formed, and provide adequate coverage for the expected behaviors defined in the `ROUTER_VALIDATION_BENCHMARKS.md` specification.
 
 ## Scope
-This runner script is scoped exclusively to parsing, validating, and summarizing the hardcoded definitions of benchmark cases.
+This runner script is scoped exclusively to parsing, validating, and summarizing the machine-readable benchmark definitions stored in `tests/fixtures/router_benchmarks.json`.
+
+## Source of Truth
+- **Machine-Readable Fixture**: Benchmark definitions live in `tests/fixtures/router_benchmarks.json`. The runner loads and validates this fixture.
+- **Human-Readable Guide**: `docs/testing/ROUTER_VALIDATION_BENCHMARKS.md` remains the primary human-readable benchmark guide.
 
 ## What It Validates
 - Ensures every benchmark case has all required keys: `case_id`, `request_type`, `expected_mode`, `expected_skill_route`, `required_context`, `excluded_context`, `governance_status`, and `pass_criteria`.
