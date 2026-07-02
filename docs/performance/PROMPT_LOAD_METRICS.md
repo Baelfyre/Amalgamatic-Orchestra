@@ -42,6 +42,8 @@ This metric script directly proves the benchmarks defined in `ROUTER_VALIDATION_
 ## CI Integration
 Prompt load metrics are measured automatically in the `governance-check.yml` CI workflow. The script output is captured and published as part of the `governance-validation-report` CI artifact (`artifacts/prompt_load_metrics.txt`). CI also executes the threshold checker (`artifacts/prompt_load_threshold_report.txt`), publishing both raw prompt load metrics and threshold status. Currently, these metrics are for observability only and do not trigger hard CI failures based on prompt size thresholds.
 
+For a complete guide to accessing and interpreting all governance artifacts, see the [CI Artifact Index](../testing/CI_ARTIFACT_INDEX.md).
+
 ## Threshold Policy
 For details on the acceptable growth limits of prompt payload sizes and the actions required when these limits are exceeded, see [PROMPT_LOAD_THRESHOLD_POLICY.md](PROMPT_LOAD_THRESHOLD_POLICY.md).
 

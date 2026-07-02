@@ -20,7 +20,7 @@ Execute the following from the repository root:
 ```bash
 python scripts/router_benchmark_runner.py
 ```
-*(Note: This runner is automatically executed as part of the CI validation workflow in `.github/workflows/governance-check.yml`.)*
+*(Note: This runner is automatically executed as part of the CI validation workflow in `.github/workflows/governance-check.yml`. For details on the generated `router_benchmark_report.txt` artifact, see the [CI Artifact Index](CI_ARTIFACT_INDEX.md).)*
 
 ## Expected Output
 A structured text report detailing:

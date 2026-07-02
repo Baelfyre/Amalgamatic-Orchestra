@@ -55,7 +55,7 @@ If a soft threshold is exceeded, maintainers should:
 To validate current payloads against these thresholds, you can use the dry-run checker. For details on how to run it and interpret its statuses, see [PROMPT_LOAD_THRESHOLD_CHECKER.md](PROMPT_LOAD_THRESHOLD_CHECKER.md).
 
 ## CI Artifact Usage
-The `measure_prompt_load.py` script runs automatically in the `governance-check.yml` CI workflow. Its output is published as `prompt_load_metrics.txt` in the `governance-validation-report` artifact. This ensures continuous observability of prompt load metrics.
+The `measure_prompt_load.py` script runs automatically in the `governance-check.yml` CI workflow. Its output is published as `prompt_load_metrics.txt` in the `governance-validation-report` artifact. This ensures continuous observability of prompt load metrics. For details on all governance artifacts, see the [CI Artifact Index](../testing/CI_ARTIFACT_INDEX.md).
 
 ## Non-Goals
 This policy does not govern user prompt sizes, session history limits, or downstream specialist output tokens. It only governs the static context injected into the Conductor's routing prompt.
