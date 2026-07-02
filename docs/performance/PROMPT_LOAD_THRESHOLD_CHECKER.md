@@ -34,7 +34,7 @@ python scripts/check_prompt_load_thresholds.py
 The script prints the current metrics compared to the limits, followed by a clear status report for Group A, Grand Total, and the Conductor skill.
 
 ## CI Usage
-This script can be executed locally or wired into CI pipelines to generate observability reports. Currently, its primary role is to provide visibility into prompt load degradation over time.
+This script is executed automatically during the GitHub Actions governance workflow (`governance-check.yml`). Its report is saved and published as part of the `governance-validation-report` CI artifact, providing visibility into prompt load degradation over time.
 
 ## Failure Behavior
 Because this is a dry-run checker, it will **not** block pull requests or fail CI runs upon threshold breaches.

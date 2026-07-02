@@ -43,6 +43,11 @@ jobs:
           python scripts/measure_prompt_load.py > artifacts/prompt_load_metrics.txt
           cat artifacts/prompt_load_metrics.txt
 
+      - name: Check Prompt Load Thresholds
+        run: |
+          python scripts/check_prompt_load_thresholds.py > artifacts/prompt_load_threshold_report.txt
+          cat artifacts/prompt_load_threshold_report.txt
+
       - name: Run Stage 1 Strict Governance Check
         run: |
           python scripts/governance_check.py --strict > artifacts/governance_report.txt
