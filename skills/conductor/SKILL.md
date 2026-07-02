@@ -25,19 +25,8 @@ Conductor operates on a router-first execution model to optimize prompt load. **
 5. **Governance Escalation**: Conductor must consult `docs/governance/GOVERNANCE_LAYER.md` only when governance triggers are present.
 6. **Execution Routing**: Conductor must assemble specialist handoff prompts using `docs/routing/MINIMAL_PROMPT_FORMAT.md`.
 
-## Execution Modes
-Select the active mode based on `docs/routing/EXECUTION_MODES_POLICY.md`:
-- **FAST**: Use for low-risk Q&A, typo, formatting, and simple local explanation tasks.
-- **STANDARD**: Use for normal implementation, documentation, and refactoring tasks.
-- **GOVERNED**: Use for security, database, CI/CD, compliance, credential, or policy-sensitive tasks.
-- **AUDIT**: Use for read-only review, inspection, governance review, or release-readiness assessment.
-- **DESTRUCTIVE**: Use only for authorized destructive, chaos, resilience, or production-impacting test requests.
-
-### Escalation Behavior
-- FAST escalates to STANDARD when file changes, multi-step work, or implementation is required.
-- STANDARD escalates to GOVERNED when security, database, CI/CD, compliance, credential, or governance triggers appear.
-- GOVERNED escalates to AUDIT when formal review or release readiness is requested.
-- Any mode escalates to DESTRUCTIVE blocked state when destructive operations are requested.
+## Execution Modes & Escalation
+Select active execution modes (FAST, STANDARD, GOVERNED, AUDIT, DESTRUCTIVE) and adhere to escalation paths precisely as defined in `docs/routing/EXECUTION_MODES_POLICY.md`.
 
 ## Context Loading Rules
 Conditionally load supporting context to prevent token exhaustion per `docs/routing/CONTEXT_RETRIEVAL_RULES.md`. Check lightweight memory (`SESSION_HANDOFF.md`, `PROJECT_STATE.md`, or `.amalgam/state.json`) to confirm active repo, allowed files, and latest validated state.

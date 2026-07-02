@@ -4,6 +4,8 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
+- Reduced `skills/conductor/SKILL.md` prompt payload by consolidating duplicate execution mode rules into canonical pointers, while preserving strict behavior conformance.
+
 - Created `docs/performance/CONDUCTOR_LOAD_REDUCTION_PLAN.md` outlining a strategy to safely reduce `skills/conductor/SKILL.md` prompt load while preserving governance behavior and test fixtures.
 
 - Created `scripts/measure_prompt_load.py` to calculate approximate token sizes of contextual documentation.
