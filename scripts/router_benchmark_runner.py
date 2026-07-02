@@ -134,8 +134,8 @@ def main():
         print("[ERROR] No destructive-operation benchmarks found! Failing.")
         sys.exit(1)
 
-    if total_cases != 12:
-        print(f"[ERROR] Expected exactly 12 benchmark cases, found {total_cases}.")
+    if total_cases != 16:
+        print(f"[ERROR] Expected exactly 16 benchmark cases, found {total_cases}.")
         sys.exit(1)
 
     print("[SUCCESS] Benchmark definitions are structurally valid.")

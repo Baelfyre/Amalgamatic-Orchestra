@@ -52,6 +52,10 @@ A transition from "Very High" to "Low" prompt load for standard tasks, while ach
 | BM-10 | release-readiness task | AUDIT | `overseer` / `steward` | Release slice, Governance | Destructive context | REQUIRED | Formal audit report generated |
 | BM-11 | destructive-operation task | DESTRUCTIVE | `dagger` | Target environment, Guardrails | Standard context | BLOCKED_PENDING_AUTHORIZATION | Pauses for authorization |
 | BM-12 | ambiguous multi-skill task | STANDARD | `conductor` (workflow gen) | `ROUTING_MAP.md` | Specific implementations | CONDITIONAL | Loads ROUTING_MAP.md to resolve |
+| BM-13 | multi-skill routing chain | GOVERNED | `conductor` -> `clockwork` -> `cipher` -> `chronicler` -> `ponytail` | routing, architecture, security, persistence, frontend | destructive-operation context | REQUIRED | Preserves ordered specialist routing before implementation |
+| BM-14 | ambiguous request requiring clarification or reroute | STANDARD | `conductor` | routing, skill index | destructive-operation context, database/security context unless clarified | CONDITIONAL | Ambiguity detection and no premature specialist execution |
+| BM-15 | STANDARD to GOVERNED escalation | GOVERNED | `conductor` -> `the-steward` -> `the-governor` | governance, routing, execution modes | implementation-only context until governance clears | REQUIRED | Escalation when security, database, CI/CD, compliance, or credential-sensitive scope appears |
+| BM-16 | audit-only no-edit task | AUDIT | `conductor` -> `arbiter` | audit, governance, relevant routing context | implementation, destructive-operation context | CONDITIONAL | Read-only findings and no file edits unless explicitly approved |
 
 ## Context Exclusion Checks
 1. Assert `GOVERNANCE_LAYER.md` is strictly absent during FAST mode syntax fixes.
@@ -80,7 +84,7 @@ A transition from "Very High" to "Low" prompt load for standard tasks, while ach
 4. CI/CD strict governance script failures.
 
 ## Validation Checklist
-- [ ] Run dry-run prompt captures for BM-01 through BM-12.
+- [ ] Run dry-run prompt captures for BM-01 through BM-16.
 - [ ] Evaluate context inclusion/exclusion mathematically or via manual log inspection.
 - [ ] Run `python tests/behavior/evaluate_governance.py` to confirm behavioral bounds.
 - [ ] Run `python scripts/governance_check.py --strict` to verify policy adherence.
