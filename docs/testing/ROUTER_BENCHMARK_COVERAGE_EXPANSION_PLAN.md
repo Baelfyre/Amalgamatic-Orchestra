@@ -34,7 +34,7 @@ While foundational modes and statuses are covered, the following complex scenari
 ## Candidate Benchmark Categories
 Future expansion will target the following categories to close the identified gaps:
 
-### Priority 1 Cases (BM-13 through BM-16)
+### Priority 1 Cases (BM-13 through BM-16) [IMPLEMENTED]
 - **Multi-Skill Handoff**: Explicitly routing to an initial specialist with a designated follow-up (e.g., `weaver` -> `scribe`).
 - **Ambiguity Resolution**: Forcing the router to ask a clarifying question rather than guessing a path.
 - **Contextual Escalation**: Starting as a standard task but escalating due to implicit database or security context.
