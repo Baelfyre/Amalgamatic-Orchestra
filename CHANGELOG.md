@@ -163,3 +163,6 @@ Changes after `v1.0.1` currently tracked in this checkout:
 - Added the eight-skill Orchestra structure.
 - Added IDE adapter guides and templates.
 - Added validation and local-only guidance.
+-   a d d   n e g a t i v e   v a l i d a t i o n   t e s t s   f o r   r o u t e r   b e n c h m a r k   f i x t u r e   s c h e m a   p a r s i n g  
+ -   a l l o w   r u n n e r   t o   a c c e p t   e x p l i c i t   f i x t u r e   p a t h   a r g u m e n t  
+ 

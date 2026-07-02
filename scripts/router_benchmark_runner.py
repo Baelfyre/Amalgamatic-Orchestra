@@ -26,7 +26,10 @@ def main():
     print(" Note: Validates structure, NOT live model routing.")
     print("=" * 60)
 
-    fixture_path = os.path.join(os.path.dirname(__file__), "..", "tests", "fixtures", "router_benchmarks.json")
+    if len(sys.argv) > 1:
+        fixture_path = sys.argv[1]
+    else:
+        fixture_path = os.path.join(os.path.dirname(__file__), "..", "tests", "fixtures", "router_benchmarks.json")
 
     try:
         with open(fixture_path, "r", encoding="utf-8") as f:
