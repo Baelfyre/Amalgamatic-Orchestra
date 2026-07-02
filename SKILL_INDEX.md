@@ -21,21 +21,21 @@ Conductor must consult this index to select the appropriate specialist or execut
 
 ## Skill Lookup Table
 
-| Skill | Purpose | Trigger Terms | Mode | Risk | Governance | Context Dependencies |
-|---|---|---|---|---|---|---|
-| `the-steward` | Business alignment, scope, SDLC | "goals", "scope", "requirements", "acceptance criteria" | Audit, Release | Low | None | `docs/governance/GOVERNANCE_LAYER.md` |
-| `the-governor` | Legal, compliance, privacy, IP | "legal", "privacy", "license", "compliance" | Audit, Release | Low | None | `docs/governance/GOVERNANCE_LAYER.md` |
-| `arbiter` | Continuity, validation, transitions | "interrupted", "diverged", "blocked", "verify" | All | Medium | the-steward, the-governor | Git status, diffs, test outputs |
-| `conductor` | Routing, workflow orchestration | "start", "plan", "coordinate", "route" | All | Medium | conditional | `ROUTING_MAP.md`, `SKILL_INDEX.md` |
-| `clockwork` | OOP, layering, architecture refactors | "refactor", "layering", "service boundary" | Implementation | High | conditional | None |
-| `cipher` | Security, privacy, access control | "auth", "RBAC", "secrets", "threats" | Implementation, Audit | High | conditional | `docs/governance/GOVERNANCE_LAYER.md` |
-| `cloak` | UI/UX, accessibility, frontend design | "ui", "ux", "accessibility", "responsive" | Ideation, Implementation | Low | conditional | None |
-| `chronicler`| Database, schema, normalization | "sql", "migration", "schema", "ORM" | Implementation, Audit | High | conditional | None |
-| `overseer` | QA, test strategy, CI readiness | "qa", "tests", "validation", "smoke" | Audit, Release | Medium | conditional | None |
-| `dagger` | Chaos, failure paths, resilience | "chaos", "negative tests", "resilience" | Prototype (Simulation) | Extreme | Explicit Approval | `scripts/dagger_guardrail.py` |
-| `weaver` | UML, ERD, architecture diagrams | "diagram", "uml", "erd", "mermaid" | Ideation, Audit | Low | conditional | None |
-| `scribe` | Documentation, READMEs, changelogs | "docs", "readme", "release notes" | All | Low | conditional | None |
-| `ponytail` | Implementation, safe code edits | "implement", "fix", "code" | Implementation | Medium | conditional | None |
+| Skill | Purpose | Trigger Terms | Mode | Risk | Governance | Context Dependencies | Output Formats |
+|---|---|---|---|---|---|---|---|
+| `the-steward` | Business alignment, scope, SDLC | "goals", "scope", "requirements", "acceptance criteria" | Audit, Release | Low | None | `docs/governance/GOVERNANCE_LAYER.md` | Governance Review |
+| `the-governor` | Legal, compliance, privacy, IP | "legal", "privacy", "license", "compliance" | Audit, Release | Low | None | `docs/governance/GOVERNANCE_LAYER.md` | Governance Review |
+| `arbiter` | Continuity, validation, transitions | "interrupted", "diverged", "blocked", "verify" | All | Medium | the-steward, the-governor | Git status, diffs, test outputs | Continuity Review,Governance Effectiveness Review |
+| `conductor` | Routing, workflow orchestration | "start", "plan", "coordinate", "route" | All | Medium | conditional | `ROUTING_MAP.md`, `SKILL_INDEX.md` | Routing Plan,Prompts |
+| `clockwork` | OOP, layering, architecture refactors | "refactor", "layering", "service boundary" | Implementation | High | conditional | None | Compact,Full |
+| `cipher` | Security, privacy, access control | "auth", "RBAC", "secrets", "threats" | Implementation, Audit | High | conditional | `docs/governance/GOVERNANCE_LAYER.md` | Caveman,Full Security Review |
+| `cloak` | UI/UX, accessibility, frontend design | "ui", "ux", "accessibility", "responsive" | Ideation, Implementation | Low | conditional | None | QUICK_UI_HANDOFF,DOCUMENT_REVIEW,FORMAL_UI_AUDIT |
+| `chronicler`| Database, schema, normalization | "sql", "migration", "schema", "ORM" | Implementation, Audit | High | conditional | None | Caveman,Normalization Output |
+| `overseer` | QA, test strategy, CI readiness | "qa", "tests", "validation", "smoke" | Audit, Release | Medium | conditional | None | Caveman,Full QA Review |
+| `dagger` | Chaos, failure paths, resilience | "chaos", "negative tests", "resilience" | Prototype (Simulation) | Extreme | Explicit Approval | `scripts/dagger_guardrail.py` | Caveman |
+| `weaver` | UML, ERD, architecture diagrams | "diagram", "uml", "erd", "mermaid" | Ideation, Audit | Low | conditional | None | Mermaid,PlantUML |
+| `scribe` | Documentation, READMEs, changelogs | "docs", "readme", "release notes" | All | Low | conditional | None | Mode 1,Mode 2,Mode 3 |
+| `ponytail` | Implementation, safe code edits | "implement", "fix", "code" | Implementation | Medium | conditional | None | IMPLEMENTATION_PLAN,CODE_REVIEW,QUICK_FIX |
 
 ## Avoid-When Notes
 - **the-steward**: Avoid when legal, regulatory, privacy, licensing, or IP review is needed (use `the-governor`).

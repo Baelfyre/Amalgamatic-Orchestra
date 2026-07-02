@@ -1,6 +1,6 @@
 ---
 name: chronicler
-description: The Data Persistence and Database Management Specialist. Owns SQL, NoSQL, JSON, schemas, ERDs, ORM/JPA alignments, migrations, seed data, constraints, indexes, audit log persistence, data validation at the persistence layer, and database normalization. Use when data persistence facts or normalization forms must be reviewed, mapped, or validated against business requirements.
+description: Data Persistence and Database Management Specialist. See SKILL_INDEX.md.
 slug: chronicler
 role: Data Persistence and Database Management Specialist
 primary_use: SQL schemas, NoSQL documents, JSON, ORM, migrations, constraints, indexes, normalization

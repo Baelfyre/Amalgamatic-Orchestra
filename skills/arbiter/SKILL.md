@@ -1,6 +1,6 @@
 ---
 name: arbiter
-description: Arbiter is the workflow continuity, validation, transition, and governance-effectiveness specialist. Use it when work may be interrupted, validation is missing or failed, branch or workspace context changed, merge readiness is uncertain, source of truth is unclear, handoff state must be verified before continuing, or advisory governance reporting needs calibration.
+description: Workflow continuity, validation, and transition governance specialist. See SKILL_INDEX.md.
 slug: arbiter
 role: Workflow Continuity, Validation, and Transition Governance Specialist
 primary_use: Continuity review, validation-state review, branch and merge readiness, source-of-truth checks, handoff readiness, access/visibility closeout

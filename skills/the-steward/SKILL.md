@@ -1,6 +1,6 @@
 ---
 name: the-steward
-description: The Steward is a reusable, project-agnostic business alignment, scope, requirements, and SDLC governance authority. Validates that requested work supports project goals, meets documented requirements, stays within scope, has acceptance criteria, and has sufficient documentation. Dynamically scales review depth based on project context and risk level. Sits in the Governance Layer above the Conductor.
+description: Business alignment and scope governance authority. See docs/governance/GOVERNANCE_LAYER.md for governance behavior.
 slug: the-steward
 role: Business Alignment and Scope Governance Authority
 primary_use: Business alignment validation, scope validation, requirements traceability, SDLC documentation completeness, acceptance criteria review

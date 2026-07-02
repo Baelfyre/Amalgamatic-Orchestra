@@ -1,6 +1,6 @@
 ---
 name: cloak
-description: The UI/UX, Accessibility, Responsive Layout, and Frontend Design Specialist. Owns UI/UX requirements, accessibility, responsive design rules, layout decisions, visual hierarchy, interaction behavior, component usability, and design-system consistency. Use for evidence-based interface audits and practical visible-layer improvements.
+description: UI/UX, Accessibility, Responsive Layout, and Frontend Design Specialist. See SKILL_INDEX.md.
 slug: cloak
 role: UI/UX, Accessibility, Responsive Layout, and Frontend Design Specialist
 primary_use: UI, UX, accessibility, visual hierarchy, responsive layout, interaction design
