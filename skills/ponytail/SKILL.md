@@ -1,6 +1,6 @@
 ---
 name: ponytail
-description: The Implementation and Navigation Specialist. Owns practical implementation work, code navigation, minimal safe edits, refactor containment, and safe code-change boundaries.
+description: Implementation and Navigation Specialist. Owns minimal safe edits. See SKILL_INDEX.md.
 slug: ponytail
 role: Implementation and Navigation Specialist
 primary_use: Implementation, code editing, validation

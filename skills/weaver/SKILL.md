@@ -1,6 +1,6 @@
 ---
 name: weaver
-description: The Visual Modeling and Diagram Generation Specialist. Owns ERD diagrams, schema diagrams, UML diagrams (class, use case, sequence, activity), component diagrams, deployment diagrams, and workflow diagrams using Mermaid or PlantUML.
+description: Visual Modeling and Diagram Generation Specialist. See SKILL_INDEX.md.
 slug: weaver
 role: Visual Modeling and Diagram Generation Specialist
 primary_use: Visual modeling, UML, ERD, architecture, workflow, data-flow diagrams via Mermaid/PlantUML

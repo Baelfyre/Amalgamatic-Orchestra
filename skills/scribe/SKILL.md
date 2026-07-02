@@ -1,6 +1,6 @@
 ---
 name: scribe
-description: The Documentation and Knowledge Transfer Specialist. Owns documentation prose, README updates, setup guides, release notes, changelogs, SDLC documentation, and technical summaries based on input from other specialists.
+description: Documentation and Knowledge Transfer Specialist. See SKILL_INDEX.md.
 slug: scribe
 role: Documentation and Knowledge Transfer Specialist
 primary_use: Documentation prose, READMEs, setup guides, release notes, SDLC, technical summaries

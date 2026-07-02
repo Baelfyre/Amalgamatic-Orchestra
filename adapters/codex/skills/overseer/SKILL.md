@@ -1,6 +1,6 @@
 ---
 name: overseer
-description: The QA, Test Strategy, Validation, CI, and Release Readiness Specialist. Owns validation strategy, test planning, QA gates, release readiness, CI checks, smoke tests, regression tests, acceptance criteria, and pass/fail criteria.
+description: QA, Test Strategy, Validation, CI, and Release Readiness Specialist. See SKILL_INDEX.md.
 ---
 # Overseer
 

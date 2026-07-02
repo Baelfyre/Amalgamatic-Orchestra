@@ -1,6 +1,6 @@
 ---
 name: cipher
-description: The Security, Privacy, Access Control, and Threat Review Specialist. Owns security policy, RBAC, authorization rules, authentication risk review, secrets handling, privacy, threat modeling, abuse-case review, secure configuration, and security remediation requirements. Use when the user asks about application security, privacy, data protection, RBAC, or secrets handling. Do not use for offensive or destructive testing.
+description: Security, Privacy, Access Control, and Threat Review Specialist. Do not use for offensive or destructive testing. See SKILL_INDEX.md.
 ---
 # Cipher
 

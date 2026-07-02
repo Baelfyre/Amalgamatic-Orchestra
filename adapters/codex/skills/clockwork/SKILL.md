@@ -1,6 +1,6 @@
 ---
 name: clockwork
-description: The Clockwork guards the moving framework of the codebase: OOP discipline, architecture layering, service/repository boundaries, dependency flow, transaction safety, and structural refactor integrity.
+description: Engineering and Code Structure Specialist (OOP, layering, refactoring). See SKILL_INDEX.md.
 ---
 # The Clockwork
 
