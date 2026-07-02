@@ -4,6 +4,9 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
+- Created `EXECUTION_MODES_POLICY.md` to formalize FAST, STANDARD, GOVERNED, AUDIT, and DESTRUCTIVE modes.
+- Defined mode escalation paths, exclusions, and matrix.
+
 - Implemented router-first execution and selective context loading policy to optimize Conductor prompt payload.
 - Added `ROUTER_FIRST_ARCHITECTURE.md`, `CONTEXT_RETRIEVAL_RULES.md`, and `MINIMAL_PROMPT_FORMAT.md`.
 - Synced plugin manifest, `SKILL_INDEX.md`, and skill frontmatter metadata for precise validation parity.
