@@ -1,7 +1,9 @@
 # Router Benchmark Fixture Schema
 
 ## Purpose
-This document defines the schema for `tests/fixtures/router_benchmarks.json`, which acts as the machine-readable source of truth for all router validation benchmarks.
+This document defines the exact schema contract for the router benchmark JSON fixture (`tests/fixtures/router_benchmarks.json`). It is strictly enforced by the `scripts/router_benchmark_runner.py` runner to prevent malformed validation coverage.
+
+If you need to add or edit benchmarks, first read the [ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md](ROUTER_BENCHMARK_MAINTENANCE_GUIDE.md).
 
 ## Scope
 This schema dictates the required shape and values for the router benchmark JSON fixture.
