@@ -12,6 +12,7 @@ The governance CI workflow generates multiple text reports that are zipped into 
 ## Artifact List
 The following files are included in the bundle:
 - `artifacts/router_benchmark_report.txt`
+- `artifacts/router_benchmark_negative_fixture_report.txt`
 - `artifacts/prompt_load_metrics.txt`
 - `artifacts/prompt_load_threshold_report.txt`
 - `artifacts/governance_report.txt`
@@ -19,9 +20,9 @@ The following files are included in the bundle:
 - `artifacts/evaluate_governance_report.txt`
 - `artifacts/run_tests_report.txt`
 
-## Router Benchmark Report
-**File**: `artifacts/router_benchmark_report.txt`
-This report validates the benchmark case definitions against the expected schema, ensuring consistency across all routing test vectors. See [ROUTER_BENCHMARK_RUNNER.md](ROUTER_BENCHMARK_RUNNER.md) for execution details.
+## Router Benchmark Reports
+**Files**: `artifacts/router_benchmark_report.txt`, `artifacts/router_benchmark_negative_fixture_report.txt`
+The primary report validates the benchmark case definitions against the expected schema, ensuring consistency across all routing test vectors. The negative fixture report proves that malformed inputs cause the runner to fail appropriately. See [ROUTER_BENCHMARK_RUNNER.md](ROUTER_BENCHMARK_RUNNER.md) for execution details.
 
 ## Prompt Load Metrics Report
 **File**: `artifacts/prompt_load_metrics.txt`

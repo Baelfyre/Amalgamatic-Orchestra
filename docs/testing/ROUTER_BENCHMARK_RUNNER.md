@@ -50,7 +50,7 @@ The runner will exit with code `1` (fail) if:
 - It is not a goal to modify or write any files.
 
 ## Negative Validation Testing
-The runner script itself is validated against malformed data inputs by `tests/behavior/test_router_benchmark_fixture_validation.py`. This script automatically constructs temporary malformed JSON fixtures and verifies that the runner fails appropriately for each defined constraint.
+The runner script itself is validated against malformed data inputs by `tests/behavior/test_router_benchmark_fixture_validation.py`. This script automatically constructs temporary malformed JSON fixtures and verifies that the runner fails appropriately for each defined constraint. This negative validation test runs continuously in CI to ensure the strictness of the benchmark runner is never degraded.
 
 ## Runner Result
 ROUTER_BENCHMARK_RUNNER_DEFINED
