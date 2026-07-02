@@ -4,6 +4,9 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
+- Created `scripts/measure_prompt_load.py` to calculate approximate token sizes of contextual documentation.
+- Added `PROMPT_LOAD_METRICS.md` defining token estimation heuristics and context exclusion groups.
+
 - Defined `ROUTER_VALIDATION_BENCHMARKS.md` to benchmark the efficiency, accuracy, and safety of the router-first execution model against the legacy monolithic context approach.
 
 - Wired Execution Modes Policy (`docs/routing/EXECUTION_MODES_POLICY.md`) into Conductor.
