@@ -4,6 +4,10 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
+- Implemented router-first execution and selective context loading policy to optimize Conductor prompt payload.
+- Added `ROUTER_FIRST_ARCHITECTURE.md`, `CONTEXT_RETRIEVAL_RULES.md`, and `MINIMAL_PROMPT_FORMAT.md`.
+- Synced plugin manifest, `SKILL_INDEX.md`, and skill frontmatter metadata for precise validation parity.
+
 - Added behavior fixtures validating Conductor routing for Cloak multi-stage workflow preservation and frontend/backend alignment with Clockwork, Cipher, and Chronicler.
 
 - Added Conductor routing rules for Cloak and backend alignment, requiring Clockwork, Cipher, and/or Chronicler before implementation when frontend work affects data, auth, APIs, persistence, security, privacy, integrations, payments, or compliance-sensitive workflows.
