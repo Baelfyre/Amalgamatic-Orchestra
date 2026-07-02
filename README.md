@@ -512,6 +512,7 @@ Output from Conductor and its specialists automatically adapts to your intent:
 | Installation | [Installation Guide](docs/setup/INSTALLATION.md) | Set up the plugin in Antigravity, Codex, VS Code, or JetBrains IDEs |
 | Changelog | [Changelog](CHANGELOG.md) | Track release history and documented repo milestones |
 | Validation | [Validation Guide](docs/setup/VALIDATION.md) | Run structure and manifest checks |
+| CI Artifacts | [CI Artifact Index](docs/testing/CI_ARTIFACT_INDEX.md) | Browse governance reports and validation CI artifacts |
 | Maturity | [Maturity](docs/MATURITY.md) | Current project stability and roadmap |
 | Contributing | [Contributing Guide](docs/CONTRIBUTING.md) | Guidelines for contributing and safety policies |
 | Disclaimer | [Disclaimer](docs/meta/DISCLAIMER.md) | Understand legal and operational limitations |
