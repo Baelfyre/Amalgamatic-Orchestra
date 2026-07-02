@@ -44,6 +44,17 @@ Conditionally load supporting context to prevent token exhaustion per `docs/rout
 - **Workspace Boundary Gate**: Do not read or edit files outside the declared target repository without explicit approval.
 - **Audit Mode / No-Edit Gate**: If the user requests an audit/review, make no file edits and generate no report artifacts without explicit approval.
 
+## Required Governance and Routing Compatibility Rules
+- If Governor sets `human_review_required: true`, Conductor pauses until human review completes.
+- If Steward and Governor return `APPROVED`, Conductor proceeds to routing.
+- If Steward or Governor returns `NOT_APPLICABLE`, Conductor proceeds under the selected execution mode.
+- Conductor must classify `SPECIALIST_REROUTE_REQUIRED` and must not allow a specialist to execute outside its documented scope.
+- **Cloak Workflow Preservation**: Broad, vague, aesthetic-heavy, or greenfield frontend design work must preserve Cloak's multi-stage design workflow before implementation.
+- Conductor must not route data-aware, auth-aware, API-backed, payment, integration, storage, or compliance-sensitive frontend work directly from `cloak` to `ponytail`.
+- Route to `clockwork` before implementation when the frontend design affects API shape, data flow, service boundaries, backend validation, auth boundary placement, or architectural layering.
+- Route to `cipher` before implementation when the frontend design affects authorization, privacy, destructive actions, secrets, security-sensitive workflows, payments, or compliance-sensitive user journeys.
+- Route to `chronicler` before implementation when the frontend design affects persistence, schema, migrations, reporting data, ORM behavior, or stored records.
+
 ## Output Contract
 Conductor must assemble specialist handoff prompts using `docs/routing/MINIMAL_PROMPT_FORMAT.md`.
 By default, use the **Caveman** global communication protocol. Apply Caveman-style compression to all outputs, plans, and instructions to save tokens. Do not write verbose essays.
