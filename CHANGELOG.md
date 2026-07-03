@@ -4,6 +4,10 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
+- added priority 3 router benchmark cases BM-21 through BM-24
+- added benchmark coverage completion review for Phase 7
+- audited router-first integration hardening and identified Phase 8 gaps
+
 - Documented the `tests/fixtures/router_benchmarks.json` schema in `ROUTER_BENCHMARK_FIXTURE_SCHEMA.md` and updated the benchmark validation runner to enforce the root shape and `schema_version`.
 
 - Refactored `scripts/router_benchmark_runner.py` to extract hardcoded definitions into a machine-readable fixture at `tests/fixtures/router_benchmarks.json`, preserving existing validation capabilities.
@@ -163,13 +167,3 @@ Changes after `v1.0.1` currently tracked in this checkout:
 - Added the eight-skill Orchestra structure.
 - Added IDE adapter guides and templates.
 - Added validation and local-only guidance.
--   a d d   n e g a t i v e   v a l i d a t i o n   t e s t s   f o r   r o u t e r   b e n c h m a r k   f i x t u r e   s c h e m a   p a r s i n g  
- -   a l l o w   r u n n e r   t o   a c c e p t   e x p l i c i t   f i x t u r e   p a t h   a r g u m e n t  
- -   a d d e d   n e g a t i v e   r o u t e r   b e n c h m a r k   f i x t u r e   v a l i d a t i o n   t o   C I   p i p e l i n e  
- -   r e c o r d e d   n e g a t i v e   f i x t u r e   t e s t   a r t i f a c t s   i n   C I   a r t i f a c t   i n d e x  
- -   a d d e d   r o u t e r   b e n c h m a r k   m a i n t e n a n c e   g u i d e   w i t h   r e v i e w   c h e c k l i s t s   a n d   v a l i d a t i o n   p r o c e d u r e s  
- -   d r a f t e d   r o u t e r   b e n c h m a r k   c o v e r a g e   e x p a n s i o n   p l a n   f o r   f u t u r e   r o u t i n g   s c e n a r i o s  
- -   a d d e d   p r i o r i t y   1   r o u t e r   b e n c h m a r k   c a s e s   B M - 1 3   t h r o u g h   B M - 1 6  
- -   a d d e d   p r i o r i t y   2   r o u t e r   b e n c h m a r k   c a s e s   B M - 1 7   t h r o u g h   B M - 2 0  
- -   a d d e d   p r i o r i t y   3   r o u t e r   b e n c h m a r k   c a s e s   B M - 2 1   t h r o u g h   B M - 2 4  
- 
