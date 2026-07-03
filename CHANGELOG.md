@@ -4,9 +4,7 @@ This changelog tracks the repository history using git tags, merge history, and 
 
 ## Unreleased
 
-- added priority 3 router benchmark cases BM-21 through BM-24
-- added benchmark coverage completion review for Phase 7
-- audited router-first integration hardening and identified Phase 8 gaps
+- Added Phase 8A router-first integration hardening audit documentation.
 
 - Documented the `tests/fixtures/router_benchmarks.json` schema in `ROUTER_BENCHMARK_FIXTURE_SCHEMA.md` and updated the benchmark validation runner to enforce the root shape and `schema_version`.
 
@@ -167,3 +165,13 @@ Changes after `v1.0.1` currently tracked in this checkout:
 - Added the eight-skill Orchestra structure.
 - Added IDE adapter guides and templates.
 - Added validation and local-only guidance.
+- add negative validation tests for router benchmark fixture schema parsing
+- allow runner to accept explicit fixture path argument
+- added negative router benchmark fixture validation to CI pipeline
+- recorded negative fixture test artifacts in CI artifact index
+- added router benchmark maintenance guide with review checklists and validation procedures
+- drafted router benchmark coverage expansion plan for future routing scenarios
+- added priority 1 router benchmark cases BM-13 through BM-16
+- added priority 2 router benchmark cases BM-17 through BM-20
+- added priority 3 router benchmark cases BM-21 through BM-24
+- added benchmark coverage completion review for Phase 7
